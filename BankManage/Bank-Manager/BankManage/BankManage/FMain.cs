@@ -39,5 +39,18 @@ namespace BankManage
             form.Dock = DockStyle.Fill;
             form.Show();
         }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            if (!pnlCreate.Controls.Contains(UCInfo.Instance))
+            {
+                pnlCreate.Controls.Add(UCInfo.Instance);
+                UCInfo.Instance.Dock = DockStyle.Fill;
+                UCInfo.Instance.BringToFront();
+            }
+            else
+                UCInfo.Instance.BringToFront();
+            btnOK.Enabled = true;
+        }
     }
 }
