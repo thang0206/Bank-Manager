@@ -64,6 +64,12 @@
     <Compile Include="FDetail.Designer.cs">
       <DependentUpon>FDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="FHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHistory.Designer.cs">
+      <DependentUpon>FHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FDetail.resx">
       <DependentUpon>FDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FHistory.resx">
+      <DependentUpon>FHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
