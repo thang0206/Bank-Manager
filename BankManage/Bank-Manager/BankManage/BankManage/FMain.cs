@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,6 +51,44 @@ namespace BankManage
             else
                 UCInfo.Instance.BringToFront();
             btnOK.Enabled = true;
+        }
+
+        private void chuyểnKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel5.Controls.Clear();
+            FTrans c = new FTrans();
+            c.TopLevel = false;
+            c.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            panel5.Controls.Add(c);
+            c.Dock = DockStyle.Fill;
+            c.Show();
+        }
+
+        private void rútTiềnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel5.Controls.Clear();
+            FWithdraw b = new FWithdraw();
+            b.TopLevel = false;
+            b.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            panel5.Controls.Add(b);
+            b.Dock = DockStyle.Fill;
+            b.Show();
+        }
+
+        private void giaoDịchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel5.Controls.Clear();
+            FBorrow d = new FBorrow(); 
+            d.TopLevel = false;
+            d.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            panel5.Controls.Add(d);
+            d.Dock = DockStyle.Fill;
+            d.Show();
         }
     }
 }

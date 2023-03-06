@@ -40,6 +40,7 @@ namespace BankManage
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.giaoDịchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rútTiềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,23 +57,28 @@ namespace BankManage
             this.panel1.SuspendLayout();
             this.pnlUpdate.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDelete
             // 
+            this.btnDelete.Location = new System.Drawing.Point(396, 619);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Location = new System.Drawing.Point(302, 484);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(115, 48);
+            this.btnDelete.Size = new System.Drawing.Size(129, 60);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnCreate
             // 
+            this.btnCreate.Location = new System.Drawing.Point(161, 619);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreate.Location = new System.Drawing.Point(88, 504);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(115, 48);
+            this.btnCreate.Size = new System.Drawing.Size(129, 60);
             this.btnCreate.TabIndex = 5;
             this.btnCreate.Text = "Tạo";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -86,7 +92,8 @@ namespace BankManage
             this.panel1.Controls.Add(this.txtFilter);
             this.panel1.Controls.Add(this.pnlCreate);
             this.panel1.Controls.Add(this.btnCreate);
-            this.panel1.Location = new System.Drawing.Point(10, 12);
+            this.panel1.Location = new System.Drawing.Point(11, 15);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(443, 572);
             this.panel1.TabIndex = 6;
@@ -116,14 +123,15 @@ namespace BankManage
             // 
             this.btnUpdate.Location = new System.Drawing.Point(168, 484);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(115, 48);
+            this.btnUpdate.Size = new System.Drawing.Size(129, 60);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Chỉnh sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // txtMoney
             // 
-            this.txtMoney.Location = new System.Drawing.Point(220, 381);
+            this.txtMoney.Location = new System.Drawing.Point(248, 476);
+            this.txtMoney.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(197, 22);
             this.txtMoney.TabIndex = 38;
@@ -133,9 +141,9 @@ namespace BankManage
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 387);
+            this.label7.Location = new System.Drawing.Point(29, 484);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 18);
+            this.label7.Size = new System.Drawing.Size(150, 22);
             this.label7.TabIndex = 37;
             this.label7.Text = "Số tiền khả dụng:";
             // 
@@ -152,7 +160,7 @@ namespace BankManage
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(26, 336);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 18);
+            this.label2.Size = new System.Drawing.Size(51, 22);
             this.label2.TabIndex = 26;
             this.label2.Text = "STK:";
             // 
@@ -167,15 +175,28 @@ namespace BankManage
             // 
             // panel5
             // 
-            this.panel5.Location = new System.Drawing.Point(3, 35);
+            this.panel5.Controls.Add(this.btnCancel);
+            this.panel5.Location = new System.Drawing.Point(3, 44);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(667, 516);
             this.panel5.TabIndex = 1;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(628, 183);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(86, 48);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.giaoDịchToolStripMenuItem,
@@ -184,7 +205,8 @@ namespace BankManage
             this.xemLịchSửGiaoDịchToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(452, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(719, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -195,14 +217,17 @@ namespace BankManage
             this.gửiTiềnToolStripMenuItem,
             this.chuyểnKhoảnToolStripMenuItem});
             this.giaoDịchToolStripMenuItem.Name = "giaoDịchToolStripMenuItem";
-            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
             this.giaoDịchToolStripMenuItem.Text = "Giao dịch";
+            this.giaoDịchToolStripMenuItem.Click += new System.EventHandler(this.giaoDịchToolStripMenuItem_Click);
             // 
             // rútTiềnToolStripMenuItem
             // 
+            this.rútTiềnToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.rútTiềnToolStripMenuItem.Name = "rútTiềnToolStripMenuItem";
-            this.rútTiềnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.rútTiềnToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.rútTiềnToolStripMenuItem.Text = "Rút tiền";
+            this.rútTiềnToolStripMenuItem.Click += new System.EventHandler(this.rútTiềnToolStripMenuItem_Click);
             // 
             // gửiTiềnToolStripMenuItem
             // 
@@ -214,25 +239,27 @@ namespace BankManage
             // chuyểnKhoảnToolStripMenuItem
             // 
             this.chuyểnKhoảnToolStripMenuItem.Name = "chuyểnKhoảnToolStripMenuItem";
-            this.chuyểnKhoảnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.chuyểnKhoảnToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.chuyểnKhoảnToolStripMenuItem.Text = "Chuyển khoản";
+            this.chuyểnKhoảnToolStripMenuItem.Click += new System.EventHandler(this.chuyểnKhoảnToolStripMenuItem_Click);
             // 
             // vayToolStripMenuItem
             // 
             this.vayToolStripMenuItem.Name = "vayToolStripMenuItem";
-            this.vayToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.vayToolStripMenuItem.Size = new System.Drawing.Size(56, 29);
             this.vayToolStripMenuItem.Text = "Vay";
+            this.vayToolStripMenuItem.Click += new System.EventHandler(this.vayToolStripMenuItem_Click);
             // 
             // tàiKhoảnTiếtKiệmToolStripMenuItem
             // 
             this.tàiKhoảnTiếtKiệmToolStripMenuItem.Name = "tàiKhoảnTiếtKiệmToolStripMenuItem";
-            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Size = new System.Drawing.Size(175, 29);
             this.tàiKhoảnTiếtKiệmToolStripMenuItem.Text = "Tài khoản tiết kiệm";
             // 
             // xemLịchSửGiaoDịchToolStripMenuItem
             // 
             this.xemLịchSửGiaoDịchToolStripMenuItem.Name = "xemLịchSửGiaoDịchToolStripMenuItem";
-            this.xemLịchSửGiaoDịchToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
+            this.xemLịchSửGiaoDịchToolStripMenuItem.Size = new System.Drawing.Size(197, 29);
             this.xemLịchSửGiaoDịchToolStripMenuItem.Text = "Xem lịch sử giao dịch";
             this.xemLịchSửGiaoDịchToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửGiaoDịchToolStripMenuItem_Click);
             // 
@@ -281,13 +308,14 @@ namespace BankManage
             // 
             // FMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1594, 596);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlUpdate);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FMain";
@@ -297,6 +325,7 @@ namespace BankManage
             this.pnlUpdate.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
