@@ -16,5 +16,10 @@ namespace BankManage
         {
             InitializeComponent();
         }
+
+        private void FSend_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
