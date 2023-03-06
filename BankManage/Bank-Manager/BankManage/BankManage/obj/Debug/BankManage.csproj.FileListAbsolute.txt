@@ -52,3 +52,4 @@ D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\B
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.CoreCompileInputs.cache
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.exe
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.pdb
+D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.UCInfo.resources
