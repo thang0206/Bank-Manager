@@ -17,9 +17,22 @@ namespace BankManage
             InitializeComponent();
         }
 
+        private void FLogin_Load(object sender, EventArgs e)
+        {
+            txtPass.PasswordChar = '*';
+        }
+
+        public bool IsLoggedIn { get; set; }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (txtLogin_name.Text == "user" && txtPass.Text == "user")
+            {
+                Close();
+                IsLoggedIn = true;
+            }
+            else
+                MessageBox.Show("Tài khoản không hợp lệ");
         }
     }
 }

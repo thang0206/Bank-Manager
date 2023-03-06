@@ -102,7 +102,9 @@
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtLogin_name);
             this.Name = "FLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.FLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,7 +16,11 @@ namespace BankManage
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FMain());
+            FLogin fLogin = new FLogin();
+            Application.Run(fLogin);
+
+            if (fLogin.IsLoggedIn)
+                Application.Run(new FMain());
         }
     }
 }

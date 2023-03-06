@@ -334,7 +334,7 @@
             // gửiTiềnToolStripMenuItem
             // 
             this.gửiTiềnToolStripMenuItem.Name = "gửiTiềnToolStripMenuItem";
-            this.gửiTiềnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gửiTiềnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.gửiTiềnToolStripMenuItem.Text = "Gửi tiền";
             this.gửiTiềnToolStripMenuItem.Click += new System.EventHandler(this.gửiTiềnToolStripMenuItem_Click);
             // 
