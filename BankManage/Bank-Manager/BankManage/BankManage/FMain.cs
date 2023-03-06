@@ -19,12 +19,25 @@ namespace BankManage
 
         private void gửiTiềnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FSend a = new FSend();
-            a.TopLevel = false;
-            a.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            panel5.Controls.Add(a);
-            a.Dock = DockStyle.Fill;
-            a.Show();
+            panel5.Controls.Clear();
+            FSend fsend = new FSend();
+            ShowFormOnPanel(fsend);
+        }
+
+        private void xemLịchSửGiaoDịchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel5.Controls.Clear();
+            FHistory fHistory = new FHistory();
+            ShowFormOnPanel(fHistory);
+        }
+
+        private void ShowFormOnPanel(Form form)
+        {
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            panel5.Controls.Add(form);
+            form.Dock = DockStyle.Fill;
+            form.Show();
         }
     }
 }

@@ -289,14 +289,14 @@
             this.panel3.Controls.Add(this.menuStrip1);
             this.panel3.Location = new System.Drawing.Point(909, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(557, 580);
+            this.panel3.Size = new System.Drawing.Size(673, 580);
             this.panel3.TabIndex = 7;
             // 
             // panel5
             // 
             this.panel5.Location = new System.Drawing.Point(3, 35);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(551, 516);
+            this.panel5.Size = new System.Drawing.Size(667, 516);
             this.panel5.TabIndex = 1;
             // 
             // menuStrip1
@@ -361,12 +361,13 @@
             this.xemLịchSửGiaoDịchToolStripMenuItem.Name = "xemLịchSửGiaoDịchToolStripMenuItem";
             this.xemLịchSửGiaoDịchToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
             this.xemLịchSửGiaoDịchToolStripMenuItem.Text = "Xem lịch sử giao dịch";
+            this.xemLịchSửGiaoDịchToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửGiaoDịchToolStripMenuItem_Click);
             // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1478, 596);
+            this.ClientSize = new System.Drawing.Size(1594, 596);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
