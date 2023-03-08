@@ -253,28 +253,28 @@ namespace BankManage
             this.gửiTiềnToolStripMenuItem,
             this.chuyểnKhoảnToolStripMenuItem});
             this.giaoDịchToolStripMenuItem.Name = "giaoDịchToolStripMenuItem";
-            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.giaoDịchToolStripMenuItem.Text = "Giao dịch";
             // 
             // rútTiềnToolStripMenuItem
             // 
             this.rútTiềnToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.rútTiềnToolStripMenuItem.Name = "rútTiềnToolStripMenuItem";
-            this.rútTiềnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.rútTiềnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.rútTiềnToolStripMenuItem.Text = "Rút tiền";
             this.rútTiềnToolStripMenuItem.Click += new System.EventHandler(this.rútTiềnToolStripMenuItem_Click);
             // 
             // gửiTiềnToolStripMenuItem
             // 
             this.gửiTiềnToolStripMenuItem.Name = "gửiTiềnToolStripMenuItem";
-            this.gửiTiềnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.gửiTiềnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gửiTiềnToolStripMenuItem.Text = "Gửi tiền";
             this.gửiTiềnToolStripMenuItem.Click += new System.EventHandler(this.gửiTiềnToolStripMenuItem_Click);
             // 
             // chuyểnKhoảnToolStripMenuItem
             // 
             this.chuyểnKhoảnToolStripMenuItem.Name = "chuyểnKhoảnToolStripMenuItem";
-            this.chuyểnKhoảnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.chuyểnKhoảnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.chuyểnKhoảnToolStripMenuItem.Text = "Chuyển khoản";
             this.chuyểnKhoảnToolStripMenuItem.Click += new System.EventHandler(this.chuyểnKhoảnToolStripMenuItem_Click);
             // 
