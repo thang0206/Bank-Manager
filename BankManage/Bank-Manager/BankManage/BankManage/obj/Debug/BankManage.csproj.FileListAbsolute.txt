@@ -68,7 +68,6 @@ E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankMan
 E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FTrans.resources
 E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FWithdraw.resources
 E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.Properties.Resources.resources
-E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.UCInfo.resources
 E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.GenerateResource.cache
 E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.CoreCompileInputs.cache
 E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.exe
