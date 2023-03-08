@@ -53,3 +53,23 @@ D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\B
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.exe
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.pdb
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.UCInfo.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\bin\Debug\BankManage.exe.config
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\bin\Debug\BankManage.exe
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\bin\Debug\BankManage.pdb
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.AssemblyReference.cache
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.SuggestedBindingRedirects.cache
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FBorrow.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FCreate.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FDetail.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FHistory.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FLogin.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FMain.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FSend.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FTrans.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FWithdraw.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.Properties.Resources.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.UCInfo.resources
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.GenerateResource.cache
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.CoreCompileInputs.cache
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.exe
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.pdb
