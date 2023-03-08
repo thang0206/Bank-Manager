@@ -81,15 +81,15 @@ namespace BankManage
             }
             else
             {
+                gvSTK.Visible = false;
                 MessageBox.Show("Chua co tai khoan. Vui long tao!");
                 btnCreate.Enabled = true;
-                txtName.Text = "";
-                txtAddr.Text = "";
-                txtPNum.Text = "";
-                txtMoney.Text = "";
-                txtSTK.Text = "";
+                txtName.Clear();
+                txtAddr.Clear();
+                txtPNum.Clear();
+                txtMoney.Clear();
+                txtSTK.Clear();
             }
-
         }
     }
 }

@@ -32,12 +32,12 @@ namespace BankManage
             this.btnCreate = new System.Windows.Forms.Button();
             this.pnlFind = new System.Windows.Forms.Panel();
             this.gvSTK = new System.Windows.Forms.DataGridView();
-            this.txtSTKFind = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlUpdate = new System.Windows.Forms.Panel();
+            this.txtSTK = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pickDoB = new System.Windows.Forms.DateTimePicker();
             this.txtPNum = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -51,8 +51,6 @@ namespace BankManage
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtMoney = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtSTK = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlOption = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -95,9 +93,7 @@ namespace BankManage
             this.pnlFind.AutoSize = true;
             this.pnlFind.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlFind.Controls.Add(this.gvSTK);
-            this.pnlFind.Controls.Add(this.txtSTKFind);
             this.pnlFind.Controls.Add(this.label1);
-            this.pnlFind.Controls.Add(this.label9);
             this.pnlFind.Controls.Add(this.btnFilter);
             this.pnlFind.Controls.Add(this.txtFilter);
             this.pnlFind.Location = new System.Drawing.Point(10, 12);
@@ -108,22 +104,13 @@ namespace BankManage
             // gvSTK
             // 
             this.gvSTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSTK.Location = new System.Drawing.Point(16, 189);
+            this.gvSTK.Location = new System.Drawing.Point(16, 125);
             this.gvSTK.Name = "gvSTK";
             this.gvSTK.RowHeadersWidth = 51;
             this.gvSTK.RowTemplate.Height = 24;
-            this.gvSTK.Size = new System.Drawing.Size(391, 277);
+            this.gvSTK.Size = new System.Drawing.Size(391, 341);
             this.gvSTK.TabIndex = 2;
             this.gvSTK.Visible = false;
-            // 
-            // txtSTKFind
-            // 
-            this.txtSTKFind.Location = new System.Drawing.Point(16, 101);
-            this.txtSTKFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSTKFind.MinimumSize = new System.Drawing.Size(4, 30);
-            this.txtSTKFind.Name = "txtSTKFind";
-            this.txtSTKFind.Size = new System.Drawing.Size(391, 22);
-            this.txtSTKFind.TabIndex = 13;
             // 
             // label1
             // 
@@ -134,18 +121,9 @@ namespace BankManage
             this.label1.TabIndex = 12;
             this.label1.Text = "Nhập CMND/CCCD:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 79);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 16);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Nhập STK:";
-            // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(166, 142);
+            this.btnFilter.Location = new System.Drawing.Point(151, 81);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(91, 24);
@@ -189,6 +167,24 @@ namespace BankManage
             this.pnlUpdate.Name = "pnlUpdate";
             this.pnlUpdate.Size = new System.Drawing.Size(405, 453);
             this.pnlUpdate.TabIndex = 7;
+            // 
+            // txtSTK
+            // 
+            this.txtSTK.Location = new System.Drawing.Point(202, 2);
+            this.txtSTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSTK.Name = "txtSTK";
+            this.txtSTK.Size = new System.Drawing.Size(200, 22);
+            this.txtSTK.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 18);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "STK:";
             // 
             // pickDoB
             // 
@@ -302,25 +298,6 @@ namespace BankManage
             this.label7.Size = new System.Drawing.Size(122, 18);
             this.label7.TabIndex = 37;
             this.label7.Text = "Số tiền khả dụng:";
-            // 
-            // txtSTK
-            // 
-            this.txtSTK.Location = new System.Drawing.Point(202, 2);
-            this.txtSTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSTK.Name = "txtSTK";
-            this.txtSTK.ReadOnly = true;
-            this.txtSTK.Size = new System.Drawing.Size(200, 22);
-            this.txtSTK.TabIndex = 31;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 18);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "STK:";
             // 
             // panel3
             // 
@@ -477,7 +454,5 @@ namespace BankManage
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView gvSTK;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtSTKFind;
     }
 }
