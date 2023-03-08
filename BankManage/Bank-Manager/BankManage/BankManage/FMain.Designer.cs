@@ -80,6 +80,8 @@ namespace BankManage
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnFilter);
@@ -88,7 +90,7 @@ namespace BankManage
             this.panel1.Controls.Add(this.btnCreate);
             this.panel1.Location = new System.Drawing.Point(10, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(435, 481);
+            this.panel1.Size = new System.Drawing.Size(435, 469);
             this.panel1.TabIndex = 6;
             // 
             // btnOK
@@ -127,7 +129,7 @@ namespace BankManage
             this.txtFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFilter.MinimumSize = new System.Drawing.Size(4, 30);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(391, 30);
+            this.txtFilter.Size = new System.Drawing.Size(391, 22);
             this.txtFilter.TabIndex = 10;
             // 
             // pnlCreate
@@ -140,6 +142,8 @@ namespace BankManage
             // 
             // pnlUpdate
             // 
+            this.pnlUpdate.AutoSize = true;
+            this.pnlUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlUpdate.Controls.Add(this.ucInfo1);
             this.pnlUpdate.Controls.Add(this.btnUpdate);
             this.pnlUpdate.Controls.Add(this.txtMoney);
@@ -150,7 +154,7 @@ namespace BankManage
             this.pnlUpdate.Location = new System.Drawing.Point(451, 28);
             this.pnlUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUpdate.Name = "pnlUpdate";
-            this.pnlUpdate.Size = new System.Drawing.Size(416, 465);
+            this.pnlUpdate.Size = new System.Drawing.Size(419, 453);
             this.pnlUpdate.TabIndex = 7;
             // 
             // btnUpdate
@@ -201,12 +205,14 @@ namespace BankManage
             // 
             // panel3
             // 
+            this.panel3.AutoSize = true;
+            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel3.Controls.Add(this.pnlOption);
             this.panel3.Controls.Add(this.menuStrip1);
             this.panel3.Location = new System.Drawing.Point(885, 6);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(677, 487);
+            this.panel3.Size = new System.Drawing.Size(689, 475);
             this.panel3.TabIndex = 7;
             // 
             // pnlOption
@@ -228,7 +234,7 @@ namespace BankManage
             this.xemLịchSửGiaoDịchToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(452, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(454, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -239,7 +245,7 @@ namespace BankManage
             this.gửiTiềnToolStripMenuItem,
             this.chuyểnKhoảnToolStripMenuItem});
             this.giaoDịchToolStripMenuItem.Name = "giaoDịchToolStripMenuItem";
-            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
             this.giaoDịchToolStripMenuItem.Text = "Giao dịch";
             // 
             // rútTiềnToolStripMenuItem
@@ -267,20 +273,20 @@ namespace BankManage
             // vayToolStripMenuItem
             // 
             this.vayToolStripMenuItem.Name = "vayToolStripMenuItem";
-            this.vayToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.vayToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.vayToolStripMenuItem.Text = "Vay";
             this.vayToolStripMenuItem.Click += new System.EventHandler(this.vayToolStripMenuItem_Click);
             // 
             // tàiKhoảnTiếtKiệmToolStripMenuItem
             // 
             this.tàiKhoảnTiếtKiệmToolStripMenuItem.Name = "tàiKhoảnTiếtKiệmToolStripMenuItem";
-            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.tàiKhoảnTiếtKiệmToolStripMenuItem.Text = "Tài khoản tiết kiệm";
             // 
             // xemLịchSửGiaoDịchToolStripMenuItem
             // 
             this.xemLịchSửGiaoDịchToolStripMenuItem.Name = "xemLịchSửGiaoDịchToolStripMenuItem";
-            this.xemLịchSửGiaoDịchToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
+            this.xemLịchSửGiaoDịchToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.xemLịchSửGiaoDịchToolStripMenuItem.Text = "Xem lịch sử giao dịch";
             this.xemLịchSửGiaoDịchToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửGiaoDịchToolStripMenuItem_Click);
             // 
@@ -313,6 +319,7 @@ namespace BankManage
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
