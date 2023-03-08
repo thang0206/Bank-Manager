@@ -61,20 +61,18 @@ namespace BankManage
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(295, 502);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Location = new System.Drawing.Point(262, 402);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(129, 60);
+            this.btnDelete.Size = new System.Drawing.Size(115, 48);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(86, 522);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCreate.Location = new System.Drawing.Point(76, 418);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(129, 60);
+            this.btnCreate.Size = new System.Drawing.Size(115, 48);
             this.btnCreate.TabIndex = 5;
             this.btnCreate.Text = "Tạo";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -90,19 +88,18 @@ namespace BankManage
             this.panel1.Controls.Add(this.txtFilter);
             this.panel1.Controls.Add(this.pnlCreate);
             this.panel1.Controls.Add(this.btnCreate);
-            this.panel1.Location = new System.Drawing.Point(11, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(10, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(489, 586);
+            this.panel1.Size = new System.Drawing.Size(435, 469);
             this.panel1.TabIndex = 6;
             // 
             // btnOK
             // 
             this.btnOK.Enabled = false;
-            this.btnOK.Location = new System.Drawing.Point(236, 522);
+            this.btnOK.Location = new System.Drawing.Point(210, 418);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(115, 60);
+            this.btnOK.Size = new System.Drawing.Size(102, 48);
             this.btnOK.TabIndex = 13;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -110,37 +107,37 @@ namespace BankManage
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 22);
+            this.label1.Location = new System.Drawing.Point(13, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 20);
+            this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nhập CMND/CCCD:";
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(18, 102);
+            this.btnFilter.Location = new System.Drawing.Point(16, 82);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(102, 30);
+            this.btnFilter.Size = new System.Drawing.Size(91, 24);
             this.btnFilter.TabIndex = 11;
             this.btnFilter.Text = "Tìm kiếm";
             this.btnFilter.UseVisualStyleBackColor = true;
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(18, 54);
+            this.txtFilter.Location = new System.Drawing.Point(16, 43);
             this.txtFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFilter.MinimumSize = new System.Drawing.Size(4, 30);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(439, 26);
+            this.txtFilter.Size = new System.Drawing.Size(391, 22);
             this.txtFilter.TabIndex = 10;
             // 
             // pnlCreate
             // 
-            this.pnlCreate.Location = new System.Drawing.Point(18, 152);
+            this.pnlCreate.Location = new System.Drawing.Point(16, 122);
             this.pnlCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlCreate.Name = "pnlCreate";
-            this.pnlCreate.Size = new System.Drawing.Size(468, 341);
+            this.pnlCreate.Size = new System.Drawing.Size(416, 273);
             this.pnlCreate.TabIndex = 7;
             // 
             // pnlUpdate
@@ -154,28 +151,27 @@ namespace BankManage
             this.pnlUpdate.Controls.Add(this.label7);
             this.pnlUpdate.Controls.Add(this.textBox5);
             this.pnlUpdate.Controls.Add(this.label2);
-            this.pnlUpdate.Location = new System.Drawing.Point(507, 35);
+            this.pnlUpdate.Location = new System.Drawing.Point(451, 28);
             this.pnlUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUpdate.Name = "pnlUpdate";
-            this.pnlUpdate.Size = new System.Drawing.Size(471, 566);
+            this.pnlUpdate.Size = new System.Drawing.Size(419, 453);
             this.pnlUpdate.TabIndex = 7;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(136, 502);
+            this.btnUpdate.Location = new System.Drawing.Point(121, 402);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(129, 60);
+            this.btnUpdate.Size = new System.Drawing.Size(115, 48);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Chỉnh sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // txtMoney
             // 
-            this.txtMoney.Location = new System.Drawing.Point(230, 385);
-            this.txtMoney.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMoney.Location = new System.Drawing.Point(204, 308);
             this.txtMoney.Name = "txtMoney";
-            this.txtMoney.Size = new System.Drawing.Size(222, 26);
+            this.txtMoney.Size = new System.Drawing.Size(198, 22);
             this.txtMoney.TabIndex = 38;
             // 
             // label7
@@ -183,27 +179,27 @@ namespace BankManage
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 380);
+            this.label7.Location = new System.Drawing.Point(13, 304);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 22);
+            this.label7.Size = new System.Drawing.Size(122, 18);
             this.label7.TabIndex = 37;
             this.label7.Text = "Số tiền khả dụng:";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(230, 328);
+            this.textBox5.Location = new System.Drawing.Point(204, 262);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(222, 26);
+            this.textBox5.Size = new System.Drawing.Size(198, 22);
             this.textBox5.TabIndex = 31;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 328);
+            this.label2.Location = new System.Drawing.Point(13, 262);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 22);
+            this.label2.Size = new System.Drawing.Size(41, 18);
             this.label2.TabIndex = 26;
             this.label2.Text = "STK:";
             // 
@@ -213,25 +209,23 @@ namespace BankManage
             this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel3.Controls.Add(this.pnlOption);
             this.panel3.Controls.Add(this.menuStrip1);
-            this.panel3.Location = new System.Drawing.Point(996, 8);
+            this.panel3.Location = new System.Drawing.Point(885, 6);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(719, 594);
+            this.panel3.Size = new System.Drawing.Size(519, 475);
             this.panel3.TabIndex = 7;
             // 
             // pnlOption
             // 
-            this.pnlOption.Location = new System.Drawing.Point(24, 44);
-            this.pnlOption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlOption.Location = new System.Drawing.Point(21, 35);
             this.pnlOption.Name = "pnlOption";
-            this.pnlOption.Size = new System.Drawing.Size(525, 546);
+            this.pnlOption.Size = new System.Drawing.Size(495, 437);
             this.pnlOption.TabIndex = 1;
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.giaoDịchToolStripMenuItem,
@@ -240,8 +234,7 @@ namespace BankManage
             this.xemLịchSửGiaoDịchToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(719, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(452, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -252,69 +245,68 @@ namespace BankManage
             this.gửiTiềnToolStripMenuItem,
             this.chuyểnKhoảnToolStripMenuItem});
             this.giaoDịchToolStripMenuItem.Name = "giaoDịchToolStripMenuItem";
-            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
             this.giaoDịchToolStripMenuItem.Text = "Giao dịch";
             // 
             // rútTiềnToolStripMenuItem
             // 
             this.rútTiềnToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.rútTiềnToolStripMenuItem.Name = "rútTiềnToolStripMenuItem";
-            this.rútTiềnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.rútTiềnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.rútTiềnToolStripMenuItem.Text = "Rút tiền";
             this.rútTiềnToolStripMenuItem.Click += new System.EventHandler(this.rútTiềnToolStripMenuItem_Click);
             // 
             // gửiTiềnToolStripMenuItem
             // 
             this.gửiTiềnToolStripMenuItem.Name = "gửiTiềnToolStripMenuItem";
-            this.gửiTiềnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gửiTiềnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.gửiTiềnToolStripMenuItem.Text = "Gửi tiền";
             this.gửiTiềnToolStripMenuItem.Click += new System.EventHandler(this.gửiTiềnToolStripMenuItem_Click);
             // 
             // chuyểnKhoảnToolStripMenuItem
             // 
             this.chuyểnKhoảnToolStripMenuItem.Name = "chuyểnKhoảnToolStripMenuItem";
-            this.chuyểnKhoảnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.chuyểnKhoảnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.chuyểnKhoảnToolStripMenuItem.Text = "Chuyển khoản";
             this.chuyểnKhoảnToolStripMenuItem.Click += new System.EventHandler(this.chuyểnKhoảnToolStripMenuItem_Click);
             // 
             // vayToolStripMenuItem
             // 
             this.vayToolStripMenuItem.Name = "vayToolStripMenuItem";
-            this.vayToolStripMenuItem.Size = new System.Drawing.Size(56, 29);
+            this.vayToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.vayToolStripMenuItem.Text = "Vay";
             this.vayToolStripMenuItem.Click += new System.EventHandler(this.vayToolStripMenuItem_Click);
             // 
             // tàiKhoảnTiếtKiệmToolStripMenuItem
             // 
             this.tàiKhoảnTiếtKiệmToolStripMenuItem.Name = "tàiKhoảnTiếtKiệmToolStripMenuItem";
-            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Size = new System.Drawing.Size(175, 29);
+            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.tàiKhoảnTiếtKiệmToolStripMenuItem.Text = "Tài khoản tiết kiệm";
             // 
             // xemLịchSửGiaoDịchToolStripMenuItem
             // 
             this.xemLịchSửGiaoDịchToolStripMenuItem.Name = "xemLịchSửGiaoDịchToolStripMenuItem";
-            this.xemLịchSửGiaoDịchToolStripMenuItem.Size = new System.Drawing.Size(197, 29);
+            this.xemLịchSửGiaoDịchToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.xemLịchSửGiaoDịchToolStripMenuItem.Text = "Xem lịch sử giao dịch";
             this.xemLịchSửGiaoDịchToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửGiaoDịchToolStripMenuItem_Click);
             // 
             // ucInfo1
             // 
-            this.ucInfo1.Location = new System.Drawing.Point(7, 34);
+            this.ucInfo1.Location = new System.Drawing.Point(6, 27);
             this.ucInfo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucInfo1.Name = "ucInfo1";
-            this.ucInfo1.Size = new System.Drawing.Size(461, 279);
+            this.ucInfo1.Size = new System.Drawing.Size(410, 223);
             this.ucInfo1.TabIndex = 39;
             // 
             // FMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1568, 631);
+            this.ClientSize = new System.Drawing.Size(1413, 505);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlUpdate);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FMain";
