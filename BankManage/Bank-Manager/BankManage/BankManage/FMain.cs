@@ -77,7 +77,7 @@ namespace BankManage
                 txtPNum.Text = "0936114256";
                 txtMoney.Text = "1.000.000";
                 txtSTK.Text = "123";
-                pickDoB.Value = Convert.ToDateTime("22/3/1998");
+                pickDoB.Value = Convert.ToDateTime("1998-03-22");
             }
             else
             {

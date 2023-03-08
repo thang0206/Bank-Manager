@@ -386,14 +386,6 @@ namespace BankManage
             this.xemLịchSửGiaoDịchToolStripMenuItem.Text = "Xem lịch sử giao dịch";
             this.xemLịchSửGiaoDịchToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửGiaoDịchToolStripMenuItem_Click);
             // 
-            // ucInfo1
-            // 
-            this.ucInfo1.Location = new System.Drawing.Point(6, 27);
-            this.ucInfo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ucInfo1.Name = "ucInfo1";
-            this.ucInfo1.Size = new System.Drawing.Size(410, 223);
-            this.ucInfo1.TabIndex = 39;
-            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
