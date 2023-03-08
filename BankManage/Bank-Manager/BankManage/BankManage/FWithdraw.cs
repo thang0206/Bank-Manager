@@ -38,5 +38,10 @@ namespace BankManage
         {
             txtMoney.Clear();
         }
+
+        private void FWithdraw_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

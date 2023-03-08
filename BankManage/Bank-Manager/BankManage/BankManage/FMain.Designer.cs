@@ -37,7 +37,6 @@ namespace BankManage
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.pnlCreate = new System.Windows.Forms.Panel();
             this.pnlUpdate = new System.Windows.Forms.Panel();
-            this.ucInfo1 = new BankManage.UCInfo();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtMoney = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@ namespace BankManage
             this.vayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tàiKhoảnTiếtKiệmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemLịchSửGiaoDịchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ucInfo1 = new BankManage.UCInfo();
             this.panel1.SuspendLayout();
             this.pnlUpdate.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -157,14 +157,6 @@ namespace BankManage
             this.pnlUpdate.Size = new System.Drawing.Size(419, 453);
             this.pnlUpdate.TabIndex = 7;
             // 
-            // ucInfo1
-            // 
-            this.ucInfo1.Location = new System.Drawing.Point(6, 27);
-            this.ucInfo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ucInfo1.Name = "ucInfo1";
-            this.ucInfo1.Size = new System.Drawing.Size(410, 223);
-            this.ucInfo1.TabIndex = 39;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(121, 402);
@@ -220,14 +212,14 @@ namespace BankManage
             this.panel3.Location = new System.Drawing.Point(885, 6);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(491, 475);
+            this.panel3.Size = new System.Drawing.Size(519, 475);
             this.panel3.TabIndex = 7;
             // 
             // pnlOption
             // 
             this.pnlOption.Location = new System.Drawing.Point(21, 35);
             this.pnlOption.Name = "pnlOption";
-            this.pnlOption.Size = new System.Drawing.Size(467, 437);
+            this.pnlOption.Size = new System.Drawing.Size(495, 437);
             this.pnlOption.TabIndex = 1;
             // 
             // menuStrip1
@@ -242,7 +234,7 @@ namespace BankManage
             this.xemLịchSửGiaoDịchToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(452, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(452, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -253,56 +245,64 @@ namespace BankManage
             this.gửiTiềnToolStripMenuItem,
             this.chuyểnKhoảnToolStripMenuItem});
             this.giaoDịchToolStripMenuItem.Name = "giaoDịchToolStripMenuItem";
-            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
             this.giaoDịchToolStripMenuItem.Text = "Giao dịch";
             // 
             // rútTiềnToolStripMenuItem
             // 
             this.rútTiềnToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.rútTiềnToolStripMenuItem.Name = "rútTiềnToolStripMenuItem";
-            this.rútTiềnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.rútTiềnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.rútTiềnToolStripMenuItem.Text = "Rút tiền";
             this.rútTiềnToolStripMenuItem.Click += new System.EventHandler(this.rútTiềnToolStripMenuItem_Click);
             // 
             // gửiTiềnToolStripMenuItem
             // 
             this.gửiTiềnToolStripMenuItem.Name = "gửiTiềnToolStripMenuItem";
-            this.gửiTiềnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gửiTiềnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.gửiTiềnToolStripMenuItem.Text = "Gửi tiền";
             this.gửiTiềnToolStripMenuItem.Click += new System.EventHandler(this.gửiTiềnToolStripMenuItem_Click);
             // 
             // chuyểnKhoảnToolStripMenuItem
             // 
             this.chuyểnKhoảnToolStripMenuItem.Name = "chuyểnKhoảnToolStripMenuItem";
-            this.chuyểnKhoảnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.chuyểnKhoảnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.chuyểnKhoảnToolStripMenuItem.Text = "Chuyển khoản";
             this.chuyểnKhoảnToolStripMenuItem.Click += new System.EventHandler(this.chuyểnKhoảnToolStripMenuItem_Click);
             // 
             // vayToolStripMenuItem
             // 
             this.vayToolStripMenuItem.Name = "vayToolStripMenuItem";
-            this.vayToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.vayToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.vayToolStripMenuItem.Text = "Vay";
             this.vayToolStripMenuItem.Click += new System.EventHandler(this.vayToolStripMenuItem_Click);
             // 
             // tàiKhoảnTiếtKiệmToolStripMenuItem
             // 
             this.tàiKhoảnTiếtKiệmToolStripMenuItem.Name = "tàiKhoảnTiếtKiệmToolStripMenuItem";
-            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.tàiKhoảnTiếtKiệmToolStripMenuItem.Text = "Tài khoản tiết kiệm";
             // 
             // xemLịchSửGiaoDịchToolStripMenuItem
             // 
             this.xemLịchSửGiaoDịchToolStripMenuItem.Name = "xemLịchSửGiaoDịchToolStripMenuItem";
-            this.xemLịchSửGiaoDịchToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
+            this.xemLịchSửGiaoDịchToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.xemLịchSửGiaoDịchToolStripMenuItem.Text = "Xem lịch sử giao dịch";
             this.xemLịchSửGiaoDịchToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửGiaoDịchToolStripMenuItem_Click);
+            // 
+            // ucInfo1
+            // 
+            this.ucInfo1.Location = new System.Drawing.Point(6, 27);
+            this.ucInfo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ucInfo1.Name = "ucInfo1";
+            this.ucInfo1.Size = new System.Drawing.Size(410, 223);
+            this.ucInfo1.TabIndex = 39;
             // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1394, 505);
+            this.ClientSize = new System.Drawing.Size(1413, 505);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlUpdate);
             this.Controls.Add(this.panel1);
