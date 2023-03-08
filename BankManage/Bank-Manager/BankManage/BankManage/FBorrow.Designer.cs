@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpchovay = new System.Windows.Forms.DateTimePicker();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -36,21 +36,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtphoantien = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbKyhan = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtpchovay
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(186, 323);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(224, 26);
-            this.dateTimePicker1.TabIndex = 29;
+            this.dtpchovay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpchovay.Location = new System.Drawing.Point(186, 323);
+            this.dtpchovay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpchovay.Name = "dtpchovay";
+            this.dtpchovay.Size = new System.Drawing.Size(224, 26);
+            this.dtpchovay.TabIndex = 29;
+            this.dtpchovay.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBox3
             // 
@@ -62,11 +64,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(186, 38);
+            this.textBox2.Location = new System.Drawing.Point(191, 45);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(219, 26);
             this.textBox2.TabIndex = 27;
+            this.textBox2.Text = "68000000";
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnCancel
             // 
@@ -87,6 +92,7 @@
             this.btnOK.TabIndex = 24;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label4
             // 
@@ -118,13 +124,16 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Số dư hiện tại:";
             // 
-            // dateTimePicker2
+            // dtphoantien
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(186, 397);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(224, 26);
-            this.dateTimePicker2.TabIndex = 31;
+            this.dtphoantien.Enabled = false;
+            this.dtphoantien.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtphoantien.Location = new System.Drawing.Point(186, 397);
+            this.dtphoantien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtphoantien.Name = "dtphoantien";
+            this.dtphoantien.Size = new System.Drawing.Size(224, 26);
+            this.dtphoantien.TabIndex = 31;
+            this.dtphoantien.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label5
             // 
@@ -168,30 +177,31 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "Kỳ hạn:";
             // 
-            // comboBox2
+            // cbKyhan
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "12 tháng, lãi suất: 10%/năm ",
-            "8 tháng, lãi suất: 8%/năm "});
-            this.comboBox2.Location = new System.Drawing.Point(186, 246);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(224, 28);
-            this.comboBox2.TabIndex = 37;
+            this.cbKyhan.FormattingEnabled = true;
+            this.cbKyhan.Items.AddRange(new object[] {
+            "12 tháng, lãi suất 10%/năm",
+            "8 tháng, lãi suất 6%/năm"});
+            this.cbKyhan.Location = new System.Drawing.Point(186, 243);
+            this.cbKyhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbKyhan.Name = "cbKyhan";
+            this.cbKyhan.Size = new System.Drawing.Size(224, 28);
+            this.cbKyhan.TabIndex = 37;
+            this.cbKyhan.SelectedIndexChanged += new System.EventHandler(this.cbKyhan_SelectedIndexChanged_1);
             // 
             // FBorrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 652);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbKyhan);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dtphoantien);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpchovay);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnCancel);
@@ -202,6 +212,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FBorrow";
             this.Text = "FBorrow";
+            this.Load += new System.EventHandler(this.FBorrow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,7 +220,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpchovay;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnCancel;
@@ -217,11 +228,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtphoantien;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbKyhan;
     }
 }
