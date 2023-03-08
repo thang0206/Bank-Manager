@@ -33,15 +33,7 @@ namespace BankManage
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!pnlCreate.Controls.Contains(UCInfo.Instance))
-            {
-                pnlCreate.Controls.Add(UCInfo.Instance);
-                UCInfo.Instance.Dock = DockStyle.Fill;
-                UCInfo.Instance.BringToFront();
-            }
-            else
-                UCInfo.Instance.BringToFront();
-            btnOK.Enabled = true;
+            
         }
 
         private void chuyểnKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,6 +64,32 @@ namespace BankManage
             pnlOption.Controls.Add(form);
             form.Dock = DockStyle.Fill;
             form.Show();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            gvSTK.Visible = true;
+            txtID.Text = txtFilter.Text;
+            if (txtFilter.Text == "12345")
+            {
+                txtName.Text = "Nguyen Van A";
+                txtAddr.Text = "HCM";
+                txtPNum.Text = "0936114256";
+                txtMoney.Text = "1.000.000";
+                txtSTK.Text = "123";
+                pickDoB.Value = Convert.ToDateTime("1998-03-22");
+            }
+            else
+            {
+                gvSTK.Visible = false;
+                MessageBox.Show("Chua co tai khoan. Vui long tao!");
+                btnCreate.Enabled = true;
+                txtName.Clear();
+                txtAddr.Clear();
+                txtPNum.Clear();
+                txtMoney.Clear();
+                txtSTK.Clear();
+            }
         }
     }
 }

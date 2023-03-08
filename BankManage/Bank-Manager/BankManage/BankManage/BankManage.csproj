@@ -102,12 +102,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UCInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCInfo.Designer.cs">
-      <DependentUpon>UCInfo.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FBorrow.resx">
       <DependentUpon>FBorrow.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,9 +138,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UCInfo.resx">
-      <DependentUpon>UCInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
