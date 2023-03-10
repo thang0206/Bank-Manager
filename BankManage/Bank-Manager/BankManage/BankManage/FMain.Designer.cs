@@ -54,13 +54,13 @@ namespace BankManage
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlOption = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.giaoDịchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rútTiềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gửiTiềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chuyểnKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tàiKhoảnTiếtKiệmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xemLịchSửGiaoDịchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WithdrawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TransToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BorrowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SavingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Trans_HisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlFind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).BeginInit();
             this.pnlUpdate.SuspendLayout();
@@ -324,67 +324,68 @@ namespace BankManage
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.giaoDịchToolStripMenuItem,
-            this.vayToolStripMenuItem,
-            this.tàiKhoảnTiếtKiệmToolStripMenuItem,
-            this.xemLịchSửGiaoDịchToolStripMenuItem});
+            this.ContractToolStripMenuItem,
+            this.BorrowToolStripMenuItem,
+            this.SavingToolStripMenuItem,
+            this.Trans_HisToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(452, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(452, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // giaoDịchToolStripMenuItem
+            // ContractToolStripMenuItem
             // 
-            this.giaoDịchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rútTiềnToolStripMenuItem,
-            this.gửiTiềnToolStripMenuItem,
-            this.chuyểnKhoảnToolStripMenuItem});
-            this.giaoDịchToolStripMenuItem.Name = "giaoDịchToolStripMenuItem";
-            this.giaoDịchToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
-            this.giaoDịchToolStripMenuItem.Text = "Giao dịch";
+            this.ContractToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.WithdrawToolStripMenuItem,
+            this.SendToolStripMenuItem,
+            this.TransToolStripMenuItem});
+            this.ContractToolStripMenuItem.Name = "ContractToolStripMenuItem";
+            this.ContractToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.ContractToolStripMenuItem.Text = "Giao dịch";
             // 
-            // rútTiềnToolStripMenuItem
+            // WithdrawToolStripMenuItem
             // 
-            this.rútTiềnToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.rútTiềnToolStripMenuItem.Name = "rútTiềnToolStripMenuItem";
-            this.rútTiềnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
-            this.rútTiềnToolStripMenuItem.Text = "Rút tiền";
-            this.rútTiềnToolStripMenuItem.Click += new System.EventHandler(this.rútTiềnToolStripMenuItem_Click);
+            this.WithdrawToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.WithdrawToolStripMenuItem.Name = "WithdrawToolStripMenuItem";
+            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.WithdrawToolStripMenuItem.Text = "Rút tiền";
+            this.WithdrawToolStripMenuItem.Click += new System.EventHandler(this.WithdrawToolStripMenuItem_Click);
             // 
-            // gửiTiềnToolStripMenuItem
+            // SendToolStripMenuItem
             // 
-            this.gửiTiềnToolStripMenuItem.Name = "gửiTiềnToolStripMenuItem";
-            this.gửiTiềnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
-            this.gửiTiềnToolStripMenuItem.Text = "Gửi tiền";
-            this.gửiTiềnToolStripMenuItem.Click += new System.EventHandler(this.gửiTiềnToolStripMenuItem_Click);
+            this.SendToolStripMenuItem.Name = "SendToolStripMenuItem";
+            this.SendToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.SendToolStripMenuItem.Text = "Gửi tiền";
+            this.SendToolStripMenuItem.Click += new System.EventHandler(this.SendToolStripMenuItem_Click);
             // 
-            // chuyểnKhoảnToolStripMenuItem
+            // TransToolStripMenuItem
             // 
-            this.chuyểnKhoảnToolStripMenuItem.Name = "chuyểnKhoảnToolStripMenuItem";
-            this.chuyểnKhoảnToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
-            this.chuyểnKhoảnToolStripMenuItem.Text = "Chuyển khoản";
-            this.chuyểnKhoảnToolStripMenuItem.Click += new System.EventHandler(this.chuyểnKhoảnToolStripMenuItem_Click);
+            this.TransToolStripMenuItem.Name = "TransToolStripMenuItem";
+            this.TransToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.TransToolStripMenuItem.Text = "Chuyển khoản";
+            this.TransToolStripMenuItem.Click += new System.EventHandler(this.TransToolStripMenuItem_Click);
             // 
-            // vayToolStripMenuItem
+            // BorrowToolStripMenuItem
             // 
-            this.vayToolStripMenuItem.Name = "vayToolStripMenuItem";
-            this.vayToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
-            this.vayToolStripMenuItem.Text = "Vay";
-            this.vayToolStripMenuItem.Click += new System.EventHandler(this.vayToolStripMenuItem_Click);
+            this.BorrowToolStripMenuItem.Name = "BorrowToolStripMenuItem";
+            this.BorrowToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.BorrowToolStripMenuItem.Text = "Vay";
+            this.BorrowToolStripMenuItem.Click += new System.EventHandler(this.BorrowToolStripMenuItem_Click);
             // 
-            // tàiKhoảnTiếtKiệmToolStripMenuItem
+            // SavingToolStripMenuItem
             // 
-            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Name = "tàiKhoảnTiếtKiệmToolStripMenuItem";
-            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
-            this.tàiKhoảnTiếtKiệmToolStripMenuItem.Text = "Tài khoản tiết kiệm";
+            this.SavingToolStripMenuItem.Name = "SavingToolStripMenuItem";
+            this.SavingToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.SavingToolStripMenuItem.Text = "Tài khoản tiết kiệm";
+            this.SavingToolStripMenuItem.Click += new System.EventHandler(this.SavingToolStripMenuItem_Click);
             // 
-            // xemLịchSửGiaoDịchToolStripMenuItem
+            // Trans_HisToolStripMenuItem
             // 
-            this.xemLịchSửGiaoDịchToolStripMenuItem.Name = "xemLịchSửGiaoDịchToolStripMenuItem";
-            this.xemLịchSửGiaoDịchToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
-            this.xemLịchSửGiaoDịchToolStripMenuItem.Text = "Xem lịch sử giao dịch";
-            this.xemLịchSửGiaoDịchToolStripMenuItem.Click += new System.EventHandler(this.xemLịchSửGiaoDịchToolStripMenuItem_Click);
+            this.Trans_HisToolStripMenuItem.Name = "Trans_HisToolStripMenuItem";
+            this.Trans_HisToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
+            this.Trans_HisToolStripMenuItem.Text = "Xem lịch sử giao dịch";
+            this.Trans_HisToolStripMenuItem.Click += new System.EventHandler(this.Trans_HisToolStripMenuItem_Click);
             // 
             // FMain
             // 
@@ -397,7 +398,7 @@ namespace BankManage
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FMain";
+            this.Text = "Quản lý ngân hàng";
             this.pnlFind.ResumeLayout(false);
             this.pnlFind.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).EndInit();
@@ -424,13 +425,13 @@ namespace BankManage
         private System.Windows.Forms.TextBox txtMoney;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem giaoDịchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rútTiềnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gửiTiềnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chuyểnKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vayToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tàiKhoảnTiếtKiệmToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xemLịchSửGiaoDịchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ContractToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem WithdrawToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SendToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TransToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BorrowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SavingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Trans_HisToolStripMenuItem;
         private System.Windows.Forms.Panel pnlOption;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFilter;

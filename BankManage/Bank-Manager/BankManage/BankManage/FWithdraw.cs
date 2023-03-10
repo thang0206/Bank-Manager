@@ -15,28 +15,28 @@ namespace BankManage
         public FWithdraw()
         {
             InitializeComponent();
-            txtRemain.Text = "1000000";
+            txtMoneyRemain.Text = "1000000";
 
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            int remainMoneyAfterWithDraw = Convert.ToInt32(txtRemain.Text) - Convert.ToInt32(txtMoney.Text);
+            int remainMoneyAfterWithDraw = Convert.ToInt32(txtMoneyRemain.Text) - Convert.ToInt32(txtMoneySend.Text);
             if (remainMoneyAfterWithDraw < 0)
                 MessageBox.Show("Số dư tài khoản không đủ để rút tiền");
             else if (remainMoneyAfterWithDraw < 50000)
                 MessageBox.Show("Số dư tài khoản của bạn phải có ít nhất 50000");
             else
             {
-                txtRemain.Text = remainMoneyAfterWithDraw.ToString();
-                txtMoney.Clear();
+                txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
+                txtMoneySend.Clear();
                 MessageBox.Show($"Bạn đã rút tiền thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtMoney.Clear();
+            txtMoneySend.Clear();
         }
 
         private void FWithdraw_Load(object sender, EventArgs e)
