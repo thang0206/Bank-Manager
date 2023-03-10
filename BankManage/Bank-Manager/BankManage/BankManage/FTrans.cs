@@ -16,5 +16,10 @@ namespace BankManage
         {
             InitializeComponent();
         }
+
+        private void FTrans_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

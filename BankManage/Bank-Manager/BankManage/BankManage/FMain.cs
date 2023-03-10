@@ -16,47 +16,10 @@ namespace BankManage
         {
             InitializeComponent();
         }
-
-        private void gửiTiềnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FSend fsend = new FSend();
-            ShowFormOnPanel(fsend);
-        }
-
-        private void xemLịchSửGiaoDịchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FHistory fHistory = new FHistory();
-            ShowFormOnPanel(fHistory);
-        }
-
         private void btnCreate_Click(object sender, EventArgs e)
         {
             
         }
-
-        private void chuyểnKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FTrans fTrans = new FTrans();
-            ShowFormOnPanel(fTrans);
-        }
-
-        private void rútTiềnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FWithdraw fWithdraw = new FWithdraw();
-            ShowFormOnPanel(fWithdraw);
-        }
-
-        private void vayToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FBorrow fBorrow = new FBorrow();
-            ShowFormOnPanel(fBorrow);
-        }
-
         private void ShowFormOnPanel(Form form)
         {
             form.TopLevel = false;
@@ -90,6 +53,42 @@ namespace BankManage
                 txtMoney.Clear();
                 txtSTK.Clear();
             }
+        }
+        private void Trans_HisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FHistory fHistory = new FHistory();
+            ShowFormOnPanel(fHistory);
+        }
+        private void SavingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FSaving fSaving = new FSaving();
+            ShowFormOnPanel(fSaving);
+        }
+        private void BorrowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FBorrow fBorrow = new FBorrow();
+            ShowFormOnPanel(fBorrow);
+        }
+        private void WithdrawToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FWithdraw fWithdraw = new FWithdraw();
+            ShowFormOnPanel(fWithdraw);
+        }
+        private void SendToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FSend fsend = new FSend();
+            ShowFormOnPanel(fsend);
+        }
+        private void TransToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FTrans fTrans = new FTrans();
+            ShowFormOnPanel(fTrans);
         }
     }
 }
