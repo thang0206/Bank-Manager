@@ -90,3 +90,4 @@ D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankM
 D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.exe
 D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.pdb
 D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.AssemblyReference.cache
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FSaving.resources

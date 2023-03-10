@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.dtpSend = new System.Windows.Forms.DateTimePicker();
+            this.txtMoneySend = new System.Windows.Forms.TextBox();
+            this.txtMoneyRemain = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -38,26 +38,26 @@
             this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtpSend
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(129, 129);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(232, 22);
-            this.dateTimePicker1.TabIndex = 35;
+            this.dtpSend.Location = new System.Drawing.Point(129, 129);
+            this.dtpSend.Name = "dtpSend";
+            this.dtpSend.Size = new System.Drawing.Size(232, 22);
+            this.dtpSend.TabIndex = 35;
             // 
-            // textBox7
+            // txtMoneySend
             // 
-            this.textBox7.Location = new System.Drawing.Point(129, 74);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(232, 22);
-            this.textBox7.TabIndex = 34;
+            this.txtMoneySend.Location = new System.Drawing.Point(129, 74);
+            this.txtMoneySend.Name = "txtMoneySend";
+            this.txtMoneySend.Size = new System.Drawing.Size(232, 22);
+            this.txtMoneySend.TabIndex = 34;
             // 
-            // textBox8
+            // txtMoneyRemain
             // 
-            this.textBox8.Location = new System.Drawing.Point(129, 15);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(232, 22);
-            this.textBox8.TabIndex = 33;
+            this.txtMoneyRemain.Location = new System.Drawing.Point(129, 15);
+            this.txtMoneyRemain.Name = "txtMoneyRemain";
+            this.txtMoneyRemain.Size = new System.Drawing.Size(232, 22);
+            this.txtMoneyRemain.TabIndex = 33;
             // 
             // btnCancel
             // 
@@ -111,10 +111,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 272);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox8);
+            this.ClientSize = new System.Drawing.Size(376, 255);
+            this.Controls.Add(this.dtpSend);
+            this.Controls.Add(this.txtMoneySend);
+            this.Controls.Add(this.txtMoneyRemain);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label9);
@@ -130,9 +130,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.DateTimePicker dtpSend;
+        private System.Windows.Forms.TextBox txtMoneySend;
+        private System.Windows.Forms.TextBox txtMoneyRemain;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label9;
