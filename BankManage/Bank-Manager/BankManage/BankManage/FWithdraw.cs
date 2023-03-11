@@ -16,7 +16,6 @@ namespace BankManage
         {
             InitializeComponent();
             txtMoneyRemain.Text = "1000000";
-
         }
 
         private void btnOK_Click(object sender, EventArgs e)
