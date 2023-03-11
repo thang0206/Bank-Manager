@@ -47,42 +47,47 @@
             // dtpAllow
             // 
             this.dtpAllow.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpAllow.Location = new System.Drawing.Point(159, 251);
+            this.dtpAllow.Location = new System.Drawing.Point(179, 314);
+            this.dtpAllow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpAllow.Name = "dtpAllow";
-            this.dtpAllow.Size = new System.Drawing.Size(200, 22);
+            this.dtpAllow.Size = new System.Drawing.Size(224, 26);
             this.dtpAllow.TabIndex = 29;
             this.dtpAllow.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // txtMoneyBorrow
             // 
-            this.txtMoneyBorrow.Location = new System.Drawing.Point(159, 82);
+            this.txtMoneyBorrow.Location = new System.Drawing.Point(179, 102);
+            this.txtMoneyBorrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneyBorrow.Name = "txtMoneyBorrow";
-            this.txtMoneyBorrow.Size = new System.Drawing.Size(200, 22);
+            this.txtMoneyBorrow.Size = new System.Drawing.Size(224, 26);
             this.txtMoneyBorrow.TabIndex = 28;
             // 
             // txtMoneyRemain
             // 
-            this.txtMoneyRemain.Location = new System.Drawing.Point(159, 29);
+            this.txtMoneyRemain.Location = new System.Drawing.Point(179, 36);
+            this.txtMoneyRemain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneyRemain.Name = "txtMoneyRemain";
             this.txtMoneyRemain.ReadOnly = true;
-            this.txtMoneyRemain.Size = new System.Drawing.Size(200, 22);
+            this.txtMoneyRemain.Size = new System.Drawing.Size(224, 26);
             this.txtMoneyRemain.TabIndex = 27;
             this.txtMoneyRemain.Text = "68000000";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(282, 392);
+            this.btnCancel.Location = new System.Drawing.Point(317, 490);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(76, 38);
+            this.btnCancel.Size = new System.Drawing.Size(86, 48);
             this.btnCancel.TabIndex = 25;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(159, 392);
+            this.btnSubmit.Location = new System.Drawing.Point(179, 490);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(76, 38);
+            this.btnSubmit.Size = new System.Drawing.Size(86, 48);
             this.btnSubmit.TabIndex = 24;
             this.btnSubmit.Text = "OK";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -92,9 +97,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(29, 249);
+            this.label4.Location = new System.Drawing.Point(33, 311);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 17);
+            this.label4.Size = new System.Drawing.Size(106, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "Ngày cho vay:";
             // 
@@ -102,9 +107,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 85);
+            this.label2.Location = new System.Drawing.Point(33, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 17);
+            this.label2.Size = new System.Drawing.Size(134, 20);
             this.label2.TabIndex = 21;
             this.label2.Text = "Số tiền muốn vay:";
             // 
@@ -112,9 +117,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 29);
+            this.label1.Location = new System.Drawing.Point(33, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 17);
+            this.label1.Size = new System.Drawing.Size(110, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "Số dư hiện tại:";
             // 
@@ -122,18 +127,19 @@
             // 
             this.dtpBack.Enabled = false;
             this.dtpBack.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBack.Location = new System.Drawing.Point(159, 311);
+            this.dtpBack.Location = new System.Drawing.Point(179, 389);
+            this.dtpBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpBack.Name = "dtpBack";
-            this.dtpBack.Size = new System.Drawing.Size(200, 22);
+            this.dtpBack.Size = new System.Drawing.Size(224, 26);
             this.dtpBack.TabIndex = 31;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 308);
+            this.label5.Location = new System.Drawing.Point(33, 385);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 17);
+            this.label5.Size = new System.Drawing.Size(119, 20);
             this.label5.TabIndex = 30;
             this.label5.Text = "Ngày hoàn tiền:";
             // 
@@ -141,9 +147,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 144);
+            this.label6.Location = new System.Drawing.Point(33, 180);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 17);
+            this.label6.Size = new System.Drawing.Size(105, 20);
             this.label6.TabIndex = 32;
             this.label6.Text = "Kiểu tín dụng:";
             // 
@@ -153,18 +159,19 @@
             this.cbTypeOfCredit.Items.AddRange(new object[] {
             "Vay thế chấp",
             "Vay không thế chấp"});
-            this.cbTypeOfCredit.Location = new System.Drawing.Point(159, 142);
+            this.cbTypeOfCredit.Location = new System.Drawing.Point(179, 178);
+            this.cbTypeOfCredit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTypeOfCredit.Name = "cbTypeOfCredit";
-            this.cbTypeOfCredit.Size = new System.Drawing.Size(200, 24);
+            this.cbTypeOfCredit.Size = new System.Drawing.Size(224, 28);
             this.cbTypeOfCredit.TabIndex = 33;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(29, 195);
+            this.label7.Location = new System.Drawing.Point(33, 244);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 17);
+            this.label7.Size = new System.Drawing.Size(61, 20);
             this.label7.TabIndex = 36;
             this.label7.Text = "Kỳ hạn:";
             // 
@@ -174,17 +181,18 @@
             this.cbTerm.Items.AddRange(new object[] {
             "12 tháng, lãi suất 10%/năm",
             "8 tháng, lãi suất 6%/năm"});
-            this.cbTerm.Location = new System.Drawing.Point(159, 192);
+            this.cbTerm.Location = new System.Drawing.Point(179, 240);
+            this.cbTerm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTerm.Name = "cbTerm";
-            this.cbTerm.Size = new System.Drawing.Size(200, 24);
+            this.cbTerm.Size = new System.Drawing.Size(224, 28);
             this.cbTerm.TabIndex = 37;
             this.cbTerm.SelectedIndexChanged += new System.EventHandler(this.cbKyhan_SelectedIndexChanged_1);
             // 
             // FBorrow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 454);
+            this.ClientSize = new System.Drawing.Size(438, 568);
             this.Controls.Add(this.cbTerm);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbTypeOfCredit);
@@ -199,8 +207,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FBorrow";
             this.Text = "FBorrow";
+            this.Load += new System.EventHandler(this.FBorrow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
