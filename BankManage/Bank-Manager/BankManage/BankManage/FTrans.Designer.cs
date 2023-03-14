@@ -40,11 +40,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.RichTextBox();
+            this.btnCheck = new System.Windows.Forms.Button();
+            this.lblNote = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtpSend
             // 
-            this.dtpSend.Location = new System.Drawing.Point(139, 183);
+            this.dtpSend.Enabled = false;
+            this.dtpSend.Location = new System.Drawing.Point(139, 221);
             this.dtpSend.Name = "dtpSend";
             this.dtpSend.Size = new System.Drawing.Size(200, 22);
             this.dtpSend.TabIndex = 29;
@@ -60,32 +63,36 @@
             // 
             this.txtMoneyRemain.Location = new System.Drawing.Point(139, 15);
             this.txtMoneyRemain.Name = "txtMoneyRemain";
+            this.txtMoneyRemain.ReadOnly = true;
             this.txtMoneyRemain.Size = new System.Drawing.Size(200, 22);
             this.txtMoneyRemain.TabIndex = 27;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(263, 348);
+            this.btnCancel.Location = new System.Drawing.Point(263, 381);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(76, 38);
             this.btnCancel.TabIndex = 25;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(139, 348);
+            this.btnOK.Enabled = false;
+            this.btnOK.Location = new System.Drawing.Point(139, 381);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(76, 38);
             this.btnOK.TabIndex = 24;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 188);
+            this.label4.Location = new System.Drawing.Point(22, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 17);
             this.label4.TabIndex = 23;
@@ -122,7 +129,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(22, 239);
+            this.label5.Location = new System.Drawing.Point(22, 272);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 17);
             this.label5.TabIndex = 31;
@@ -140,17 +147,38 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(139, 239);
+            this.txtNote.Location = new System.Drawing.Point(139, 272);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(200, 96);
             this.txtNote.TabIndex = 34;
             this.txtNote.Text = "";
             // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(354, 128);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(76, 26);
+            this.btnCheck.TabIndex = 35;
+            this.btnCheck.Text = "Kiểm tra";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
+            // lblNote
+            // 
+            this.lblNote.AutoSize = true;
+            this.lblNote.Location = new System.Drawing.Point(136, 179);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(0, 16);
+            this.lblNote.TabIndex = 36;
+            this.lblNote.Visible = false;
+            // 
             // FTrans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 406);
+            this.ClientSize = new System.Drawing.Size(453, 436);
+            this.Controls.Add(this.lblNote);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.txtNote);
             this.Controls.Add(this.txtSTK);
             this.Controls.Add(this.label5);
@@ -165,7 +193,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FTrans";
             this.Text = "FTrans";
-            this.Load += new System.EventHandler(this.FTrans_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +212,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox txtNote;
+        private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.Label lblNote;
     }
 }

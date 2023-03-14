@@ -45,7 +45,7 @@ namespace BankManage
             else
             {
                 gvSTK.Visible = false;
-                MessageBox.Show("Chua co tai khoan. Vui long tao!");
+                MessageBox.Show("Chua co tai khoan, Vui long tao!");
                 btnCreate.Enabled = true;
                 txtName.Clear();
                 txtAddr.Clear();
