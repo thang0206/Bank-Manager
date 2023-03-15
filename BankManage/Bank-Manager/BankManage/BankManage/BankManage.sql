@@ -11,6 +11,3 @@ Create Table Customer (
 	CreateAt date,
 	UpdateAt date
 )
-
-INSERT INTO Customer(STK, Name, Address, DoB, CitizenID, PhoneNum, Money)
-VALUES ('1234567890', 'Nguyen Van A', 'HCM', '1999-5-15','123456789012','0365471254', 250000)
