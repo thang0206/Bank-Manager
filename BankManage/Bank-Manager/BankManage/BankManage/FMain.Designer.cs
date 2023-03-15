@@ -316,9 +316,9 @@ namespace BankManage
             // 
             // pnlOption
             // 
-            this.pnlOption.Location = new System.Drawing.Point(21, 35);
+            this.pnlOption.Location = new System.Drawing.Point(10, 35);
             this.pnlOption.Name = "pnlOption";
-            this.pnlOption.Size = new System.Drawing.Size(469, 624);
+            this.pnlOption.Size = new System.Drawing.Size(480, 624);
             this.pnlOption.TabIndex = 1;
             // 
             // menuStrip1

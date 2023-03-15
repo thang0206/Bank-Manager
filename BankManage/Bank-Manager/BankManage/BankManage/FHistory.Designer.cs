@@ -50,6 +50,7 @@
             this.Controls.Add(this.gvHistory);
             this.Name = "FHistory";
             this.Text = "FHistory";
+            this.Load += new System.EventHandler(this.FHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvHistory)).EndInit();
             this.ResumeLayout(false);
 
