@@ -402,6 +402,7 @@ namespace BankManage
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý ngân hàng";
+            this.Load += new System.EventHandler(this.FMain_Load);
             this.pnlFind.ResumeLayout(false);
             this.pnlFind.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).EndInit();

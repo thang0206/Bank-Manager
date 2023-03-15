@@ -26,9 +26,8 @@ namespace BankManage.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Integrated Security=True;Connect Timeout=30;En" +
-            "crypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnet" +
-            "Failover=False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=BankManageDM;Integrated Securi" +
+            "ty=True")]
         public string ConnStr {
             get {
                 return ((string)(this["ConnStr"]));

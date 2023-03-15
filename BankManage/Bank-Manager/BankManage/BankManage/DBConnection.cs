@@ -41,6 +41,7 @@ namespace BankManage
                 SqlDataAdapter adapter = new SqlDataAdapter(SqlStr, conn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
+                //MessageBox.Show
                 return dt;
             }
             catch (Exception exc)

@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerDAO.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="FBorrow.cs">
       <SubType>Form</SubType>

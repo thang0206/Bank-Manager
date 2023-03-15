@@ -12,10 +12,22 @@ namespace BankManage
 {
     public partial class FMain : Form
     {
+        CustomerDAO customerDAO = new CustomerDAO();
+        DBConnection dBConnection = new DBConnection();
         public FMain()
         {
             InitializeComponent();
         }
+        private void FMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadCustomerData()
+        {
+            gvSTK.DataSource = dBConnection.Load("Customer");
+        }
+
         private void btnCreate_Click(object sender, EventArgs e)
         {
             MessageBox.Show("T?o thành công");
@@ -32,30 +44,31 @@ namespace BankManage
         private void btnFilter_Click(object sender, EventArgs e)
         {
             gvSTK.Visible = true;
-            txtID.Text = txtFilter.Text;
-            if (txtFilter.Text == "12345")
-            {
-                txtName.Text = "Nguyen Van A";
-                txtAddr.Text = "HCM";
-                txtPNum.Text = "0936114256";
-                txtMoney.Text = "1.000.000";
-                txtSTK.Text = "123";
-                pickDoB.Value = Convert.ToDateTime("1998-03-22");
-                btnUpdate.Enabled = true;
-                btnCreate.Enabled = false;
-            }
-            else
-            {
-                gvSTK.Visible = false;
-                btnUpdate.Enabled = false;
-                MessageBox.Show("Ch?a có tài kho?n, Vui lòng t?o!");
-                btnCreate.Enabled = true;
-                txtName.Clear();
-                txtAddr.Clear();
-                txtPNum.Clear();
-                txtMoney.Clear();
-                txtSTK.Clear();
-            }
+            //txtID.Text = txtFilter.Text;
+            //if (txtFilter.Text == "12345")
+            //{
+            //    txtName.Text = "Nguyen Van A";
+            //    txtAddr.Text = "HCM";
+            //    txtPNum.Text = "0936114256";
+            //    txtMoney.Text = "1.000.000";
+            //    txtSTK.Text = "123";
+            //    pickDoB.Value = Convert.ToDateTime("1998-03-22");
+            //    btnUpdate.Enabled = true;
+            //    btnCreate.Enabled = false;
+            //}
+            //else
+            //{
+            //    gvSTK.Visible = false;
+            //    btnUpdate.Enabled = false;
+            //    MessageBox.Show("Ch?a có tài kho?n, Vui lòng t?o!");
+            //    btnCreate.Enabled = true;
+            //    txtName.Clear();
+            //    txtAddr.Clear();
+            //    txtPNum.Clear();
+            //    txtMoney.Clear();
+            //    txtSTK.Clear();
+            //}
+            LoadCustomerData();
         }
         private void Trans_HisToolStripMenuItem_Click(object sender, EventArgs e)
         {
