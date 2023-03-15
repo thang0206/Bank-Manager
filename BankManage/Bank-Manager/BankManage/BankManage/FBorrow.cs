@@ -41,5 +41,10 @@ namespace BankManage
             else
                 MessageBox.Show("Chúc mừng bạn đã được vay với số tiền: " + txtMoneyBorrow.Text + "\nKỳ hạn: " + cbTerm.Text + "\nVui lòng thanh toán trước thời gian sau: " + dtpBack.Value.ToString());
         }
+
+        private void FBorrow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
