@@ -99,17 +99,17 @@ namespace BankManage
             this.pnlFind.Controls.Add(this.txtFilter);
             this.pnlFind.Location = new System.Drawing.Point(10, 12);
             this.pnlFind.Name = "pnlFind";
-            this.pnlFind.Size = new System.Drawing.Size(410, 203);
+            this.pnlFind.Size = new System.Drawing.Size(410, 206);
             this.pnlFind.TabIndex = 6;
             // 
             // gvSTK
             // 
             this.gvSTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSTK.Location = new System.Drawing.Point(16, 125);
+            this.gvSTK.Location = new System.Drawing.Point(16, 110);
             this.gvSTK.Name = "gvSTK";
             this.gvSTK.RowHeadersWidth = 51;
             this.gvSTK.RowTemplate.Height = 24;
-            this.gvSTK.Size = new System.Drawing.Size(391, 75);
+            this.gvSTK.Size = new System.Drawing.Size(391, 93);
             this.gvSTK.TabIndex = 2;
             this.gvSTK.Visible = false;
             // 
@@ -163,7 +163,7 @@ namespace BankManage
             this.pnlUpdate.Controls.Add(this.txtMoney);
             this.pnlUpdate.Controls.Add(this.btnDelete);
             this.pnlUpdate.Controls.Add(this.label7);
-            this.pnlUpdate.Location = new System.Drawing.Point(10, 220);
+            this.pnlUpdate.Location = new System.Drawing.Point(15, 220);
             this.pnlUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUpdate.Name = "pnlUpdate";
             this.pnlUpdate.Size = new System.Drawing.Size(405, 453);
@@ -274,6 +274,7 @@ namespace BankManage
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(150, 402);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";

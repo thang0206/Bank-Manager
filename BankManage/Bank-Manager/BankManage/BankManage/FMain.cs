@@ -41,10 +41,13 @@ namespace BankManage
                 txtMoney.Text = "1.000.000";
                 txtSTK.Text = "123";
                 pickDoB.Value = Convert.ToDateTime("1998-03-22");
+                btnUpdate.Enabled = true;
+                btnCreate.Enabled = false;
             }
             else
             {
                 gvSTK.Visible = false;
+                btnUpdate.Enabled = false;
                 MessageBox.Show("Ch?a có tài kho?n, Vui lòng t?o!");
                 btnCreate.Enabled = true;
                 txtName.Clear();
