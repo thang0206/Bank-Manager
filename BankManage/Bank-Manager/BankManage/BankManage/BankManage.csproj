@@ -53,6 +53,12 @@
     <Compile Include="FBorrow.Designer.cs">
       <DependentUpon>FBorrow.cs</DependentUpon>
     </Compile>
+    <Compile Include="FCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCredit.Designer.cs">
+      <DependentUpon>FCredit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FBorrow.resx">
       <DependentUpon>FBorrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCredit.resx">
+      <DependentUpon>FCredit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FHistory.resx">
       <DependentUpon>FHistory.cs</DependentUpon>
