@@ -56,6 +56,7 @@
             // 
             this.txtMoneyRemain.Location = new System.Drawing.Point(129, 15);
             this.txtMoneyRemain.Name = "txtMoneyRemain";
+            this.txtMoneyRemain.ReadOnly = true;
             this.txtMoneyRemain.Size = new System.Drawing.Size(232, 22);
             this.txtMoneyRemain.TabIndex = 33;
             // 
@@ -76,6 +77,7 @@
             this.btnOK.TabIndex = 31;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label9
             // 
