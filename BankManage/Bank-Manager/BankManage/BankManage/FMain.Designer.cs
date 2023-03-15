@@ -76,6 +76,7 @@ namespace BankManage
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCreate
             // 
@@ -98,7 +99,7 @@ namespace BankManage
             this.pnlFind.Controls.Add(this.txtFilter);
             this.pnlFind.Location = new System.Drawing.Point(10, 12);
             this.pnlFind.Name = "pnlFind";
-            this.pnlFind.Size = new System.Drawing.Size(410, 469);
+            this.pnlFind.Size = new System.Drawing.Size(410, 203);
             this.pnlFind.TabIndex = 6;
             // 
             // gvSTK
@@ -108,7 +109,7 @@ namespace BankManage
             this.gvSTK.Name = "gvSTK";
             this.gvSTK.RowHeadersWidth = 51;
             this.gvSTK.RowTemplate.Height = 24;
-            this.gvSTK.Size = new System.Drawing.Size(391, 341);
+            this.gvSTK.Size = new System.Drawing.Size(391, 75);
             this.gvSTK.TabIndex = 2;
             this.gvSTK.Visible = false;
             // 
@@ -162,7 +163,7 @@ namespace BankManage
             this.pnlUpdate.Controls.Add(this.txtMoney);
             this.pnlUpdate.Controls.Add(this.btnDelete);
             this.pnlUpdate.Controls.Add(this.label7);
-            this.pnlUpdate.Location = new System.Drawing.Point(451, 28);
+            this.pnlUpdate.Location = new System.Drawing.Point(10, 220);
             this.pnlUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUpdate.Name = "pnlUpdate";
             this.pnlUpdate.Size = new System.Drawing.Size(405, 453);
@@ -280,6 +281,7 @@ namespace BankManage
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Chỉnh sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtMoney
             // 
@@ -305,17 +307,17 @@ namespace BankManage
             this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel3.Controls.Add(this.pnlOption);
             this.panel3.Controls.Add(this.menuStrip1);
-            this.panel3.Location = new System.Drawing.Point(885, 6);
+            this.panel3.Location = new System.Drawing.Point(436, 11);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(493, 475);
+            this.panel3.Size = new System.Drawing.Size(493, 662);
             this.panel3.TabIndex = 7;
             // 
             // pnlOption
             // 
             this.pnlOption.Location = new System.Drawing.Point(21, 35);
             this.pnlOption.Name = "pnlOption";
-            this.pnlOption.Size = new System.Drawing.Size(469, 437);
+            this.pnlOption.Size = new System.Drawing.Size(469, 624);
             this.pnlOption.TabIndex = 1;
             // 
             // menuStrip1
@@ -391,7 +393,7 @@ namespace BankManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1411, 505);
+            this.ClientSize = new System.Drawing.Size(946, 684);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlUpdate);
             this.Controls.Add(this.pnlFind);

@@ -18,7 +18,7 @@ namespace BankManage
         }
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("T?o thành công");
         }
         private void ShowFormOnPanel(Form form)
         {
@@ -45,7 +45,7 @@ namespace BankManage
             else
             {
                 gvSTK.Visible = false;
-                MessageBox.Show("Chua co tai khoan, Vui long tao!");
+                MessageBox.Show("Ch?a có tài kho?n, Vui lòng t?o!");
                 btnCreate.Enabled = true;
                 txtName.Clear();
                 txtAddr.Clear();
@@ -89,6 +89,16 @@ namespace BankManage
             pnlOption.Controls.Clear();
             FTrans fTrans = new FTrans();
             ShowFormOnPanel(fTrans);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("C?p nh?t thành công");
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xóa thành công");
         }
     }
 }
