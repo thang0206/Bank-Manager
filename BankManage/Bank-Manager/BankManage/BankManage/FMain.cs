@@ -20,12 +20,12 @@ namespace BankManage
         }
         private void FMain_Load(object sender, EventArgs e)
         {
-
+            LoadCustomerData("");
         }
 
-        private void LoadCustomerData()
+        private void LoadCustomerData(string condition)
         {
-            gvSTK.DataSource = dBConnection.Load("Customer");
+            gvSTK.DataSource = dBConnection.Load("Customer", condition);
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -43,32 +43,30 @@ namespace BankManage
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            gvSTK.Visible = true;
-            //txtID.Text = txtFilter.Text;
-            //if (txtFilter.Text == "12345")
-            //{
-            //    txtName.Text = "Nguyen Van A";
-            //    txtAddr.Text = "HCM";
-            //    txtPNum.Text = "0936114256";
-            //    txtMoney.Text = "1.000.000";
-            //    txtSTK.Text = "123";
-            //    pickDoB.Value = Convert.ToDateTime("1998-03-22");
-            //    btnUpdate.Enabled = true;
-            //    btnCreate.Enabled = false;
-            //}
-            //else
-            //{
-            //    gvSTK.Visible = false;
-            //    btnUpdate.Enabled = false;
-            //    MessageBox.Show("Ch?a có tài kho?n, Vui lòng t?o!");
-            //    btnCreate.Enabled = true;
-            //    txtName.Clear();
-            //    txtAddr.Clear();
-            //    txtPNum.Clear();
-            //    txtMoney.Clear();
-            //    txtSTK.Clear();
-            //}
-            LoadCustomerData();
+            // 156456789012
+            bool isShowGvCustomer = false;
+            for (int i = 0; i < gvSTK.Rows.Count - 1; i++)
+            {
+                string CitizenId = gvSTK.Rows[i].Cells["CitizenId"].Value.ToString() ?? "";
+                if (txtFilter.Text == CitizenId)
+                {
+                    LoadCustomerData($" WHERE CitizenId = '{txtFilter.Text}'");
+                    isShowGvCustomer = true;
+                    break;
+                }
+            }
+            gvSTK.Visible = isShowGvCustomer;
+            if (isShowGvCustomer)
+            {
+                btnUpdate.Enabled = true;
+                btnCreate.Enabled = false;
+            }
+            else
+            {
+                LoadCustomerData("");
+                btnCreate.Enabled = true;
+                btnUpdate.Enabled = false;
+            }
         }
         private void Trans_HisToolStripMenuItem_Click(object sender, EventArgs e)
         {

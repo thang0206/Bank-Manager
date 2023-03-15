@@ -32,16 +32,15 @@ namespace BankManage
                 conn.Close();
             }
         }
-        public DataTable Load(string Table)
+        public DataTable Load(string Table, string condition)
         {
             try
             {
                 conn.Open();
-                string SqlStr = string.Format("SELECT *FROM " + Table);
+                string SqlStr = string.Format("SELECT * FROM " + Table + condition);
                 SqlDataAdapter adapter = new SqlDataAdapter(SqlStr, conn);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-                //MessageBox.Show
                 return dt;
             }
             catch (Exception exc)
