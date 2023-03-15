@@ -18,7 +18,7 @@ namespace BankManage
         private DateTime createdAt;
         private DateTime updatedAt;
 
-        public Customer(string stk, string name, string address, DateTime dob, string citizenId, string phoneNumber, int monney)
+        public Customer(string stk, string name, string address, DateTime dob, string citizenId, string phoneNumber, int monney, DateTime createdAt)
         {
             this.stk = stk;
             this.name = name;
@@ -27,6 +27,7 @@ namespace BankManage
             this.citizenId = citizenId;
             this.phoneNumber = phoneNumber;
             this.monney = monney;
+            this.createdAt = createdAt;
         }
         public string Stk { get { return stk; } }
         public string Name { get { return name; } }
@@ -37,6 +38,5 @@ namespace BankManage
         public int Monney { get { return monney; } }
         public DateTime CreatedAt { get { return createdAt; } }
         public DateTime UpdatedAt { get { return updatedAt; } }
-
     }
 }

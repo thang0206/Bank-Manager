@@ -38,7 +38,7 @@ namespace BankManage
             this.pnlUpdate = new System.Windows.Forms.Panel();
             this.txtSTK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pickDoB = new System.Windows.Forms.DateTimePicker();
+            this.dtpDoB = new System.Windows.Forms.DateTimePicker();
             this.txtPNum = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -80,7 +80,6 @@ namespace BankManage
             // 
             // btnCreate
             // 
-            this.btnCreate.Enabled = false;
             this.btnCreate.Location = new System.Drawing.Point(16, 402);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(115, 48);
@@ -148,7 +147,7 @@ namespace BankManage
             this.pnlUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlUpdate.Controls.Add(this.txtSTK);
             this.pnlUpdate.Controls.Add(this.label2);
-            this.pnlUpdate.Controls.Add(this.pickDoB);
+            this.pnlUpdate.Controls.Add(this.dtpDoB);
             this.pnlUpdate.Controls.Add(this.txtPNum);
             this.pnlUpdate.Controls.Add(this.txtID);
             this.pnlUpdate.Controls.Add(this.label4);
@@ -187,12 +186,12 @@ namespace BankManage
             this.label2.TabIndex = 26;
             this.label2.Text = "STK:";
             // 
-            // pickDoB
+            // dtpDoB
             // 
-            this.pickDoB.Location = new System.Drawing.Point(202, 163);
-            this.pickDoB.Name = "pickDoB";
-            this.pickDoB.Size = new System.Drawing.Size(200, 22);
-            this.pickDoB.TabIndex = 58;
+            this.dtpDoB.Location = new System.Drawing.Point(202, 163);
+            this.dtpDoB.Name = "dtpDoB";
+            this.dtpDoB.Size = new System.Drawing.Size(200, 22);
+            this.dtpDoB.TabIndex = 58;
             // 
             // txtPNum
             // 
@@ -290,6 +289,7 @@ namespace BankManage
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(200, 22);
             this.txtMoney.TabIndex = 38;
+            this.txtMoney.Text = "0";
             // 
             // label7
             // 
@@ -440,7 +440,7 @@ namespace BankManage
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.TextBox txtFilter;
-        private System.Windows.Forms.DateTimePicker pickDoB;
+        private System.Windows.Forms.DateTimePicker dtpDoB;
         private System.Windows.Forms.TextBox txtPNum;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label4;

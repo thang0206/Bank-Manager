@@ -30,7 +30,21 @@ namespace BankManage
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("T?o thành công");
+            Customer newCustomer = new Customer(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now);
+            if (customerDAO.ValidateFormCreate(newCustomer))
+                MessageBox.Show("Khong duoc de trong");
+            else
+            {
+                for (int i = 0; i < gvSTK.Rows.Count - 1; i++)
+                {
+                    if (newCustomer.Stk == gvSTK.Rows[i].Cells["STK"].Value.ToString())
+                    {
+                        MessageBox.Show("So tai khoan da ton tai");
+                        break;
+                    }
+                }
+                customerDAO.Create(newCustomer);
+            }
         }
         private void ShowFormOnPanel(Form form)
         {
@@ -64,6 +78,7 @@ namespace BankManage
             else
             {
                 LoadCustomerData("");
+                MessageBox.Show("Chua co tai khoan");
                 btnCreate.Enabled = true;
                 btnUpdate.Enabled = false;
             }

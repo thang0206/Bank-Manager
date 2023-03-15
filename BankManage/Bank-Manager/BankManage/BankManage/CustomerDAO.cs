@@ -9,10 +9,10 @@ namespace BankManage
     internal class CustomerDAO
     {
         DBConnection DbConnection = new DBConnection();
-        public void Add(Customer customer)
+        public void Create(Customer customer)
         {
-            string sqlStr = string.Format("INSERT INTO Customer(STK, Name, Address, Dob, CitizenId, PhoneNum) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", customer.Stk, customer.Name, customer.Address, customer.Dob, customer.CitizenId, customer.PhoneNumber);
-            DbConnection.Execute(sqlStr, "Add");
+            string sqlStr = string.Format("INSERT INTO Customer(STK, Name, Address, Dob, CitizenId, PhoneNum) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", customer.Stk, customer.Name, customer.Address, customer.Dob, customer.CitizenId, customer.PhoneNumber, customer.CreatedAt);
+            DbConnection.Execute(sqlStr, "Create");
         }
         public void Update(Customer customer)
         {
@@ -23,6 +23,10 @@ namespace BankManage
         {
             string sqlStr = string.Format("DELETE FROM Customer where StudentId = '{0}'", customer.Stk);
             DbConnection.Execute(sqlStr, "Delete");
+        }
+        public bool ValidateFormCreate(Customer customer)
+        {
+            return string.IsNullOrEmpty(customer.Stk) || string.IsNullOrEmpty(customer.Name) || string.IsNullOrEmpty(customer.Address) || string.IsNullOrEmpty(customer.PhoneNumber);
         }
     }
 }
