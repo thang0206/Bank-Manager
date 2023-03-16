@@ -16,5 +16,11 @@ namespace BankManage
         {
             InitializeComponent();
         }
+
+        private void FHistory_Load(object sender, EventArgs e)
+        {
+            DBConnection db = new DBConnection();
+            gvHistory.DataSource = db.Load("Trans", "");
+        }
     }
 }

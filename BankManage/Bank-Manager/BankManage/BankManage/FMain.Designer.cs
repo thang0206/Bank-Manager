@@ -111,6 +111,7 @@ namespace BankManage
             this.gvSTK.Size = new System.Drawing.Size(391, 93);
             this.gvSTK.TabIndex = 2;
             this.gvSTK.Visible = false;
+            this.gvSTK.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSTK_CellClick);
             // 
             // label1
             // 
@@ -311,7 +312,7 @@ namespace BankManage
             this.panel3.Location = new System.Drawing.Point(436, 11);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(493, 662);
+            this.panel3.Size = new System.Drawing.Size(602, 662);
             this.panel3.TabIndex = 7;
             // 
             // pnlOption
@@ -325,6 +326,7 @@ namespace BankManage
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Enabled = false;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContractToolStripMenuItem,
@@ -333,7 +335,7 @@ namespace BankManage
             this.Trans_HisToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(452, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(602, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -351,21 +353,21 @@ namespace BankManage
             // 
             this.WithdrawToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.WithdrawToolStripMenuItem.Name = "WithdrawToolStripMenuItem";
-            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.WithdrawToolStripMenuItem.Text = "Rút tiền";
             this.WithdrawToolStripMenuItem.Click += new System.EventHandler(this.WithdrawToolStripMenuItem_Click);
             // 
             // SendToolStripMenuItem
             // 
             this.SendToolStripMenuItem.Name = "SendToolStripMenuItem";
-            this.SendToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.SendToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.SendToolStripMenuItem.Text = "Gửi tiền";
             this.SendToolStripMenuItem.Click += new System.EventHandler(this.SendToolStripMenuItem_Click);
             // 
             // TransToolStripMenuItem
             // 
             this.TransToolStripMenuItem.Name = "TransToolStripMenuItem";
-            this.TransToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.TransToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.TransToolStripMenuItem.Text = "Chuyển khoản";
             this.TransToolStripMenuItem.Click += new System.EventHandler(this.TransToolStripMenuItem_Click);
             // 

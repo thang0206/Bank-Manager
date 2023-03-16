@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +14,11 @@ namespace BankManage
 {
     public partial class FSend : Form
     {
-        public FSend()
+        public FSend(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
         {
             InitializeComponent();
-            txtMoneyRemain.Text = "1000000";
+            txtMoneyRemain.Text = Money.ToString();
+            Customer temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
         }
 
         private void FSend_Load(object sender, EventArgs e)
