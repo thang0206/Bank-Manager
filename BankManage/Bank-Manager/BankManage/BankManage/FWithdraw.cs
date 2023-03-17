@@ -7,15 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace BankManage
 {
     public partial class FWithdraw : Form
     {
-        public FWithdraw()
+        public FWithdraw(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
         {
             InitializeComponent();
-            txtMoneyRemain.Text = "1000000";
+            txtMoneyRemain.Text = Money.ToString();
+            Customer temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace BankManage
 
         private void FWithdraw_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

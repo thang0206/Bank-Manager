@@ -38,7 +38,7 @@ namespace BankManage
             this.pnlUpdate = new System.Windows.Forms.Panel();
             this.txtSTK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pickDoB = new System.Windows.Forms.DateTimePicker();
+            this.dtpDoB = new System.Windows.Forms.DateTimePicker();
             this.txtPNum = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -85,6 +85,7 @@ namespace BankManage
             this.btnCreate.Enabled = false;
             this.btnCreate.Location = new System.Drawing.Point(18, 502);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCreate.Location = new System.Drawing.Point(16, 402);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(129, 60);
             this.btnCreate.TabIndex = 5;
@@ -117,6 +118,7 @@ namespace BankManage
             this.gvSTK.Size = new System.Drawing.Size(440, 116);
             this.gvSTK.TabIndex = 2;
             this.gvSTK.Visible = false;
+            this.gvSTK.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSTK_CellClick);
             // 
             // label1
             // 
@@ -153,7 +155,7 @@ namespace BankManage
             this.pnlUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlUpdate.Controls.Add(this.txtSTK);
             this.pnlUpdate.Controls.Add(this.label2);
-            this.pnlUpdate.Controls.Add(this.pickDoB);
+            this.pnlUpdate.Controls.Add(this.dtpDoB);
             this.pnlUpdate.Controls.Add(this.txtPNum);
             this.pnlUpdate.Controls.Add(this.txtID);
             this.pnlUpdate.Controls.Add(this.label4);
@@ -192,13 +194,12 @@ namespace BankManage
             this.label2.TabIndex = 26;
             this.label2.Text = "STK:";
             // 
-            // pickDoB
+            // dtpDoB
             // 
-            this.pickDoB.Location = new System.Drawing.Point(227, 204);
-            this.pickDoB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pickDoB.Name = "pickDoB";
-            this.pickDoB.Size = new System.Drawing.Size(224, 26);
-            this.pickDoB.TabIndex = 58;
+            this.dtpDoB.Location = new System.Drawing.Point(202, 163);
+            this.dtpDoB.Name = "dtpDoB";
+            this.dtpDoB.Size = new System.Drawing.Size(200, 22);
+            this.dtpDoB.TabIndex = 58;
             // 
             // txtPNum
             // 
@@ -301,6 +302,7 @@ namespace BankManage
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(224, 26);
             this.txtMoney.TabIndex = 38;
+            this.txtMoney.Text = "0";
             // 
             // label7
             // 
@@ -337,7 +339,7 @@ namespace BankManage
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.Enabled = false;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContractToolStripMenuItem,
@@ -366,21 +368,21 @@ namespace BankManage
             // 
             this.WithdrawToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.WithdrawToolStripMenuItem.Name = "WithdrawToolStripMenuItem";
-            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
+            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.WithdrawToolStripMenuItem.Text = "Rút tiền";
             this.WithdrawToolStripMenuItem.Click += new System.EventHandler(this.WithdrawToolStripMenuItem_Click);
             // 
             // SendToolStripMenuItem
             // 
             this.SendToolStripMenuItem.Name = "SendToolStripMenuItem";
-            this.SendToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
+            this.SendToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.SendToolStripMenuItem.Text = "Gửi tiền";
             this.SendToolStripMenuItem.Click += new System.EventHandler(this.SendToolStripMenuItem_Click);
             // 
             // TransToolStripMenuItem
             // 
             this.TransToolStripMenuItem.Name = "TransToolStripMenuItem";
-            this.TransToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
+            this.TransToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.TransToolStripMenuItem.Text = "Chuyển khoản";
             this.TransToolStripMenuItem.Click += new System.EventHandler(this.TransToolStripMenuItem_Click);
             // 
@@ -425,6 +427,7 @@ namespace BankManage
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý ngân hàng";
+            this.Load += new System.EventHandler(this.FMain_Load);
             this.pnlFind.ResumeLayout(false);
             this.pnlFind.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).EndInit();
@@ -462,7 +465,7 @@ namespace BankManage
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.TextBox txtFilter;
-        private System.Windows.Forms.DateTimePicker pickDoB;
+        private System.Windows.Forms.DateTimePicker dtpDoB;
         private System.Windows.Forms.TextBox txtPNum;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label4;
