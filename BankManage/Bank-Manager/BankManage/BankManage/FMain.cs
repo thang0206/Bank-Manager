@@ -103,5 +103,12 @@ namespace BankManage
         {
             MessageBox.Show("Xóa thành công");
         }
+
+        private void CreditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FCredit fcredit = new FCredit();
+            ShowFormOnPanel(fcredit);
+        }
     }
 }

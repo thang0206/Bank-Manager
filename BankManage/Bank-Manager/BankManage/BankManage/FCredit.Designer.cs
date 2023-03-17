@@ -44,7 +44,7 @@ namespace BankManage
             // dtpOpen
             // 
             this.dtpOpen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpOpen.Location = new System.Drawing.Point(327, 312);
+            this.dtpOpen.Location = new System.Drawing.Point(290, 312);
             this.dtpOpen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpOpen.Name = "dtpOpen";
             this.dtpOpen.Size = new System.Drawing.Size(224, 26);
@@ -54,7 +54,7 @@ namespace BankManage
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(29, 318);
+            this.label4.Location = new System.Drawing.Point(12, 318);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 20);
             this.label4.TabIndex = 40;
@@ -62,7 +62,7 @@ namespace BankManage
             // 
             // txtSothe
             // 
-            this.txtSothe.Location = new System.Drawing.Point(327, 44);
+            this.txtSothe.Location = new System.Drawing.Point(290, 44);
             this.txtSothe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSothe.Name = "txtSothe";
             this.txtSothe.Size = new System.Drawing.Size(224, 26);
@@ -72,7 +72,7 @@ namespace BankManage
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 50);
+            this.label3.Location = new System.Drawing.Point(12, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 51;
@@ -82,7 +82,7 @@ namespace BankManage
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(29, 113);
+            this.label7.Location = new System.Drawing.Point(12, 113);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(272, 20);
             this.label7.TabIndex = 64;
@@ -95,7 +95,7 @@ namespace BankManage
             "Sao kê bảng lương",
             "Hợp đồng lao động",
             "Hợp đồng thuê tài sản"});
-            this.clbHoso.Location = new System.Drawing.Point(327, 113);
+            this.clbHoso.Location = new System.Drawing.Point(290, 113);
             this.clbHoso.Name = "clbHoso";
             this.clbHoso.Size = new System.Drawing.Size(224, 73);
             this.clbHoso.TabIndex = 65;
@@ -105,7 +105,7 @@ namespace BankManage
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 246);
+            this.label1.Location = new System.Drawing.Point(12, 246);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 20);
             this.label1.TabIndex = 66;
@@ -113,7 +113,7 @@ namespace BankManage
             // 
             // txtHanmuc
             // 
-            this.txtHanmuc.Location = new System.Drawing.Point(327, 243);
+            this.txtHanmuc.Location = new System.Drawing.Point(290, 243);
             this.txtHanmuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHanmuc.Name = "txtHanmuc";
             this.txtHanmuc.Size = new System.Drawing.Size(224, 26);
@@ -122,7 +122,7 @@ namespace BankManage
             // btnSubmit
             // 
             this.btnSubmit.Enabled = false;
-            this.btnSubmit.Location = new System.Drawing.Point(107, 377);
+            this.btnSubmit.Location = new System.Drawing.Point(90, 377);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(86, 48);
@@ -133,7 +133,7 @@ namespace BankManage
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(327, 377);
+            this.btnCancel.Location = new System.Drawing.Point(290, 377);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 48);
@@ -145,7 +145,7 @@ namespace BankManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 450);
+            this.ClientSize = new System.Drawing.Size(538, 450);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtHanmuc);

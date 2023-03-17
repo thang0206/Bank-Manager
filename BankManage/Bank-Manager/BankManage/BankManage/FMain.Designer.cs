@@ -59,9 +59,9 @@ namespace BankManage
             this.SendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TransToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BorrowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SavingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Trans_HisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CreditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlFind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).BeginInit();
             this.pnlUpdate.SuspendLayout();
@@ -330,7 +330,7 @@ namespace BankManage
             this.pnlOption.Location = new System.Drawing.Point(24, 44);
             this.pnlOption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlOption.Name = "pnlOption";
-            this.pnlOption.Size = new System.Drawing.Size(528, 780);
+            this.pnlOption.Size = new System.Drawing.Size(589, 780);
             this.pnlOption.TabIndex = 1;
             // 
             // menuStrip1
@@ -366,21 +366,21 @@ namespace BankManage
             // 
             this.WithdrawToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.WithdrawToolStripMenuItem.Name = "WithdrawToolStripMenuItem";
-            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.WithdrawToolStripMenuItem.Text = "Rút tiền";
             this.WithdrawToolStripMenuItem.Click += new System.EventHandler(this.WithdrawToolStripMenuItem_Click);
             // 
             // SendToolStripMenuItem
             // 
             this.SendToolStripMenuItem.Name = "SendToolStripMenuItem";
-            this.SendToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.SendToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.SendToolStripMenuItem.Text = "Gửi tiền";
             this.SendToolStripMenuItem.Click += new System.EventHandler(this.SendToolStripMenuItem_Click);
             // 
             // TransToolStripMenuItem
             // 
             this.TransToolStripMenuItem.Name = "TransToolStripMenuItem";
-            this.TransToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.TransToolStripMenuItem.Size = new System.Drawing.Size(227, 34);
             this.TransToolStripMenuItem.Text = "Chuyển khoản";
             this.TransToolStripMenuItem.Click += new System.EventHandler(this.TransToolStripMenuItem_Click);
             // 
@@ -390,6 +390,13 @@ namespace BankManage
             this.BorrowToolStripMenuItem.Size = new System.Drawing.Size(56, 29);
             this.BorrowToolStripMenuItem.Text = "Vay";
             this.BorrowToolStripMenuItem.Click += new System.EventHandler(this.BorrowToolStripMenuItem_Click);
+            // 
+            // CreditToolStripMenuItem
+            // 
+            this.CreditToolStripMenuItem.Name = "CreditToolStripMenuItem";
+            this.CreditToolStripMenuItem.Size = new System.Drawing.Size(103, 29);
+            this.CreditToolStripMenuItem.Text = "Tín dụng ";
+            this.CreditToolStripMenuItem.Click += new System.EventHandler(this.CreditToolStripMenuItem_Click);
             // 
             // SavingToolStripMenuItem
             // 
@@ -404,12 +411,6 @@ namespace BankManage
             this.Trans_HisToolStripMenuItem.Size = new System.Drawing.Size(197, 29);
             this.Trans_HisToolStripMenuItem.Text = "Xem lịch sử giao dịch";
             this.Trans_HisToolStripMenuItem.Click += new System.EventHandler(this.Trans_HisToolStripMenuItem_Click);
-            // 
-            // CreditToolStripMenuItem
-            // 
-            this.CreditToolStripMenuItem.Name = "CreditToolStripMenuItem";
-            this.CreditToolStripMenuItem.Size = new System.Drawing.Size(103, 29);
-            this.CreditToolStripMenuItem.Text = "Tín dụng ";
             // 
             // FMain
             // 

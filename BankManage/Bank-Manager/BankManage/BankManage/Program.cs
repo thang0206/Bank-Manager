@@ -21,7 +21,7 @@ namespace BankManage
             Application.Run(fLogin);
 
             if (fLogin.IsLoggedIn)
-                Application.Run(new FBorrow());
+                Application.Run(new FMain());
         }
     }
 }
