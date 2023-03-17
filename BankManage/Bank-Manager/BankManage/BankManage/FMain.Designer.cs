@@ -312,7 +312,7 @@ namespace BankManage
             this.panel3.Location = new System.Drawing.Point(436, 11);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(602, 662);
+            this.panel3.Size = new System.Drawing.Size(493, 662);
             this.panel3.TabIndex = 7;
             // 
             // pnlOption
@@ -335,7 +335,7 @@ namespace BankManage
             this.Trans_HisToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(602, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(452, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 

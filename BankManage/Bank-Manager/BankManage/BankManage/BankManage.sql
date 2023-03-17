@@ -11,3 +11,35 @@ Create Table Customer (
 	CreateAt date,
 	UpdateAt date
 )
+
+INSERT INTO Customer(STK, Name, Address, DoB, CitizenID, PhoneNum, Money)
+VALUES ('1234567890', 'Nguyen Van A', 'HCM', '1999-5-15','123456789012','0365471254', 250000)
+
+
+INSERT INTO Customer(STK, Name, Address, DoB, CitizenID, PhoneNum, Money)
+VALUES ('1564567890', 'Nguyen Van B', 'HCM', '1999-5-15','156456789012','0365471254', 250000)
+
+CREATE TABLE Trans (
+	STK char(10),
+	MaGD char(10),
+	LoaiGD varchar(255),
+	Money int,
+	ThoigianGD date,
+	ReceivedSTK char(10),
+	PRIMARY KEY(STK, MaGD),
+	FOREIGN KEY (ReceivedSTK) REFERENCES Customer(STK)
+)
+
+INSERT INTO Trans(STK, MaGD, LoaiGD, Money, ThoigianGD, ReceivedSTK)
+VALUES ('1234567890', '001', 'Chuyen tien', '15000','2022-5-6','1564567890')
+
+CREATE TABLE Saving (
+	STK char(10),
+	MaSo char(10) PRIMARY KEY,
+	Money int,
+	KyHan varchar(255),
+	PhuongThucDaoHan varchar(255),
+	NgayGui date,
+	NgayDaoHan date,
+	FOREIGN KEY (STK) REFERENCES Customer(STK)
+)

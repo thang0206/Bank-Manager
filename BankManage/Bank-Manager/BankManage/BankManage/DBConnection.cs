@@ -53,5 +53,27 @@ namespace BankManage
             }
             return null;
         }
+
+        public DataTable Load(string Table)
+        {
+            try
+            {
+                conn.Open();
+                string SqlStr = string.Format("SELECT * FROM " + Table);
+                SqlDataAdapter adapter = new SqlDataAdapter(SqlStr, conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+        }
     }
 }
