@@ -20,7 +20,12 @@ namespace BankManage
             txtMoneyRemain.Text = Money.ToString();
             Customer temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
         }
-       
+
+        private void FBorrow_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             bool isMonthBorrow = cbTerm.Text.Contains("12");
@@ -46,34 +51,9 @@ namespace BankManage
                 MessageBox.Show("Chúc mừng bạn đã được vay với số tiền: " + txtMoneyBorrow.Text + "\nKỳ hạn: " + cbTerm.Text + "\nVui lòng thanh toán trước thời gian sau: " + dtpBack.Value.ToString());
         }
 
-        private void FBorrow_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpBack_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbTypeOfCredit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbTypeOfCredit.SelectedItem.ToString() == "Vay thế chấp")
-                clbCollateral.Enabled = true;
-
-
-
-
+            clbCollateral.Enabled = cbTypeOfCredit.SelectedItem.ToString() == "Vay thế chấp";
         }
     }
 }

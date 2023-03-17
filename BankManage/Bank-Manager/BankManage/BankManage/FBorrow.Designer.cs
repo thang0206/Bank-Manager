@@ -86,7 +86,6 @@
             this.label4.Size = new System.Drawing.Size(106, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "Ngày cho vay:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // dtpBack
             // 
@@ -97,7 +96,6 @@
             this.dtpBack.Name = "dtpBack";
             this.dtpBack.Size = new System.Drawing.Size(277, 26);
             this.dtpBack.TabIndex = 31;
-            this.dtpBack.ValueChanged += new System.EventHandler(this.dtpBack_ValueChanged);
             // 
             // label5
             // 
@@ -141,7 +139,6 @@
             this.label7.Size = new System.Drawing.Size(61, 20);
             this.label7.TabIndex = 36;
             this.label7.Text = "Kỳ hạn:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // cbTerm
             // 
