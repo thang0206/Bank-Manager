@@ -317,14 +317,14 @@ namespace BankManage
             this.panel3.Location = new System.Drawing.Point(436, 11);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(548, 662);
+            this.panel3.Size = new System.Drawing.Size(557, 662);
             this.panel3.TabIndex = 7;
             // 
             // pnlOption
             // 
             this.pnlOption.Location = new System.Drawing.Point(21, 35);
             this.pnlOption.Name = "pnlOption";
-            this.pnlOption.Size = new System.Drawing.Size(524, 624);
+            this.pnlOption.Size = new System.Drawing.Size(533, 624);
             this.pnlOption.TabIndex = 1;
             // 
             // menuStrip1
@@ -420,7 +420,7 @@ namespace BankManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 684);
+            this.ClientSize = new System.Drawing.Size(1014, 684);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlUpdate);
             this.Controls.Add(this.pnlFind);

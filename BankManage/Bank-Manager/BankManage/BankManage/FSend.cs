@@ -14,28 +14,29 @@ namespace BankManage
 {
     public partial class FSend : Form
     {
+        CustomerDAO cs = new CustomerDAO();
+        Customer temp;
         public FSend(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
-            Customer temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
-        }
-
-        private void FSend_Load(object sender, EventArgs e)
-        {
-
+            temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(txtMoneyRemain.Text) < Convert.ToInt32(txtMoneySend.Text))
+            {
                 MessageBox.Show("Bạn không thể gửi tiền quá số tiền hiện tại trong tài khoản");
+            }
             else
             {
                 int moneyAfterSend = Convert.ToInt32(txtMoneySend.Text) + Convert.ToInt32(txtMoneyRemain.Text);
                 txtMoneyRemain.Text = moneyAfterSend.ToString();
                 txtMoneySend.Clear();
                 MessageBox.Show($"Bạn đã gửi tiền thành công. Số dư còn lại của bạn {moneyAfterSend}");
+                temp.Monney = moneyAfterSend;
+                cs.Update(temp);
             }
         }
     }

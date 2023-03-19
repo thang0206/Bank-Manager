@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankManage
 {
-    internal class Customer
+    public class Customer
     {
         private string stk;
         private string name;
@@ -50,7 +50,7 @@ namespace BankManage
         public DateTime Dob { get { return dob; } }
         public string CitizenId { get { return citizenId; } }
         public string PhoneNumber { get { return phoneNumber; } }
-        public int Money { get { return money; } }
+        public int Monney { get { return monney; } set { monney = value; } }
         public DateTime CreatedAt { get { return createdAt; } set { createdAt = value; } }
         public DateTime UpdatedAt { get { return updatedAt; } set { updatedAt = value; } }
     }

@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +15,8 @@ namespace BankManage
 {
     public partial class FWithdraw : Form
     {
+        CustomerDAO cs = new CustomerDAO();
+        Customer temp;
         public FWithdraw(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
         {
             InitializeComponent();
@@ -32,17 +36,14 @@ namespace BankManage
                 txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
                 txtMoneySend.Clear();
                 MessageBox.Show($"Bạn đã rút tiền thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
+                temp.Monney = remainMoneyAfterWithDraw;
+                cs.Update(temp);
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtMoneySend.Clear();
-        }
-
-        private void FWithdraw_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

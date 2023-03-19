@@ -124,7 +124,6 @@
             this.Controls.Add(this.label11);
             this.Name = "FSend";
             this.Text = "FSend";
-            this.Load += new System.EventHandler(this.FSend_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

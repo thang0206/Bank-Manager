@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,13 @@ namespace BankManage
 {
     public partial class FTrans : Form
     {
+        CustomerDAO cs = new CustomerDAO();
+        Customer temp;
         public FTrans(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
-            Customer temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
+            temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -28,14 +31,20 @@ namespace BankManage
             }
 
             if (remainMoneyAfterWithDraw < 0)
+            {
                 MessageBox.Show("Số dư tài khoản không đủ để chuyển khoản");
+            }
             else if (remainMoneyAfterWithDraw < 50000)
+            {
                 MessageBox.Show("Số dư tài khoản của bạn phải có ít nhất 50000");
+            }
             else
             {
                 txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
                 txtMoneySend.Clear();
                 MessageBox.Show($"Bạn đã chuyển khoản cho tài khoản {txtSTK.Text} thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
+                temp.Monney = Convert.ToInt32(txtMoneyRemain.Text);
+                cs.Update(temp);
             }
         }
 
