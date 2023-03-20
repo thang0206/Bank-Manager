@@ -30,7 +30,9 @@ namespace BankManage
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Customer newCustomer = new Customer(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now);
+            string randomStk = RandomSTK();
+            Customer newCustomer = new Customer(randomStk, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, 0);
+            newCustomer.CreatedAt = DateTime.Now;
             if (customerDAO.ValidateFormCreate(newCustomer))
                 MessageBox.Show("Khong duoc de trong");
             else
@@ -44,6 +46,7 @@ namespace BankManage
                     }
                 }
                 customerDAO.Create(newCustomer);
+                ClearInfomation();
             }
         }
         private void ShowFormOnPanel(Form form)
@@ -57,8 +60,8 @@ namespace BankManage
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            txtID.Text = txtFilter.Text;
             // 156456789012
+            LoadCustomerData("");
             bool isShowGvCustomer = false;
             for (int i = 0; i < gvSTK.Rows.Count - 1; i++)
             {
@@ -76,11 +79,13 @@ namespace BankManage
                 btnUpdate.Enabled = true;
                 btnCreate.Enabled = false;
                 menuStrip1.Enabled = true;
+                txtSTK.Text = gvSTK.Rows[0].Cells["STK"].Value.ToString() ?? "";
+                txtID.Text = gvSTK.Rows[0].Cells["CitizenId"].Value.ToString() ?? "";
             }
             else
             {
-                LoadCustomerData("");
                 MessageBox.Show("Chua co tai khoan");
+                ClearInfomation();
                 btnCreate.Enabled = true;
                 btnUpdate.Enabled = false;
                 menuStrip1.Enabled = false;
@@ -125,12 +130,33 @@ namespace BankManage
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("C?p nh?t th�nh c�ng");
+            Customer updatedCustomer = new Customer(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtPNum.Text));
+            updatedCustomer.UpdatedAt = DateTime.Now;
+            if (customerDAO.ValidateFormCreate(updatedCustomer))
+                MessageBox.Show("Khong duoc de trong");
+            else
+            {
+                customerDAO.Update(updatedCustomer);
+                LoadCustomerData($" WHERE CitizenId = '{txtFilter.Text}'");
+                ClearInfomation();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("X�a th�nh c�ng");
+            Customer deletetedCustomer = new Customer(txtSTK.Text);
+            customerDAO.Delete(deletetedCustomer);
+            LoadCustomerData($" WHERE CitizenId = '{txtFilter.Text}'");
+            if (gvSTK.Rows.Count - 1 == 0)
+                gvSTK.Visible = false;
+            ClearInfomation();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            gvSTK.Visible = false;
+            txtFilter.Clear();
+            ClearInfomation();
         }
 
         private void CreditToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,13 +169,29 @@ namespace BankManage
         private void gvSTK_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int numrow = e.RowIndex;
-            txtSTK.Text = gvSTK.Rows[numrow].Cells[0].Value.ToString();
-            txtName.Text = gvSTK.Rows[numrow].Cells[1].Value.ToString();
-            txtAddr.Text = gvSTK.Rows[numrow].Cells[2].Value.ToString();
-            dtpDoB.Text = gvSTK.Rows[numrow].Cells[3].Value.ToString();
-            //txtID.Text = gvSTK.Rows[numrow].Cells[4].Value.ToString();
-            txtPNum.Text = gvSTK.Rows[numrow].Cells[5].Value.ToString();
-            txtMoney.Text = gvSTK.Rows[numrow].Cells[6].Value.ToString();
+            txtSTK.Text = gvSTK.Rows[numrow].Cells["STK"].Value.ToString();
+            txtName.Text = gvSTK.Rows[numrow].Cells["Name"].Value.ToString();
+            txtAddr.Text = gvSTK.Rows[numrow].Cells["Address"].Value.ToString();
+            dtpDoB.Text = gvSTK.Rows[numrow].Cells["DoB"].Value.ToString();
+            txtID.Text = gvSTK.Rows[numrow].Cells["CitizenId"].Value.ToString();
+            txtPNum.Text = gvSTK.Rows[numrow].Cells["PhoneNum"].Value.ToString();
+            txtMoney.Text = gvSTK.Rows[numrow].Cells["Money"].Value.ToString();
+        }
+
+        private void ClearInfomation()
+        {
+            txtSTK.Clear();
+            txtName.Clear();
+            txtAddr.Clear();
+            txtID.Clear();
+            txtPNum.Clear();
+            txtMoney.Clear();
+        }
+
+        private string RandomSTK()
+        {
+            Random random = new Random();
+            return random.NextString(10);
         }
     }
 }
