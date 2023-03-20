@@ -19,6 +19,10 @@ VALUES ('1234567890', 'Nguyen Van A', 'HCM', '1999-5-15','123456789012','0365471
 INSERT INTO Customer(STK, Name, Address, DoB, CitizenID, PhoneNum, Money)
 VALUES ('1564567890', 'Nguyen Van B', 'HCM', '1999-5-15','156456789012','0365471254', 250000)
 
+INSERT INTO Customer(STK, Name, Address, DoB, CitizenID, PhoneNum, Money)
+VALUES ('1234567891', 'Nguyen Van C', 'HCM', '1999-5-15','123456789012','0365471254', 250000)
+
+
 CREATE TABLE Trans (
 	STK char(10),
 	MaGD char(10),
@@ -32,6 +36,12 @@ CREATE TABLE Trans (
 
 INSERT INTO Trans(STK, MaGD, LoaiGD, Money, ThoigianGD, ReceivedSTK)
 VALUES ('1234567890', '001', 'Chuyen tien', '15000','2022-5-6','1564567890')
+
+INSERT INTO Trans(STK, MaGD, LoaiGD, Money, ThoigianGD, ReceivedSTK)
+VALUES ('1234567890', '002', 'Gui tien', '15000','2022-5-6','1564567890')
+
+INSERT INTO Trans(STK, MaGD, LoaiGD, Money, ThoigianGD, ReceivedSTK) 
+VALUES ('1234567891', 'GT032', 'Gui tien' , '15000', '2023-03-20 8:24:30 PM' , '1234567891')
 
 CREATE TABLE Saving (
 	STK char(10),

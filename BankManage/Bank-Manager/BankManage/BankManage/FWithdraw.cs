@@ -16,28 +16,40 @@ namespace BankManage
     public partial class FWithdraw : Form
     {
         CustomerDAO cs = new CustomerDAO();
-        Customer temp;
+        TransactionDAO ts = new TransactionDAO();
+        Customer customer;
         public FWithdraw(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
-            Customer temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
+            customer = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             int remainMoneyAfterWithDraw = Convert.ToInt32(txtMoneyRemain.Text) - Convert.ToInt32(txtMoneySend.Text);
+
             if (remainMoneyAfterWithDraw < 0)
+            {
                 MessageBox.Show("Số dư tài khoản không đủ để rút tiền");
+            }
             else if (remainMoneyAfterWithDraw < 50000)
+            {
                 MessageBox.Show("Số dư tài khoản của bạn phải có ít nhất 50000");
+            }
             else
             {
                 txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
-                txtMoneySend.Clear();
                 MessageBox.Show($"Bạn đã rút tiền thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
-                temp.Monney = remainMoneyAfterWithDraw;
-                cs.Update(temp);
+                customer.Monney = remainMoneyAfterWithDraw;
+
+                Random random = new Random();
+                string GD = "RT" + random.Next().ToString();
+
+                cs.UpdateMoney(customer);
+                Transaction transaction = new Transaction(customer.Stk, GD, "Rut tien", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customer.Stk);
+                ts.Create(transaction);
+                txtMoneySend.Clear();
             }
         }
 

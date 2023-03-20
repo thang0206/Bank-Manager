@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gvHistory = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbChoice = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvHistory)).BeginInit();
             this.SuspendLayout();
@@ -44,17 +44,19 @@
             this.gvHistory.Size = new System.Drawing.Size(452, 394);
             this.gvHistory.TabIndex = 0;
             // 
-            // comboBox1
+            // cmbChoice
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbChoice.FormattingEnabled = true;
+            this.cmbChoice.Items.AddRange(new object[] {
             "Rút tiền",
             "Gửi tiền",
-            "Chuyển khoản"});
-            this.comboBox1.Location = new System.Drawing.Point(151, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(313, 24);
-            this.comboBox1.TabIndex = 1;
+            "Chuyển khoản",
+            "Tất cả giao dịch"});
+            this.cmbChoice.Location = new System.Drawing.Point(151, 33);
+            this.cmbChoice.Name = "cmbChoice";
+            this.cmbChoice.Size = new System.Drawing.Size(313, 24);
+            this.cmbChoice.TabIndex = 1;
+            this.cmbChoice.SelectedIndexChanged += new System.EventHandler(this.cmbChoice_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -71,7 +73,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 485);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbChoice);
             this.Controls.Add(this.gvHistory);
             this.Name = "FHistory";
             this.Text = "FHistory";
@@ -85,7 +87,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView gvHistory;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbChoice;
         private System.Windows.Forms.Label label1;
     }
 }
