@@ -106,19 +106,19 @@ namespace BankManage
         private void BorrowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
-            FBorrow fBorrow = new FBorrow(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now);
+            FBorrow fBorrow = new FBorrow(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
             ShowFormOnPanel(fBorrow);
         }
         private void WithdrawToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
-            FWithdraw fWithdraw = new FWithdraw(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now);
+            FWithdraw fWithdraw = new FWithdraw(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
             ShowFormOnPanel(fWithdraw);
         }
         private void SendToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
-            FSend fsend = new FSend(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now);
+            FSend fsend = new FSend(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
             ShowFormOnPanel(fsend);
         }
         private void TransToolStripMenuItem_Click(object sender, EventArgs e)

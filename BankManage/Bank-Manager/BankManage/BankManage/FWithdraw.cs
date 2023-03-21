@@ -18,11 +18,11 @@ namespace BankManage
         CustomerDAO cs = new CustomerDAO();
         TransactionDAO ts = new TransactionDAO();
         Customer customer;
-        public FWithdraw(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
+        public FWithdraw(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money)
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
-            customer = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
+            customer = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace BankManage
             {
                 txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
                 MessageBox.Show($"Bạn đã rút tiền thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
-                customer.Monney = remainMoneyAfterWithDraw;
+                customer.Money = remainMoneyAfterWithDraw;
 
                 Random random = new Random();
                 string GD = "RT" + random.Next().ToString();

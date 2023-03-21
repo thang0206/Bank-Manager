@@ -14,11 +14,11 @@ namespace BankManage
 {
     public partial class FBorrow : Form
     {
-        public FBorrow(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
+        public FBorrow(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money)
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
-            Customer temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
+            Customer temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
         }
 
         private void FBorrow_Load(object sender, EventArgs e)

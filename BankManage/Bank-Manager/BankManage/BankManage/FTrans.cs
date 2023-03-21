@@ -22,7 +22,7 @@ namespace BankManage
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
-            cs1 = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
+            cs1 = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
             dt = table;
         }
 
@@ -48,7 +48,7 @@ namespace BankManage
                 txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
                 MessageBox.Show($"Bạn đã chuyển khoản cho tài khoản {txtSTK.Text} thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
                 
-                cs1.Monney = Convert.ToInt32(txtMoneyRemain.Text);
+                cs1.Money = Convert.ToInt32(txtMoneyRemain.Text);
                 cs.UpdateMoney(cs1);
 
                 for (int i = 0; i < dt.Rows.Count - 1; i++)
@@ -56,10 +56,10 @@ namespace BankManage
                     string STK = dt.Rows[i][0].ToString();
                     if (txtSTK.Text == STK)
                     {
-                        cs2 = new Customer(STK, "", "", DateTime.Now, "", "", Convert.ToInt32(dt.Rows[i][6].ToString()), DateTime.Now);
+                        cs2 = new Customer(STK, "", "", DateTime.Now, "", "", Convert.ToInt32(dt.Rows[i][6].ToString()));
                     }
                 }
-                cs2.Monney = Convert.ToInt32(cs2.Monney + Convert.ToInt32(txtMoneySend.Text));
+                cs2.Money = Convert.ToInt32(cs2.Money + Convert.ToInt32(txtMoneySend.Text));
                 cs.UpdateMoney(cs2);
 
                 Random random = new Random();

@@ -17,11 +17,11 @@ namespace BankManage
         CustomerDAO cs = new CustomerDAO();
         TransactionDAO ts = new TransactionDAO();
         Customer customer;
-        public FSend(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
+        public FSend(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money)
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
-            customer = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
+            customer = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace BankManage
                 int moneyAfterSend = Convert.ToInt32(txtMoneySend.Text) + Convert.ToInt32(txtMoneyRemain.Text);
                 txtMoneyRemain.Text = moneyAfterSend.ToString();
                 MessageBox.Show($"Bạn đã gửi tiền thành công. Số dư còn lại của bạn {moneyAfterSend}");
-                customer.Monney = moneyAfterSend;
+                customer.Money = moneyAfterSend;
 
                 Random random = new Random();
                 string GD = "GT" + random.Next().ToString();
