@@ -32,6 +32,26 @@ namespace BankManage
                 conn.Close();
             }
         }
+        public void Execute(string SqlStr)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(SqlStr, conn);
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public DataTable Load(string Table, string condition)
         {
             try

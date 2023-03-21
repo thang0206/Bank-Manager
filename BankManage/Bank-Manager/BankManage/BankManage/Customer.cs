@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankManage
 {
-    internal class Customer
+    public class Customer
     {
         private string stk;
         private string name;
@@ -28,17 +28,6 @@ namespace BankManage
             this.phoneNumber = phoneNumber;
             this.money = monney;
         }
-        public Customer(string stk, string name, string address, DateTime dob, string citizenId, string phoneNumber, int monney, DateTime createdAt)
-        {
-            this.stk = stk;
-            this.name = name;
-            this.address = address;
-            this.dob = dob;
-            this.citizenId = citizenId;
-            this.phoneNumber = phoneNumber;
-            this.money = monney;
-            this.createdAt = createdAt;
-        }
 
         public Customer(string stk)
         {
@@ -50,7 +39,7 @@ namespace BankManage
         public DateTime Dob { get { return dob; } }
         public string CitizenId { get { return citizenId; } }
         public string PhoneNumber { get { return phoneNumber; } }
-        public int Money { get { return money; } }
+        public int Money { get { return money; } set { money = value; } }
         public DateTime CreatedAt { get { return createdAt; } set { createdAt = value; } }
         public DateTime UpdatedAt { get { return updatedAt; } set { updatedAt = value; } }
     }

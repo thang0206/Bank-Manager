@@ -126,7 +126,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FWithdraw";
             this.Text = "FWithdraw";
-            this.Load += new System.EventHandler(this.FWithdraw_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

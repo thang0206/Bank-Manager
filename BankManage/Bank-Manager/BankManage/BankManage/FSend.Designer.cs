@@ -68,6 +68,7 @@
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -124,7 +125,6 @@
             this.Controls.Add(this.label11);
             this.Name = "FSend";
             this.Text = "FSend";
-            this.Load += new System.EventHandler(this.FSend_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

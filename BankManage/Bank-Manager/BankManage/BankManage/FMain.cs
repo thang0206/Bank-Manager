@@ -94,7 +94,7 @@ namespace BankManage
         private void Trans_HisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
-            FHistory fHistory = new FHistory();
+            FHistory fHistory = new FHistory(txtSTK.Text);
             ShowFormOnPanel(fHistory);
         }
         private void SavingToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,25 +106,28 @@ namespace BankManage
         private void BorrowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
-            FBorrow fBorrow = new FBorrow(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now);
+            FBorrow fBorrow = new FBorrow(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
             ShowFormOnPanel(fBorrow);
         }
         private void WithdrawToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
-            FWithdraw fWithdraw = new FWithdraw(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now);
+            FWithdraw fWithdraw = new FWithdraw(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
             ShowFormOnPanel(fWithdraw);
         }
         private void SendToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
-            FSend fsend = new FSend(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now);
+            FSend fsend = new FSend(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
             ShowFormOnPanel(fsend);
         }
         private void TransToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dBConnection.Load("Customer");
+            DataTable dt = (DataTable)dataGrid.DataSource;
             pnlOption.Controls.Clear();
-            FTrans fTrans = new FTrans(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now);
+            FTrans fTrans = new FTrans(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now, dt);
             ShowFormOnPanel(fTrans);
         }
 
