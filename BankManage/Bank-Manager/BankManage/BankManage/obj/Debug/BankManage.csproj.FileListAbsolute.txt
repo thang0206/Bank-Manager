@@ -82,10 +82,10 @@ D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankM
 D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.CoreCompileInputs.cache
 D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.exe
 D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.pdb
-D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.AssemblyReference.cache
 E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FSaving.resources
 D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FSaving.resources
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FSaving.resources
 D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FCredit.resources
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FCredit.resources
 E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FCredit.resources
+D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.AssemblyReference.cache

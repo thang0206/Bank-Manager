@@ -113,5 +113,10 @@ namespace BankManage
                 btnOK.Enabled = false;
             }
         }
+
+        private void FTrans_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

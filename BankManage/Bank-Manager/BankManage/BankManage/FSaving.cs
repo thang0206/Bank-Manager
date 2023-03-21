@@ -12,9 +12,16 @@ namespace BankManage
 {
     public partial class FSaving : Form
     {
-        public FSaving()
+        CustomerDAO cs = new CustomerDAO();
+        Random rd = new Random();
+        Customer temp;
+        public FSaving(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
         {
             InitializeComponent();
+            txtSavingnumber.Text = rd.Next(00001, 10000).ToString();
+            txtMoney.Text = Money.ToString();
+            txtName.Text = Name.ToString();
+            temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
         }
 
         private void FSaving_Load(object sender, EventArgs e)
@@ -41,10 +48,25 @@ namespace BankManage
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMoneySend.Text) || string.IsNullOrEmpty(cbTerm.Text) || string.IsNullOrEmpty(cbMethod.Text))
-                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin");
+            int remainMoneyAfterSaving = Convert.ToInt32(txtMoney.Text) - Convert.ToInt32(txtMoneySend.Text);
+            if (remainMoneyAfterSaving < 0)
+            {
+                MessageBox.Show("Số dư tài khoản không đủ để tạo sổ tiết kiệm, vui lòng nạp thêm tiền.");
+            }
+            else if (remainMoneyAfterSaving < 50000)
+            {
+                MessageBox.Show("Số dư tài khoản của bạn phải có ít nhất 50000, vui lòng nạp thêm tiền.");
+            }
             else
-                MessageBox.Show("Chúc mừng bạn đã gửi tiết kiệm thành công với số tiền: " + txtMoneySend.Text + "\nKỳ hạn: " + cbTerm.Text + "\nNgày đáo hạn: " + dtpEnd.Value.ToString() + "(" + cbMethod.Text + ")");
+            {
+                txtMoney.Text = remainMoneyAfterSaving.ToString();
+                txtMoneySend.Clear();
+                MessageBox.Show($"Bạn đã tạo thành công sổ tiết kiệm số: " + txtSavingnumber.Text + "\nKỳ hạn: " + cbTerm.Text + "\nNgày đáo hạn: " + dtpEnd.Value.Date + " (" + cbMethod.Text +")");
+                temp.Monney = Convert.ToInt32(txtMoney.Text);
+                cs.Update(temp);
+            }
         }
+
+       
     }
 }
