@@ -62,6 +62,7 @@ namespace BankManage
             this.CreditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SavingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Trans_HisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.pnlFind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).BeginInit();
             this.pnlUpdate.SuspendLayout();
@@ -81,7 +82,6 @@ namespace BankManage
             // 
             // btnCreate
             // 
-            this.btnCreate.Enabled = false;
             this.btnCreate.Location = new System.Drawing.Point(11, 402);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(115, 48);
@@ -94,6 +94,7 @@ namespace BankManage
             // 
             this.pnlFind.AutoSize = true;
             this.pnlFind.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlFind.Controls.Add(this.btnCancel);
             this.pnlFind.Controls.Add(this.gvSTK);
             this.pnlFind.Controls.Add(this.label1);
             this.pnlFind.Controls.Add(this.btnFilter);
@@ -126,7 +127,7 @@ namespace BankManage
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(151, 81);
+            this.btnFilter.Location = new System.Drawing.Point(74, 81);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(91, 24);
@@ -176,6 +177,7 @@ namespace BankManage
             this.txtSTK.Location = new System.Drawing.Point(202, 2);
             this.txtSTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSTK.Name = "txtSTK";
+            this.txtSTK.ReadOnly = true;
             this.txtSTK.Size = new System.Drawing.Size(200, 22);
             this.txtSTK.TabIndex = 31;
             // 
@@ -291,9 +293,9 @@ namespace BankManage
             // 
             this.txtMoney.Location = new System.Drawing.Point(202, 322);
             this.txtMoney.Name = "txtMoney";
+            this.txtMoney.ReadOnly = true;
             this.txtMoney.Size = new System.Drawing.Size(200, 22);
             this.txtMoney.TabIndex = 38;
-            this.txtMoney.Text = "0";
             // 
             // label7
             // 
@@ -339,7 +341,6 @@ namespace BankManage
             this.Trans_HisToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(537, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -404,6 +405,17 @@ namespace BankManage
             this.Trans_HisToolStripMenuItem.Text = "Xem lịch sử giao dịch";
             this.Trans_HisToolStripMenuItem.Click += new System.EventHandler(this.Trans_HisToolStripMenuItem_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(239, 81);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(91, 24);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -466,5 +478,6 @@ namespace BankManage
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView gvSTK;
         private System.Windows.Forms.ToolStripMenuItem CreditToolStripMenuItem;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
