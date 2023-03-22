@@ -31,23 +31,18 @@ namespace BankManage
         private void btnCreate_Click(object sender, EventArgs e)
         {
             string randomStk = RandomSTK();
-            Customer newCustomer = new Customer(randomStk, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, 0);
-            newCustomer.CreatedAt = DateTime.Now;
+            for (int i = 0; i < gvSTK.Rows.Count - 1; i++)
+                while(randomStk == gvSTK.Rows[i].Cells["STK"].Value.ToString())
+                    randomStk = RandomSTK();
+            Customer newCustomer = new Customer(randomStk, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, 0)
+            {
+                CreatedAt = DateTime.Now
+            };
             if (customerDAO.ValidateFormCreate(newCustomer))
                 MessageBox.Show("Khong duoc de trong");
-            else
-            {
-                for (int i = 0; i < gvSTK.Rows.Count - 1; i++)
-                {
-                    if (newCustomer.Stk == gvSTK.Rows[i].Cells["STK"].Value.ToString())
-                    {
-                        MessageBox.Show("So tai khoan da ton tai");
-                        break;
-                    }
-                }
-                customerDAO.Create(newCustomer);
-                ClearInfomation();
-            }
+            customerDAO.Create(newCustomer);
+            ClearInfomation();
+            
         }
         private void ShowFormOnPanel(Form form)
         {
