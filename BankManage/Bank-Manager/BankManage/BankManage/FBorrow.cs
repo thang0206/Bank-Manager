@@ -18,6 +18,7 @@ namespace BankManage
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
+            txtID.Text = CitizenId.ToString();
             Customer temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

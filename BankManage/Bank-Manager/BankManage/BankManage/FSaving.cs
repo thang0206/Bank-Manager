@@ -13,6 +13,7 @@ namespace BankManage
     public partial class FSaving : Form
     {
         CustomerDAO cs = new CustomerDAO();
+        DBConnection dBConnection = new DBConnection();
         Random rd = new Random();
         Customer temp;
         public FSaving(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
@@ -21,12 +22,16 @@ namespace BankManage
             txtSavingnumber.Text = rd.Next(00001, 10000).ToString();
             txtMoney.Text = Money.ToString();
             txtName.Text = Name.ToString();
-            temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money, Now);
+            temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
         }
 
         private void FSaving_Load(object sender, EventArgs e)
         {
-
+            LoadCustomerData("");
+        }
+        private void LoadCustomerData(string condition)
+        {
+            gvSaving.DataSource = dBConnection.Load("Saving", condition);
         }
 
         private void cbTerm_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,11 +67,25 @@ namespace BankManage
                 txtMoney.Text = remainMoneyAfterSaving.ToString();
                 txtMoneySend.Clear();
                 MessageBox.Show($"Bạn đã tạo thành công sổ tiết kiệm số: " + txtSavingnumber.Text + "\nKỳ hạn: " + cbTerm.Text + "\nNgày đáo hạn: " + dtpEnd.Value.Date + " (" + cbMethod.Text +")");
-                temp.Monney = Convert.ToInt32(txtMoney.Text);
+                temp.Money = Convert.ToInt32(txtMoney.Text);
                 cs.Update(temp);
             }
         }
 
-       
+        private void gvSaving_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow = e.RowIndex;
+            
+            txtName.Text = gvSaving.Rows[numrow].Cells["Name"].Value.ToString();
+            txtMoney.Text = gvSaving.Rows[numrow].Cells["Money"].Value.ToString();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtSavingnumber.Clear();
+            txtMoneySend.Clear();
+          
+           
+        }
     }
 }

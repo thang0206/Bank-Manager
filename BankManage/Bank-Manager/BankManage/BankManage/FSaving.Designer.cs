@@ -178,6 +178,7 @@
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // gvSaving
             // 
@@ -189,6 +190,7 @@
             this.gvSaving.RowTemplate.Height = 24;
             this.gvSaving.Size = new System.Drawing.Size(460, 111);
             this.gvSaving.TabIndex = 15;
+            this.gvSaving.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSaving_CellContentClick);
             // 
             // label1
             // 
