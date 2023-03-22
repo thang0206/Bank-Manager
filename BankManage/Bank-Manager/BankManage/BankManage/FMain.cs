@@ -60,7 +60,6 @@ namespace BankManage
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            // 156456789012
             LoadCustomerData("");
             bool isShowGvCustomer = false;
             for (int i = 0; i < gvSTK.Rows.Count - 1; i++)
@@ -78,7 +77,6 @@ namespace BankManage
             {
                 btnUpdate.Enabled = true;
                 btnCreate.Enabled = false;
-                menuStrip1.Enabled = true;
                 txtSTK.Text = gvSTK.Rows[0].Cells["STK"].Value.ToString() ?? "";
                 txtID.Text = gvSTK.Rows[0].Cells["CitizenId"].Value.ToString() ?? "";
             }
@@ -89,6 +87,7 @@ namespace BankManage
                 btnCreate.Enabled = true;
                 btnUpdate.Enabled = false;
                 menuStrip1.Enabled = false;
+                txtID.Text = txtFilter.Text;
             }
         }
         private void Trans_HisToolStripMenuItem_Click(object sender, EventArgs e)
@@ -158,6 +157,11 @@ namespace BankManage
         private void btnCancel_Click(object sender, EventArgs e)
         {
             gvSTK.Visible = false;
+            menuStrip1.Enabled = false;
+            pnlOption.Visible = false;
+            btnCreate.Enabled = true;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
             txtFilter.Clear();
             ClearInfomation();
         }
@@ -179,6 +183,8 @@ namespace BankManage
             txtID.Text = gvSTK.Rows[numrow].Cells["CitizenId"].Value.ToString();
             txtPNum.Text = gvSTK.Rows[numrow].Cells["PhoneNum"].Value.ToString();
             txtMoney.Text = gvSTK.Rows[numrow].Cells["Money"].Value.ToString();
+            menuStrip1.Enabled = true;
+            pnlOption.Visible = true;
         }
 
         private void ClearInfomation()

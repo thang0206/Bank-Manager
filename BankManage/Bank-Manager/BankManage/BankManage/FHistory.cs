@@ -40,11 +40,11 @@ namespace BankManage
                 case "Rút tiền":
                     LoadTransactionData($" WHERE STK = '{UserSTK}' AND LoaiGD = 'Rut tien'");
                     break;
-                case "Chuyển khoản":
-                    LoadTransactionData($" WHERE STK = '{UserSTK}' AND LoaiGD = 'Chuyen khoan'");
-                    break;
                 case "Tất cả giao dịch":
                     LoadTransactionData($" WHERE STK = '{UserSTK}'");
+                    break;
+                default:
+                    LoadTransactionData($" WHERE STK = '{UserSTK}' AND (LoaiGD = 'Chuyen khoan' OR LoaiGD = 'Nhan tien Chuyen khoan')");
                     break;
             }
         }
