@@ -13,7 +13,7 @@ namespace BankManage
 {
     public partial class FHistory : Form
     {
-        DBConnection db = new DBConnection();
+        DBConnection dbConnection = new DBConnection();
         private string UserSTK;
         public FHistory(string STK)
         {
@@ -22,7 +22,7 @@ namespace BankManage
         }
         private void LoadTransactionData(string condition)
         {
-            gvHistory.DataSource = db.Load("Trans", condition);
+            gvHistory.DataSource = dbConnection.Load("Trans", condition);
         }
 
         private void FHistory_Load(object sender, EventArgs e)

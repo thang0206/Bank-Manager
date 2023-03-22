@@ -18,21 +18,6 @@ namespace BankManage
         private DateTime createdAt;
         private DateTime updatedAt;
 
-        public Customer(string stk, string name, string address, DateTime dob, string citizenId, string phoneNumber, int monney)
-        {
-            this.stk = stk;
-            this.name = name;
-            this.address = address;
-            this.dob = dob;
-            this.citizenId = citizenId;
-            this.phoneNumber = phoneNumber;
-            this.money = monney;
-        }
-
-        public Customer(string stk)
-        {
-            this.stk = stk;
-        }
         public string Stk { get { return stk; } }
         public string Name { get { return name; } }
         public string Address { get { return address; } }
@@ -42,5 +27,21 @@ namespace BankManage
         public int Money { get { return money; } set { money = value; } }
         public DateTime CreatedAt { get { return createdAt; } set { createdAt = value; } }
         public DateTime UpdatedAt { get { return updatedAt; } set { updatedAt = value; } }
+
+        public Customer(string stk, string name, string address, DateTime dob, string citizenId, string phoneNumber, int money)
+        {
+            this.stk = stk;
+            this.name = name;
+            this.address = address;
+            this.dob = dob;
+            this.citizenId = citizenId;
+            this.phoneNumber = phoneNumber;
+            this.money = money;
+        }
+
+        public Customer(string stk)
+        {
+            this.stk = stk;
+        }
     }
 }

@@ -13,17 +13,17 @@ namespace BankManage
 {
     public partial class FTrans : Form
     {
-        TransactionDAO ts = new TransactionDAO();
-        CustomerDAO cs = new CustomerDAO();
+        TransactionDAO transactionDAO = new TransactionDAO();
+        CustomerDAO customerDAO = new CustomerDAO();
         Customer customerSend, customerReceive;
-        DataTable dt;
+        DataTable datatable;
 
-        public FTrans(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now, DataTable table)
+        public FTrans(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DataTable table)
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
             customerSend = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
-            dt = table;
+            datatable = table;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -51,26 +51,26 @@ namespace BankManage
                     MessageBox.Show($"Bạn đã chuyển khoản cho tài khoản {txtSTK.Text} thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
 
                     customerSend.Money = Convert.ToInt32(txtMoneyRemain.Text);
-                    cs.UpdateMoney(customerSend);
+                    customerDAO.UpdateMoney(customerSend);
 
-                    for (int i = 0; i < dt.Rows.Count - 1; i++)
+                    for (int i = 0; i < datatable.Rows.Count - 1; i++)
                     {
-                        string STK = dt.Rows[i][0].ToString();
+                        string STK = datatable.Rows[i][0].ToString();
                         if (txtSTK.Text == STK)
                         {
-                            customerReceive = new Customer(STK, "", "", DateTime.Now, "", "", Convert.ToInt32(dt.Rows[i][6].ToString()));
+                            customerReceive = new Customer(STK, "", "", DateTime.Now, "", "", Convert.ToInt32(datatable.Rows[i][6].ToString()));
                         }
                     }
                     customerReceive.Money = Convert.ToInt32(customerReceive.Money + Convert.ToInt32(txtMoneySend.Text));
-                    cs.UpdateMoney(customerReceive);
+                    customerDAO.UpdateMoney(customerReceive);
 
                     Random random = new Random();
-                    string GD = "CK" + random.Next().ToString();
+                    string TransCode = "CK" + random.NextString(8);
 
-                    Transaction transactionSend = new Transaction(customerSend.Stk, GD, "Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerReceive.Stk);
-                    ts.Create(transactionSend);
-                    Transaction transactionReceive = new Transaction(customerReceive.Stk, GD, "Nhan tien Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerSend.Stk);
-                    ts.Create(transactionReceive);
+                    Transaction transactionSend = new Transaction(customerSend.Stk, TransCode, "Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerReceive.Stk);
+                    transactionDAO.Create(transactionSend);
+                    Transaction transactionReceive = new Transaction(customerReceive.Stk, TransCode, "Nhan tien Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerSend.Stk);
+                    transactionDAO.Create(transactionReceive);
 
                     txtMoneySend.Clear();
                 }
@@ -80,14 +80,6 @@ namespace BankManage
                 MessageBox.Show("Bạn chưa nhập đầy đủ thông tin");
                 btnOK.Enabled = false;
             }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            txtMoneySend.Clear();
-            txtNote.Clear();
-            txtSTK.Clear();
-            lblNote.Text = "";
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -102,12 +94,12 @@ namespace BankManage
             }
             else
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
+                for (int i = 0; i < datatable.Rows.Count; i++)
                 {
-                    string STK = dt.Rows[i][0].ToString();
+                    string STK = datatable.Rows[i][0].ToString();
                     if (txtSTK.Text == STK)
                     {
-                        lblNote.Text = dt.Rows[i][1].ToString();
+                        lblNote.Text = datatable.Rows[i][1].ToString();
                         btnOK.Enabled = true;
                         flag = true;
                     }
@@ -118,6 +110,14 @@ namespace BankManage
                     btnOK.Enabled = false;
                 }
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtMoneySend.Clear();
+            txtNote.Clear();
+            txtSTK.Clear();
+            lblNote.Text = "";
         }
     }
 }

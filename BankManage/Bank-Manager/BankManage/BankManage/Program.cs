@@ -8,10 +8,6 @@ namespace BankManage
 {
     internal static class Program
     {
-        //oke, test 
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {

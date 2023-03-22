@@ -14,8 +14,8 @@ namespace BankManage
 {
     public partial class FSend : Form
     {
-        CustomerDAO cs = new CustomerDAO();
-        TransactionDAO ts = new TransactionDAO();
+        CustomerDAO customerDAO = new CustomerDAO();
+        TransactionDAO transactionDAO = new TransactionDAO();
         Customer customer;
         public FSend(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money)
         {
@@ -32,11 +32,11 @@ namespace BankManage
             customer.Money = moneyAfterSend;
 
             Random random = new Random();
-            string GD = "GT" + random.Next().ToString();
+            string TransCode = "GT" + random.NextString(8);
 
-            cs.UpdateMoney(customer);
-            Transaction transaction = new Transaction(customer.Stk, GD, "Gui tien", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customer.Stk);
-            ts.Create(transaction);
+            customerDAO.UpdateMoney(customer);
+            Transaction transaction = new Transaction(customer.Stk, TransCode, "Gui tien", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customer.Stk);
+            transactionDAO.Create(transaction);
             txtMoneySend.Clear();
         }
 

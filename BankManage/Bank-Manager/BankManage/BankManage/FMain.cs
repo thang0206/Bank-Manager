@@ -49,14 +49,6 @@ namespace BankManage
                 ClearInfomation();
             }
         }
-        private void ShowFormOnPanel(Form form)
-        {
-            form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            pnlOption.Controls.Add(form);
-            form.Dock = DockStyle.Fill;
-            form.Show();
-        }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
@@ -90,49 +82,10 @@ namespace BankManage
                 txtID.Text = txtFilter.Text;
             }
         }
-        private void Trans_HisToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FHistory fHistory = new FHistory(txtSTK.Text);
-            ShowFormOnPanel(fHistory);
-        }
-        private void SavingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FSaving fSaving = new FSaving();
-            ShowFormOnPanel(fSaving);
-        }
-        private void BorrowToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FBorrow fBorrow = new FBorrow(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
-            ShowFormOnPanel(fBorrow);
-        }
-        private void WithdrawToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FWithdraw fWithdraw = new FWithdraw(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
-            ShowFormOnPanel(fWithdraw);
-        }
-        private void SendToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FSend fsend = new FSend(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
-            ShowFormOnPanel(fsend);
-        }
-        private void TransToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dBConnection.Load("Customer");
-            DataTable dt = (DataTable)dataGrid.DataSource;
-            pnlOption.Controls.Clear();
-            FTrans fTrans = new FTrans(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now, dt);
-            ShowFormOnPanel(fTrans);
-        }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Customer updatedCustomer = new Customer(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtPNum.Text));
+            Customer updatedCustomer = new Customer(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
             updatedCustomer.UpdatedAt = DateTime.Now;
             if (customerDAO.ValidateFormCreate(updatedCustomer))
                 MessageBox.Show("Khong duoc de trong");
@@ -166,6 +119,46 @@ namespace BankManage
             ClearInfomation();
         }
 
+        private void TransHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FHistory fHistory = new FHistory(txtSTK.Text);
+            ShowFormOnPanel(fHistory);
+        }
+        private void SavingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FSaving fSaving = new FSaving();
+            ShowFormOnPanel(fSaving);
+        }
+        private void BorrowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FBorrow fBorrow = new FBorrow(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
+            ShowFormOnPanel(fBorrow);
+        }
+        private void WithdrawToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FWithdraw fWithdraw = new FWithdraw(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
+            ShowFormOnPanel(fWithdraw);
+        }
+        private void SendToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FSend fsend = new FSend(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
+            ShowFormOnPanel(fsend);
+        }
+        private void TransToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGrid dataGrid = new DataGrid();
+            dataGrid.DataSource = dBConnection.Load("Customer");
+            DataTable datatable = (DataTable)dataGrid.DataSource;
+            pnlOption.Controls.Clear();
+            FTrans fTrans = new FTrans(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), datatable);
+            ShowFormOnPanel(fTrans);
+        }
+
         private void CreditToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
@@ -185,6 +178,15 @@ namespace BankManage
             txtMoney.Text = gvSTK.Rows[numrow].Cells["Money"].Value.ToString();
             menuStrip1.Enabled = true;
             pnlOption.Visible = true;
+        }
+
+        private void ShowFormOnPanel(Form form)
+        {
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            pnlOption.Controls.Add(form);
+            form.Dock = DockStyle.Fill;
+            form.Show();
         }
 
         private void ClearInfomation()
