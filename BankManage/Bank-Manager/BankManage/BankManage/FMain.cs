@@ -99,11 +99,8 @@ namespace BankManage
         }
         private void SavingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dBConnection.Load("Customer");
-            DataTable dt = (DataTable)dataGrid.DataSource;
             pnlOption.Controls.Clear();
-            FSaving fSaving = new FSaving(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now);
+            FSaving fSaving = new FSaving(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
             ShowFormOnPanel(fSaving);
         }
         private void BorrowToolStripMenuItem_Click(object sender, EventArgs e)

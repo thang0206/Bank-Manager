@@ -12,22 +12,23 @@ namespace BankManage
 {
     public partial class FSaving : Form
     {
-        CustomerDAO cs = new CustomerDAO();
+        SavingDAO savingDAO = new SavingDAO();
+        CustomerDAO customerDAO = new CustomerDAO();
         DBConnection dBConnection = new DBConnection();
-        Random rd = new Random();
-        Customer temp;
-        public FSaving(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now)
+        Random random = new Random();
+        Customer currentCustomer;
+
+        public FSaving(string STK, string name, string address, DateTime dob, string citizenId, string phoneNumber, int money)
         {
             InitializeComponent();
-            txtSavingnumber.Text = rd.Next(00001, 10000).ToString();
-            txtMoney.Text = Money.ToString();
-            txtName.Text = Name.ToString();
-            temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
+            this.currentCustomer = new Customer(STK, name, address, dob, citizenId, phoneNumber, money);
+            txtName.Text = currentCustomer.Name;
+            txtMoney.Text = currentCustomer.Money.ToString();
         }
 
         private void FSaving_Load(object sender, EventArgs e)
         {
-            LoadCustomerData("");
+            LoadCustomerData($" WHERE STK = '{currentCustomer.Stk}'");
         }
         private void LoadCustomerData(string condition)
         {
@@ -36,7 +37,7 @@ namespace BankManage
 
         private void cbTerm_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbTerm.SelectedItem.ToString() == "12 tháng với lãi suất 8%/ năm")
+            if (cbTerm.SelectedItem.ToString() == "12 thang voi lai suat 8%/ nam")
                 dtpEnd.Value = dtpSend.Value.AddYears(1);
             else
                 dtpEnd.Value = dtpSend.Value.AddYears(3);
@@ -53,7 +54,9 @@ namespace BankManage
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            int remainMoneyAfterSaving = Convert.ToInt32(txtMoney.Text) - Convert.ToInt32(txtMoneySend.Text);
+            string randomMaSo = RandomMaSo();
+            Saving saving = new Saving(currentCustomer.Stk, randomMaSo, Convert.ToInt32(txtMoneySend.Text), cbTerm.Text, cbMethod.Text, dtpSend.Value.Date, dtpEnd.Value.Date);
+            int remainMoneyAfterSaving = Convert.ToInt32(currentCustomer.Money) - Convert.ToInt32(saving.Money);
             if (remainMoneyAfterSaving < 0)
             {
                 MessageBox.Show("Số dư tài khoản không đủ để tạo sổ tiết kiệm, vui lòng nạp thêm tiền.");
@@ -64,28 +67,55 @@ namespace BankManage
             }
             else
             {
-                txtMoney.Text = remainMoneyAfterSaving.ToString();
+                currentCustomer.Money = remainMoneyAfterSaving;
                 txtMoneySend.Clear();
-                MessageBox.Show($"Bạn đã tạo thành công sổ tiết kiệm số: " + txtSavingnumber.Text + "\nKỳ hạn: " + cbTerm.Text + "\nNgày đáo hạn: " + dtpEnd.Value.Date + " (" + cbMethod.Text +")");
-                temp.Money = Convert.ToInt32(txtMoney.Text);
-                cs.Update(temp);
+                customerDAO.Update(currentCustomer);
+                savingDAO.Create(saving);
+                MessageBox.Show($"Bạn đã tạo thành công sổ tiết kiệm số: " + txtSavingNumber.Text + "\nKỳ hạn: " + cbTerm.Text + "\nNgày đáo hạn: " + dtpEnd.Value.Date + " (" + cbMethod.Text +")");
             }
         }
 
         private void gvSaving_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int numrow = e.RowIndex;
-            
-            txtName.Text = gvSaving.Rows[numrow].Cells["Name"].Value.ToString();
-            txtMoney.Text = gvSaving.Rows[numrow].Cells["Money"].Value.ToString();
+            int numRow = e.RowIndex;
+            txtSavingNumber.Text = gvSaving.Rows[numRow].Cells["MaSo"].Value.ToString();
+            txtName.Text = currentCustomer.Name;
+            txtMoney.Text = currentCustomer.Money.ToString();
+            txtMoneySend.Text = gvSaving.Rows[numRow].Cells["Money"].Value.ToString();
+            cbTerm.Text = gvSaving.Rows[numRow].Cells["KyHan"].Value.ToString();
+            cbMethod.Text = gvSaving.Rows[numRow].Cells["PhuongThucDaoHan"].Value.ToString();
+            dtpSend.Text = gvSaving.Rows[numRow].Cells["NgayGui"].Value.ToString();
+            dtpEnd.Text = gvSaving.Rows[numRow].Cells["NgayDaoHan"].Value.ToString();
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtSavingnumber.Clear();
+            ClearInfomation();
+        }
+        private void ClearInfomation()
+        {
+            txtSavingNumber.Clear();
             txtMoneySend.Clear();
-          
-           
+        }
+        private string RandomMaSo()
+        {
+            Random random = new Random();
+            return random.NextString(10);
+        }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            Saving withdrawsaving = new Saving(txtSavingNumber.Text);
+            savingDAO.Delete(withdrawsaving);
+            LoadCustomerData($" WHERE MaSo = '{txtSavingNumber.Text}'");   
+            ClearInfomation();
+            MessageBox.Show("Rut bi mat phi nhen");
+            customerDAO.Update(currentCustomer);
+            int MoneyAfterWithdraw = Convert.ToInt32(currentCustomer.Money) + Convert.ToInt32(txtMoneySend.Text); ;
+
+                
+
         }
     }
 }

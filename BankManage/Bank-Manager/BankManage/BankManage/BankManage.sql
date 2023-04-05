@@ -1,4 +1,4 @@
-﻿CREATE DATABASE BankManage
+﻿CREATE DATABASE BankManageDM
 
 Create Table Customer (
 	STK char(10) PRIMARY KEY,
@@ -47,11 +47,11 @@ CREATE TABLE Saving (
 	STK char(10),
 	MaSo char(10) PRIMARY KEY,
 	Money int,
-	KyHan nvarchar(255),
-	PhuongThucDaoHan nvarchar(255),
+	KyHan char(255),
+	PhuongThucDaoHan char(255),
 	NgayGui date,
 	NgayDaoHan date,
 	FOREIGN KEY (STK) REFERENCES Customer(STK)
 )
 INSERT INTO Saving(STK, MaSo, Money, KyHan, PhuongThucDaoHan, NgayGui, NgayDaoHan) 
-VALUES ('1234567891', '1043', '250000' , '12 tháng với lãi suất 8%/ năm', 'Chuyển gốc và lãi sang kỳ hạn mới' , '2023-03-22', '2024-03-22')
+VALUES ('1234567891', '1043', '250000' , '12 thang voi lai suat 8%/ nam', 'Chuyen goc va lai sang ky han moi' , '2023-03-22', '2024-03-22')

@@ -47,7 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtMoney = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtSavingnumber = new System.Windows.Forms.TextBox();
+            this.txtSavingNumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvSaving)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +71,7 @@
             this.btnWithdraw.TabIndex = 3;
             this.btnWithdraw.Text = "Rút tiền";
             this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // label2
             // 
@@ -102,8 +103,8 @@
             // 
             this.cbTerm.FormattingEnabled = true;
             this.cbTerm.Items.AddRange(new object[] {
-            "12 tháng với lãi suất 8%/ năm",
-            "36 tháng với lãi suất 10%/ năm (HOT)"});
+            "12 thang voi lai suat 8%/ nam",
+            "36 thang voi lai suat 10%/ nam"});
             this.cbTerm.Location = new System.Drawing.Point(202, 332);
             this.cbTerm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTerm.Name = "cbTerm";
@@ -115,9 +116,9 @@
             // 
             this.cbMethod.FormattingEnabled = true;
             this.cbMethod.Items.AddRange(new object[] {
-            "Nhận cả gốc và lãi",
-            "Nhận lãi, chuyển gốc sang kỳ hạn mới",
-            "Chuyển gốc và lãi sang kỳ hạn mới"});
+            "Nhan ca goc va lai",
+            "Nhan lai, chuyen ngoc sang ky han moi",
+            "Chuyen goc va lai sang ky han moi"});
             this.cbMethod.Location = new System.Drawing.Point(202, 394);
             this.cbMethod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbMethod.Name = "cbMethod";
@@ -235,20 +236,21 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Sổ tiết kiệm số: ";
             // 
-            // txtSavingnumber
+            // txtSavingNumber
             // 
-            this.txtSavingnumber.Location = new System.Drawing.Point(202, 137);
-            this.txtSavingnumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSavingnumber.Name = "txtSavingnumber";
-            this.txtSavingnumber.Size = new System.Drawing.Size(270, 26);
-            this.txtSavingnumber.TabIndex = 21;
+            this.txtSavingNumber.Location = new System.Drawing.Point(202, 137);
+            this.txtSavingNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSavingNumber.Name = "txtSavingNumber";
+            this.txtSavingNumber.ReadOnly = true;
+            this.txtSavingNumber.Size = new System.Drawing.Size(270, 26);
+            this.txtSavingNumber.TabIndex = 21;
             // 
             // FSaving
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 671);
-            this.Controls.Add(this.txtSavingnumber);
+            this.Controls.Add(this.txtSavingNumber);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtMoney);
             this.Controls.Add(this.label7);
@@ -298,6 +300,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtMoney;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSavingnumber;
+        private System.Windows.Forms.TextBox txtSavingNumber;
     }
 }
