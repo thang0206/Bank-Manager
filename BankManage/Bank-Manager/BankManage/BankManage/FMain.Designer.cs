@@ -31,6 +31,7 @@ namespace BankManage
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.pnlFind = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.gvSTK = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFilter = new System.Windows.Forms.Button();
@@ -61,8 +62,7 @@ namespace BankManage
             this.BorrowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SavingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Trans_HisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.TransHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlFind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).BeginInit();
             this.pnlUpdate.SuspendLayout();
@@ -103,6 +103,17 @@ namespace BankManage
             this.pnlFind.Name = "pnlFind";
             this.pnlFind.Size = new System.Drawing.Size(410, 206);
             this.pnlFind.TabIndex = 6;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(239, 81);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(91, 24);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // gvSTK
             // 
@@ -317,7 +328,7 @@ namespace BankManage
             this.panel3.Location = new System.Drawing.Point(436, 11);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(687, 662);
+            this.panel3.Size = new System.Drawing.Size(557, 662);
             this.panel3.TabIndex = 7;
             // 
             // pnlOption
@@ -338,10 +349,10 @@ namespace BankManage
             this.BorrowToolStripMenuItem,
             this.CreditToolStripMenuItem,
             this.SavingToolStripMenuItem,
-            this.Trans_HisToolStripMenuItem});
+            this.TransHistoryToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(687, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(537, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -359,21 +370,21 @@ namespace BankManage
             // 
             this.WithdrawToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.WithdrawToolStripMenuItem.Name = "WithdrawToolStripMenuItem";
-            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.WithdrawToolStripMenuItem.Text = "Rút tiền";
             this.WithdrawToolStripMenuItem.Click += new System.EventHandler(this.WithdrawToolStripMenuItem_Click);
             // 
             // SendToolStripMenuItem
             // 
             this.SendToolStripMenuItem.Name = "SendToolStripMenuItem";
-            this.SendToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.SendToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.SendToolStripMenuItem.Text = "Gửi tiền";
             this.SendToolStripMenuItem.Click += new System.EventHandler(this.SendToolStripMenuItem_Click);
             // 
             // TransToolStripMenuItem
             // 
             this.TransToolStripMenuItem.Name = "TransToolStripMenuItem";
-            this.TransToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.TransToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.TransToolStripMenuItem.Text = "Chuyển khoản";
             this.TransToolStripMenuItem.Click += new System.EventHandler(this.TransToolStripMenuItem_Click);
             // 
@@ -398,23 +409,12 @@ namespace BankManage
             this.SavingToolStripMenuItem.Text = "Tài khoản tiết kiệm";
             this.SavingToolStripMenuItem.Click += new System.EventHandler(this.SavingToolStripMenuItem_Click);
             // 
-            // Trans_HisToolStripMenuItem
+            // TransHistoryToolStripMenuItem
             // 
-            this.Trans_HisToolStripMenuItem.Name = "Trans_HisToolStripMenuItem";
-            this.Trans_HisToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
-            this.Trans_HisToolStripMenuItem.Text = "Xem lịch sử giao dịch";
-            this.Trans_HisToolStripMenuItem.Click += new System.EventHandler(this.Trans_HisToolStripMenuItem_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(239, 81);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(91, 24);
-            this.btnCancel.TabIndex = 13;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.TransHistoryToolStripMenuItem.Name = "TransHistoryToolStripMenuItem";
+            this.TransHistoryToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
+            this.TransHistoryToolStripMenuItem.Text = "Xem lịch sử giao dịch";
+            this.TransHistoryToolStripMenuItem.Click += new System.EventHandler(this.TransHistoryToolStripMenuItem_Click);
             // 
             // FMain
             // 
@@ -461,7 +461,7 @@ namespace BankManage
         private System.Windows.Forms.ToolStripMenuItem TransToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BorrowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SavingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem Trans_HisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TransHistoryToolStripMenuItem;
         private System.Windows.Forms.Panel pnlOption;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFilter;

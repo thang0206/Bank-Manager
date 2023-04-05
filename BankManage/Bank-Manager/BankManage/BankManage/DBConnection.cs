@@ -40,7 +40,6 @@ namespace BankManage
                 SqlCommand cmd = new SqlCommand(SqlStr, conn);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    
                 }
             }
             catch (Exception exc)

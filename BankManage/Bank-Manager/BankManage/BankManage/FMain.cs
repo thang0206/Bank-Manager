@@ -44,18 +44,9 @@ namespace BankManage
             ClearInfomation();
             
         }
-        private void ShowFormOnPanel(Form form)
-        {
-            form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            pnlOption.Controls.Add(form);
-            form.Dock = DockStyle.Fill;
-            form.Show();
-        }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            // 156456789012
             LoadCustomerData("");
             bool isShowGvCustomer = false;
             for (int i = 0; i < gvSTK.Rows.Count - 1; i++)
@@ -73,7 +64,6 @@ namespace BankManage
             {
                 btnUpdate.Enabled = true;
                 btnCreate.Enabled = false;
-                menuStrip1.Enabled = true;
                 txtSTK.Text = gvSTK.Rows[0].Cells["STK"].Value.ToString() ?? "";
                 txtID.Text = gvSTK.Rows[0].Cells["CitizenId"].Value.ToString() ?? "";
             }
@@ -84,9 +74,47 @@ namespace BankManage
                 btnCreate.Enabled = true;
                 btnUpdate.Enabled = false;
                 menuStrip1.Enabled = false;
+                txtID.Text = txtFilter.Text;
             }
         }
-        private void Trans_HisToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Customer updatedCustomer = new Customer(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
+            updatedCustomer.UpdatedAt = DateTime.Now;
+            if (customerDAO.ValidateFormCreate(updatedCustomer))
+                MessageBox.Show("Khong duoc de trong");
+            else
+            {
+                customerDAO.Update(updatedCustomer);
+                LoadCustomerData($" WHERE CitizenId = '{txtFilter.Text}'");
+                ClearInfomation();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Customer deletetedCustomer = new Customer(txtSTK.Text);
+            customerDAO.Delete(deletetedCustomer);
+            LoadCustomerData($" WHERE CitizenId = '{txtFilter.Text}'");
+            if (gvSTK.Rows.Count - 1 == 0)
+                gvSTK.Visible = false;
+            ClearInfomation();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            gvSTK.Visible = false;
+            menuStrip1.Enabled = false;
+            pnlOption.Visible = false;
+            btnCreate.Enabled = true;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+            txtFilter.Clear();
+            ClearInfomation();
+        }
+
+        private void TransHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
             FHistory fHistory = new FHistory(txtSTK.Text);
@@ -120,41 +148,10 @@ namespace BankManage
         {
             DataGrid dataGrid = new DataGrid();
             dataGrid.DataSource = dBConnection.Load("Customer");
-            DataTable dt = (DataTable)dataGrid.DataSource;
+            DataTable datatable = (DataTable)dataGrid.DataSource;
             pnlOption.Controls.Clear();
-            FTrans fTrans = new FTrans(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), DateTime.Now, dt);
+            FTrans fTrans = new FTrans(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text), datatable);
             ShowFormOnPanel(fTrans);
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            Customer updatedCustomer = new Customer(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtPNum.Text));
-            updatedCustomer.UpdatedAt = DateTime.Now;
-            if (customerDAO.ValidateFormCreate(updatedCustomer))
-                MessageBox.Show("Khong duoc de trong");
-            else
-            {
-                customerDAO.Update(updatedCustomer);
-                LoadCustomerData($" WHERE CitizenId = '{txtFilter.Text}'");
-                ClearInfomation();
-            }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            Customer deletetedCustomer = new Customer(txtSTK.Text);
-            customerDAO.Delete(deletetedCustomer);
-            LoadCustomerData($" WHERE CitizenId = '{txtFilter.Text}'");
-            if (gvSTK.Rows.Count - 1 == 0)
-                gvSTK.Visible = false;
-            ClearInfomation();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            gvSTK.Visible = false;
-            txtFilter.Clear();
-            ClearInfomation();
         }
 
         private void CreditToolStripMenuItem_Click(object sender, EventArgs e)
@@ -174,6 +171,17 @@ namespace BankManage
             txtID.Text = gvSTK.Rows[numrow].Cells["CitizenId"].Value.ToString();
             txtPNum.Text = gvSTK.Rows[numrow].Cells["PhoneNum"].Value.ToString();
             txtMoney.Text = gvSTK.Rows[numrow].Cells["Money"].Value.ToString();
+            menuStrip1.Enabled = true;
+            pnlOption.Visible = true;
+        }
+
+        private void ShowFormOnPanel(Form form)
+        {
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            pnlOption.Controls.Add(form);
+            form.Dock = DockStyle.Fill;
+            form.Show();
         }
 
         private void ClearInfomation()

@@ -13,69 +13,73 @@ namespace BankManage
 {
     public partial class FTrans : Form
     {
-        TransactionDAO ts = new TransactionDAO();
-        CustomerDAO cs = new CustomerDAO();
-        Customer cs1, cs2;
-        DataTable dt;
+        TransactionDAO transactionDAO = new TransactionDAO();
+        CustomerDAO customerDAO = new CustomerDAO();
+        Customer customerSend, customerReceive;
+        DataTable datatable;
 
-        public FTrans(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DateTime Now, DataTable table)
+        public FTrans(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DataTable table)
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
-            cs1 = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
-            dt = table;
+            customerSend = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
+            datatable = table;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            int remainMoneyAfterWithDraw = Convert.ToInt32(txtMoneyRemain.Text) - Convert.ToInt32(txtMoneySend.Text);
-            
-            if (txtSTK.Text != "")
+            if (txtMoneySend.Text != "" && txtSTK.Text != "")
             {
-                btnCheck.Enabled = true;
-            }
+                int remainMoneyAfterWithDraw = Convert.ToInt32(txtMoneyRemain.Text) - Convert.ToInt32(txtMoneySend.Text);
 
-            if (remainMoneyAfterWithDraw < 0)
-            {
-                MessageBox.Show("Số dư tài khoản không đủ để chuyển khoản");
-            }
-            else if (remainMoneyAfterWithDraw < 50000)
-            {
-                MessageBox.Show("Số dư tài khoản của bạn phải có ít nhất 50000");
+                if (txtSTK.Text != "")
+                {
+                    btnCheck.Enabled = true;
+                }
+
+                if (remainMoneyAfterWithDraw < 0)
+                {
+                    MessageBox.Show("Số dư tài khoản không đủ để chuyển khoản");
+                }
+                else if (remainMoneyAfterWithDraw < 50000)
+                {
+                    MessageBox.Show("Số dư tài khoản của bạn phải có ít nhất 50000");
+                }
+                else
+                {
+                    txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
+                    MessageBox.Show($"Bạn đã chuyển khoản cho tài khoản {txtSTK.Text} thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
+
+                    customerSend.Money = Convert.ToInt32(txtMoneyRemain.Text);
+                    customerDAO.UpdateMoney(customerSend);
+
+                    for (int i = 0; i < datatable.Rows.Count - 1; i++)
+                    {
+                        string STK = datatable.Rows[i][0].ToString();
+                        if (txtSTK.Text == STK)
+                        {
+                            customerReceive = new Customer(STK, "", "", DateTime.Now, "", "", Convert.ToInt32(datatable.Rows[i][6].ToString()));
+                        }
+                    }
+                    customerReceive.Money = Convert.ToInt32(customerReceive.Money + Convert.ToInt32(txtMoneySend.Text));
+                    customerDAO.UpdateMoney(customerReceive);
+
+                    Random random = new Random();
+                    string TransCode = "CK" + random.NextString(8);
+
+                    Transaction transactionSend = new Transaction(customerSend.Stk, TransCode, "Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerReceive.Stk);
+                    transactionDAO.Create(transactionSend);
+                    Transaction transactionReceive = new Transaction(customerReceive.Stk, TransCode, "Nhan tien Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerSend.Stk);
+                    transactionDAO.Create(transactionReceive);
+
+                    txtMoneySend.Clear();
+                }
             }
             else
             {
-                txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
-                MessageBox.Show($"Bạn đã chuyển khoản cho tài khoản {txtSTK.Text} thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
-                
-                cs1.Money = Convert.ToInt32(txtMoneyRemain.Text);
-                cs.UpdateMoney(cs1);
-
-                for (int i = 0; i < dt.Rows.Count - 1; i++)
-                {
-                    string STK = dt.Rows[i][0].ToString();
-                    if (txtSTK.Text == STK)
-                    {
-                        cs2 = new Customer(STK, "", "", DateTime.Now, "", "", Convert.ToInt32(dt.Rows[i][6].ToString()));
-                    }
-                }
-                cs2.Money = Convert.ToInt32(cs2.Money + Convert.ToInt32(txtMoneySend.Text));
-                cs.UpdateMoney(cs2);
-
-                Random random = new Random();
-                string GD = "CK" + random.Next().ToString();
-
-                Transaction transaction = new Transaction(cs1.Stk, GD, "Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, cs2.Stk);
-                ts.Create(transaction);
-
-                txtMoneySend.Clear();
+                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin");
+                btnOK.Enabled = false;
             }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            txtMoneySend.Clear();
-            txtSTK.Clear();
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -83,19 +87,19 @@ namespace BankManage
             lblNote.Visible = true;
             bool flag = false;
 
-            if (txtSTK.Text == cs1.Stk)
+            if (txtSTK.Text == customerSend.Stk)
             {
                 lblNote.Text = "Người nhận không hợp lệ";
                 btnOK.Enabled = false;
             }
             else
             {
-                for (int i = 0; i < dt.Rows.Count - 1; i++)
+                for (int i = 0; i < datatable.Rows.Count; i++)
                 {
-                    string STK = dt.Rows[i][0].ToString();
+                    string STK = datatable.Rows[i][0].ToString();
                     if (txtSTK.Text == STK)
                     {
-                        lblNote.Text = dt.Rows[i][1].ToString();
+                        lblNote.Text = datatable.Rows[i][1].ToString();
                         btnOK.Enabled = true;
                         flag = true;
                     }
@@ -106,12 +110,14 @@ namespace BankManage
                     btnOK.Enabled = false;
                 }
             }
+        }
 
-            if (txtMoneySend.Text == "" || txtSTK.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin");
-                btnOK.Enabled = false;
-            }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtMoneySend.Clear();
+            txtNote.Clear();
+            txtSTK.Clear();
+            lblNote.Text = "";
         }
     }
 }
