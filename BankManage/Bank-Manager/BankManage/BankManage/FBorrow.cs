@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,14 +18,9 @@ namespace BankManage
         {
             InitializeComponent();
             txtMoneyRemain.Text = Money.ToString();
+            txtID.Text = CitizenId.ToString();
             Customer temp = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
         }
-
-        private void FBorrow_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             bool isMonthBorrow = cbTerm.Text.Contains("12");
@@ -45,15 +40,48 @@ namespace BankManage
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMoneyBorrow.Text) || string.IsNullOrEmpty(cbTypeOfCredit.Text) || string.IsNullOrEmpty(cbTerm.Text))
-                MessageBox.Show("Mời bạn nhập thông tin");
+            if (Convert.ToInt32(txtMoneyBorrow.Text) > (15 * Convert.ToInt32(txtEarnings.Text)) + Convert.ToInt32(txtMoneyRemain.Text))
+            {
+                MessageBox.Show("Bạn không được phép vay, bởi vì quá mức giới hạn chi trả của bạn");
+            }
             else
-                MessageBox.Show("Chúc mừng bạn đã được vay với số tiền: " + txtMoneyBorrow.Text + "\nKỳ hạn: " + cbTerm.Text + "\nVui lòng thanh toán trước thời gian sau: " + dtpBack.Value.ToString());
-        }
+            {
+                MessageBox.Show("Chúc mừng bạn đã vay thành công với số tiền: " + txtMoneyBorrow.Text + "\nKỳ hạn: " + cbTerm.Text + "\nVui lòng thanh toán trước " + dtpBack.Value.Date);
+            }
+            }
 
         private void cbTypeOfCredit_SelectedIndexChanged(object sender, EventArgs e)
         {
             clbCollateral.Enabled = cbTypeOfCredit.SelectedItem.ToString() == "Vay thế chấp";
         }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            lblNote.Visible = true;
+            if (txtID.Text == "123456789012")
+            {
+                lblNote.Text = "KHÔNG CÓ NỢ XẤU";
+                btnSubmit.Enabled = true;
+            }
+            else
+            {
+                lblNote.Text = "NỢ XẤU";
+                btnSubmit.Enabled = false;
+            }
+        }
+
+        private void FBorrow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtEarnings.Clear();
+            txtMoneyBorrow.Clear();           
+        }
     }
+
+    
 }
+

@@ -119,5 +119,10 @@ namespace BankManage
             txtSTK.Clear();
             lblNote.Text = "";
         }
+
+        private void FTrans_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

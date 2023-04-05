@@ -47,31 +47,35 @@
             // dtpSend
             // 
             this.dtpSend.Enabled = false;
-            this.dtpSend.Location = new System.Drawing.Point(139, 221);
+            this.dtpSend.Location = new System.Drawing.Point(156, 276);
+            this.dtpSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpSend.Name = "dtpSend";
-            this.dtpSend.Size = new System.Drawing.Size(200, 22);
+            this.dtpSend.Size = new System.Drawing.Size(224, 26);
             this.dtpSend.TabIndex = 29;
             // 
             // txtMoneySend
             // 
-            this.txtMoneySend.Location = new System.Drawing.Point(139, 74);
+            this.txtMoneySend.Location = new System.Drawing.Point(156, 92);
+            this.txtMoneySend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneySend.Name = "txtMoneySend";
-            this.txtMoneySend.Size = new System.Drawing.Size(200, 22);
+            this.txtMoneySend.Size = new System.Drawing.Size(224, 26);
             this.txtMoneySend.TabIndex = 28;
             // 
             // txtMoneyRemain
             // 
-            this.txtMoneyRemain.Location = new System.Drawing.Point(139, 15);
+            this.txtMoneyRemain.Location = new System.Drawing.Point(156, 19);
+            this.txtMoneyRemain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneyRemain.Name = "txtMoneyRemain";
             this.txtMoneyRemain.ReadOnly = true;
-            this.txtMoneyRemain.Size = new System.Drawing.Size(200, 22);
+            this.txtMoneyRemain.Size = new System.Drawing.Size(224, 26);
             this.txtMoneyRemain.TabIndex = 27;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(263, 381);
+            this.btnCancel.Location = new System.Drawing.Point(296, 476);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(76, 38);
+            this.btnCancel.Size = new System.Drawing.Size(86, 48);
             this.btnCancel.TabIndex = 25;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // btnOK
             // 
             this.btnOK.Enabled = false;
-            this.btnOK.Location = new System.Drawing.Point(139, 381);
+            this.btnOK.Location = new System.Drawing.Point(156, 476);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(76, 38);
+            this.btnOK.Size = new System.Drawing.Size(86, 48);
             this.btnOK.TabIndex = 24;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -92,9 +97,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 221);
+            this.label4.Location = new System.Drawing.Point(25, 276);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 17);
+            this.label4.Size = new System.Drawing.Size(104, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "Ngày gửi tiền:";
             // 
@@ -102,9 +107,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 77);
+            this.label2.Location = new System.Drawing.Point(25, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 17);
+            this.label2.Size = new System.Drawing.Size(132, 20);
             this.label2.TabIndex = 21;
             this.label2.Text = "Số tiền muốn gửi:";
             // 
@@ -112,26 +117,27 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 21);
+            this.label1.Location = new System.Drawing.Point(25, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 17);
+            this.label1.Size = new System.Drawing.Size(110, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "Số dư hiện tại:";
             // 
             // txtSTK
             // 
-            this.txtSTK.Location = new System.Drawing.Point(139, 130);
+            this.txtSTK.Location = new System.Drawing.Point(156, 162);
+            this.txtSTK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSTK.Name = "txtSTK";
-            this.txtSTK.Size = new System.Drawing.Size(200, 22);
+            this.txtSTK.Size = new System.Drawing.Size(224, 26);
             this.txtSTK.TabIndex = 33;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(22, 272);
+            this.label5.Location = new System.Drawing.Point(25, 340);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 17);
+            this.label5.Size = new System.Drawing.Size(68, 20);
             this.label5.TabIndex = 31;
             this.label5.Text = "Ghi chú:";
             // 
@@ -139,25 +145,27 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 136);
+            this.label6.Location = new System.Drawing.Point(25, 170);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 17);
+            this.label6.Size = new System.Drawing.Size(126, 20);
             this.label6.TabIndex = 30;
             this.label6.Text = "STK người nhận:";
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(139, 272);
+            this.txtNote.Location = new System.Drawing.Point(156, 340);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(200, 96);
+            this.txtNote.Size = new System.Drawing.Size(224, 119);
             this.txtNote.TabIndex = 34;
             this.txtNote.Text = "";
             // 
             // btnCheck
             // 
-            this.btnCheck.Location = new System.Drawing.Point(354, 128);
+            this.btnCheck.Location = new System.Drawing.Point(398, 160);
+            this.btnCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(76, 26);
+            this.btnCheck.Size = new System.Drawing.Size(86, 32);
             this.btnCheck.TabIndex = 35;
             this.btnCheck.Text = "Kiểm tra";
             this.btnCheck.UseVisualStyleBackColor = true;
@@ -166,17 +174,17 @@
             // lblNote
             // 
             this.lblNote.AutoSize = true;
-            this.lblNote.Location = new System.Drawing.Point(136, 179);
+            this.lblNote.Location = new System.Drawing.Point(153, 224);
             this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(0, 16);
+            this.lblNote.Size = new System.Drawing.Size(0, 20);
             this.lblNote.TabIndex = 36;
             this.lblNote.Visible = false;
             // 
             // FTrans
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 436);
+            this.ClientSize = new System.Drawing.Size(510, 545);
             this.Controls.Add(this.lblNote);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.txtNote);
@@ -191,8 +199,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FTrans";
             this.Text = "FTrans";
+            this.Load += new System.EventHandler(this.FTrans_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

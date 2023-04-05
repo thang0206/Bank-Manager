@@ -44,12 +44,18 @@
             this.txtMoneyBorrow = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.clbCollateral = new System.Windows.Forms.CheckedListBox();
+            this.btnCheck = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtEarnings = new System.Windows.Forms.TextBox();
+            this.lblNote = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtpAllow
             // 
             this.dtpAllow.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpAllow.Location = new System.Drawing.Point(159, 380);
+            this.dtpAllow.Location = new System.Drawing.Point(201, 453);
             this.dtpAllow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpAllow.Name = "dtpAllow";
             this.dtpAllow.Size = new System.Drawing.Size(277, 26);
@@ -58,17 +64,18 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(297, 496);
+            this.btnCancel.Location = new System.Drawing.Point(290, 554);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 48);
             this.btnCancel.TabIndex = 25;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(159, 496);
+            this.btnSubmit.Location = new System.Drawing.Point(104, 554);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(86, 48);
@@ -81,7 +88,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 386);
+            this.label4.Location = new System.Drawing.Point(12, 459);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 20);
             this.label4.TabIndex = 23;
@@ -91,7 +98,7 @@
             // 
             this.dtpBack.Enabled = false;
             this.dtpBack.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBack.Location = new System.Drawing.Point(159, 444);
+            this.dtpBack.Location = new System.Drawing.Point(201, 509);
             this.dtpBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpBack.Name = "dtpBack";
             this.dtpBack.Size = new System.Drawing.Size(277, 26);
@@ -101,7 +108,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 450);
+            this.label5.Location = new System.Drawing.Point(12, 514);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 20);
             this.label5.TabIndex = 30;
@@ -111,7 +118,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 162);
+            this.label6.Location = new System.Drawing.Point(12, 230);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 20);
             this.label6.TabIndex = 32;
@@ -123,7 +130,7 @@
             this.cbTypeOfCredit.Items.AddRange(new object[] {
             "Vay thế chấp",
             "Vay không thế chấp"});
-            this.cbTypeOfCredit.Location = new System.Drawing.Point(159, 154);
+            this.cbTypeOfCredit.Location = new System.Drawing.Point(201, 227);
             this.cbTypeOfCredit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTypeOfCredit.Name = "cbTypeOfCredit";
             this.cbTypeOfCredit.Size = new System.Drawing.Size(277, 28);
@@ -134,7 +141,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 328);
+            this.label7.Location = new System.Drawing.Point(12, 401);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 20);
             this.label7.TabIndex = 36;
@@ -146,7 +153,7 @@
             this.cbTerm.Items.AddRange(new object[] {
             "12 tháng, lãi suất 10%/năm",
             "8 tháng, lãi suất 6%/năm"});
-            this.cbTerm.Location = new System.Drawing.Point(159, 320);
+            this.cbTerm.Location = new System.Drawing.Point(201, 393);
             this.cbTerm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTerm.Name = "cbTerm";
             this.cbTerm.Size = new System.Drawing.Size(277, 28);
@@ -167,7 +174,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 89);
+            this.label2.Location = new System.Drawing.Point(12, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 20);
             this.label2.TabIndex = 21;
@@ -175,17 +182,16 @@
             // 
             // txtMoneyRemain
             // 
-            this.txtMoneyRemain.Location = new System.Drawing.Point(159, 19);
+            this.txtMoneyRemain.Location = new System.Drawing.Point(201, 19);
             this.txtMoneyRemain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneyRemain.Name = "txtMoneyRemain";
             this.txtMoneyRemain.ReadOnly = true;
             this.txtMoneyRemain.Size = new System.Drawing.Size(277, 26);
             this.txtMoneyRemain.TabIndex = 27;
-            this.txtMoneyRemain.Text = "68000000";
             // 
             // txtMoneyBorrow
             // 
-            this.txtMoneyBorrow.Location = new System.Drawing.Point(159, 85);
+            this.txtMoneyBorrow.Location = new System.Drawing.Point(201, 136);
             this.txtMoneyBorrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneyBorrow.Name = "txtMoneyBorrow";
             this.txtMoneyBorrow.Size = new System.Drawing.Size(277, 26);
@@ -195,7 +201,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 206);
+            this.label3.Location = new System.Drawing.Point(12, 279);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 20);
             this.label3.TabIndex = 38;
@@ -210,16 +216,77 @@
             "Cà vẹt xe",
             "Giấy phép xây dựng",
             "Giấy chứng nhận hộ kinh doanh"});
-            this.clbCollateral.Location = new System.Drawing.Point(159, 206);
+            this.clbCollateral.Location = new System.Drawing.Point(201, 279);
             this.clbCollateral.Name = "clbCollateral";
             this.clbCollateral.Size = new System.Drawing.Size(277, 96);
             this.clbCollateral.TabIndex = 39;
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(201, 187);
+            this.btnCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(129, 32);
+            this.btnCheck.TabIndex = 40;
+            this.btnCheck.Text = "Kiểm tra nợ xấu";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(12, 99);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(169, 20);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "Thu nhập hàng tháng: ";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(201, 53);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(277, 26);
+            this.txtID.TabIndex = 58;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 57);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(109, 20);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "CMND/CCCD:";
+            // 
+            // txtEarnings
+            // 
+            this.txtEarnings.Location = new System.Drawing.Point(201, 93);
+            this.txtEarnings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEarnings.Name = "txtEarnings";
+            this.txtEarnings.Size = new System.Drawing.Size(277, 26);
+            this.txtEarnings.TabIndex = 59;
+            // 
+            // lblNote
+            // 
+            this.lblNote.AutoSize = true;
+            this.lblNote.Location = new System.Drawing.Point(351, 196);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Size = new System.Drawing.Size(0, 20);
+            this.lblNote.TabIndex = 60;
             // 
             // FBorrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 568);
+            this.ClientSize = new System.Drawing.Size(519, 625);
+            this.Controls.Add(this.lblNote);
+            this.Controls.Add(this.txtEarnings);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.clbCollateral);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbTerm);
@@ -263,5 +330,11 @@
         private System.Windows.Forms.TextBox txtMoneyBorrow;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckedListBox clbCollateral;
+        private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtEarnings;
+        private System.Windows.Forms.Label lblNote;
     }
 }
