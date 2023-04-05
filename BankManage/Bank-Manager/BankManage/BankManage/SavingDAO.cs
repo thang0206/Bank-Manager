@@ -18,7 +18,7 @@ namespace BankManage
         public void Delete(Saving saving)
         {
             string sqlStr = string.Format("DELETE FROM Saving where Maso = '{0}'", saving.MaSo);
-            DbConnection.Execute(sqlStr, "Delete");
+            DbConnection.Execute(sqlStr);
         }
     }
 }
