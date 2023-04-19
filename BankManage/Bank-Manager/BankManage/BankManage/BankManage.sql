@@ -55,3 +55,19 @@ CREATE TABLE Saving (
 )
 INSERT INTO Saving(STK, MaSo, Money, KyHan, PhuongThucDaoHan, NgayGui, NgayDaoHan) 
 VALUES ('1234567891', '1043', '250000' , '12 thang voi lai suat 8%/ nam', 'Chuyen goc va lai sang ky han moi' , '2023-03-22', '2024-03-22')
+
+CREATE TABLE Borrow(
+	Money int,
+	CitizenID char(12) PRIMARY KEY,
+	Salary int,
+	MoneyBorrow int,
+	KieuTinDung char(255),
+	TaiSanTheChap char(255),
+	KyHan char(255),
+	NgayChoVay date,
+	NgayHoanTien date,
+)
+INSERT INTO Borrow(Money, CitizenID, Salary, MoneyBorrow, KieuTinDung, TaiSanTheChap, KyHan, NgayChoVay, NgayHoanTien) 
+VALUES ('250000', '123456789012', '300000' ,'200000' ,'Vay khong the chap', '', '12 thang, lai suat 10%/nam' , '2023-03-22', '2024-03-22')
+
+SELECT * FROM Borrow WHERE CitizenID = '123456789123'

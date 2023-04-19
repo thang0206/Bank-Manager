@@ -199,5 +199,7 @@ namespace BankManage
             Random random = new Random();
             return random.NextString(10);
         }
+
+        
     }
 }
