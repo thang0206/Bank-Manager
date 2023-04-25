@@ -328,14 +328,14 @@ namespace BankManage
             this.panel3.Location = new System.Drawing.Point(491, 11);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(687, 672);
+            this.panel3.Size = new System.Drawing.Size(631, 672);
             this.panel3.TabIndex = 7;
             // 
             // pnlOption
             // 
             this.pnlOption.Location = new System.Drawing.Point(18, 35);
             this.pnlOption.Name = "pnlOption";
-            this.pnlOption.Size = new System.Drawing.Size(521, 634);
+            this.pnlOption.Size = new System.Drawing.Size(610, 634);
             this.pnlOption.TabIndex = 1;
             // 
             // menuStrip1
@@ -352,7 +352,7 @@ namespace BankManage
             this.TransHistoryToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(687, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(537, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -370,21 +370,21 @@ namespace BankManage
             // 
             this.WithdrawToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.WithdrawToolStripMenuItem.Name = "WithdrawToolStripMenuItem";
-            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.WithdrawToolStripMenuItem.Text = "Rút tiền";
             this.WithdrawToolStripMenuItem.Click += new System.EventHandler(this.WithdrawToolStripMenuItem_Click);
             // 
             // SendToolStripMenuItem
             // 
             this.SendToolStripMenuItem.Name = "SendToolStripMenuItem";
-            this.SendToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.SendToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.SendToolStripMenuItem.Text = "Gửi tiền";
             this.SendToolStripMenuItem.Click += new System.EventHandler(this.SendToolStripMenuItem_Click);
             // 
             // TransToolStripMenuItem
             // 
             this.TransToolStripMenuItem.Name = "TransToolStripMenuItem";
-            this.TransToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.TransToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.TransToolStripMenuItem.Text = "Chuyển khoản";
             this.TransToolStripMenuItem.Click += new System.EventHandler(this.TransToolStripMenuItem_Click);
             // 
@@ -420,7 +420,7 @@ namespace BankManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 702);
+            this.ClientSize = new System.Drawing.Size(1162, 702);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlUpdate);
             this.Controls.Add(this.pnlFind);

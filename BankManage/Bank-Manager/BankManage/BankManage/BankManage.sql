@@ -1,4 +1,4 @@
-﻿CREATE DATABASE BankManageDM
+CREATE DATABASE BankManageDM
 
 Create Table Customer (
 	STK char(10) PRIMARY KEY,
@@ -70,4 +70,14 @@ CREATE TABLE Borrow(
 INSERT INTO Borrow(Money, CitizenID, Salary, MoneyBorrow, KieuTinDung, TaiSanTheChap, KyHan, NgayChoVay, NgayHoanTien) 
 VALUES ('250000', '123456789012', '300000' ,'200000' ,'Vay khong the chap', '', '12 thang, lai suat 10%/nam' , '2023-03-22', '2024-03-22')
 
-SELECT * FROM Borrow WHERE CitizenID = '123456789123'
+CREATE TABLE Credit (
+	STK char(10),
+	MaThe char(10) PRIMARY KEY,
+	HanMuc int NOT NULL,
+	UsedMoney int,
+	Anh image NOT NULL,
+	Method varchar(255),
+	NgayMo Date,
+	NgayDaoHan Date,
+	FOREIGN KEY (STK) REFERENCES Customer(STK)
+)
