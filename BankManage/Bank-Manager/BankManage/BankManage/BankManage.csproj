@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Borrow.cs" />
+    <Compile Include="BorrowBase.cs" />
+    <Compile Include="BorrowDAO.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerDAO.cs" />
     <Compile Include="DBConnection.cs" />
