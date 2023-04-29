@@ -13,7 +13,6 @@ namespace BankManage
         private string id;
         private int hanmuc;
         private int usedmoney;
-        private string picture;
         private string method;
         private DateTime ngaymo;
         private DateTime ngaydaohan;
@@ -22,18 +21,16 @@ namespace BankManage
         public string ID { get { return id; } set { id = value; } }
         public int HanMuc { get { return hanmuc; } set { hanmuc = value; } }
         public int UsedMoney { get { return usedmoney; } set { usedmoney = value; } }
-        public string Picture { get { return picture; } set { picture = value; } }
         public string Method { get { return method; } set { method = value; } }
         public DateTime NgayMo { get { return ngaymo; } set { ngaymo = value; } }
         public DateTime NgayDaoHan { get { return ngaydaohan; } set { ngaydaohan = value; } }
 
-        public Credit(string stk, string id, int hanmuc, int usedmoney, string picture, string method, DateTime ngaymo, DateTime ngaydaohan)
+        public Credit(string stk, string id, int hanmuc, int usedmoney, string method, DateTime ngaymo, DateTime ngaydaohan)
         {
             this.stk = stk;
             this.id = id;
             this.hanmuc = hanmuc;
             this.usedmoney = usedmoney;
-            this.picture = picture;
             Method = method;
             this.ngaymo = ngaymo;
             this.ngaydaohan = ngaydaohan;
@@ -41,6 +38,10 @@ namespace BankManage
         public Credit(string stk)
         {
             this.stk = stk;
+        }
+        public Credit(string stk, string id)
+        {
+            this.id = id;
         }
     }
 }

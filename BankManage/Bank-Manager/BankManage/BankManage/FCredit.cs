@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
+using System.Data.Odbc;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace BankManage
         Customer customer;
         DBConnection DbConnection = new DBConnection();
         CreditDAO creditDAO = new CreditDAO();
+        Credit credit;
         
         public FCredit(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money)
         {
@@ -27,7 +29,48 @@ namespace BankManage
 
         private void FCredit_Load(object sender, EventArgs e)
         {
-            LoadCustomerData($" WHERE STK = '{customer.Stk}'");
+            credit = new Credit(customer.Stk);
+
+            credit = creditDAO.Get(credit);
+
+            txtSothe.Text = credit.ID;
+            txtHanmuc.Text = credit.HanMuc.ToString();
+            txtMoneyUsed.Text = credit.UsedMoney.ToString();
+
+            if (DateTime.Now >= credit.NgayDaoHan)
+            {
+                CustomerDAO customerDAO = new CustomerDAO();
+                customer.Money = customer.Money - credit.UsedMoney;
+
+                if (customer.Money < 50000 )
+                {
+                    MessageBox.Show("Số tiền trong tài khoản gốc không đủ để trả thế chấp. Bạn sẽ bị khóa thẻ");
+                    btnDelete.Enabled = false;
+                    btnSubmit.Enabled = false;
+                }
+                else
+                {
+                    customerDAO.UpdateMoney(customer);
+                }
+            }
+
+            if (credit.UsedMoney > credit.HanMuc)
+            {
+                MessageBox.Show("Bạn đã xài quá hạn mức. Vui lòng gửi tiền vào thẻ để tiếp tục sử dụng");
+            }
+            else
+            {
+                if (txtSothe.Text == "")
+                {
+                    btnSubmit.Enabled = true;
+                    btnDelete.Enabled = false;
+                }
+                else
+                {
+                    btnDelete.Enabled = true;
+                    btnSubmit.Enabled = false;
+                }
+            }            
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -41,7 +84,7 @@ namespace BankManage
             }
             else
             {
-                Credit credit = new Credit(customer.Stk, MaThe, Convert.ToInt32(txtHanmuc.Text), 0, ConvertImageToString(pctShow.Image), cmbMethod.Text, DateTime.Now, DateTime.Now.AddMonths(1));
+                Credit credit = new Credit(customer.Stk, MaThe, Convert.ToInt32(txtHanmuc.Text), 0, cmbMethod.Text, DateTime.Now, DateTime.Now.AddMonths(1));
                 creditDAO.Create(credit);
 
                 MessageBox.Show("Chúc mừng bạn đã mở thẻ tín dụng thành công:\nSố thẻ: " + MaThe + "\nHạn mức cho phép:" + txtHanmuc.Text + "\nVui lòng thanh toán dư nợ vào ngày " + DateTime.Now.Day + " của tháng tiếp theo, nếu phát sinh giao dịch");
@@ -49,59 +92,13 @@ namespace BankManage
             FCredit_Load(sender, e);
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog() { ValidateNames = true, Multiselect = false })
-            {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    pctShow.Show();
-                    pctShow.Image = Image.FromFile(ofd.FileName);
-                }
-                if (pctShow.Image == null)
-                {
-                    MessageBox.Show("Vui long tai anh minh chung");
-                }
-                else
-                {
-                    btnSubmit.Enabled = true;
-                }
-            }
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Credit credit = new Credit(txtSothe.Text);
+            Credit credit = new Credit(customer.Stk, txtSothe.Text);
             creditDAO.Delete(credit);
             FCredit_Load(sender, e);
             btnDelete.Enabled = false;
-            pctShow.Hide();
         }
-
-        private void LoadCustomerData(string condition)
-        {
-            gvCredit.DataSource = DbConnection.Load("Credit", condition);
-        }
-
-        private void gvCredit_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            pctShow.Show();
-            int numrow = e.RowIndex;
-            txtSothe.Text = gvCredit.Rows[numrow].Cells["MaThe"].Value.ToString();
-            txtHanmuc.Text = gvCredit.Rows[numrow].Cells["HanMuc"].Value.ToString();
-            txtMoneyUsed.Text = gvCredit.Rows[numrow].Cells["UsedMoney"].Value.ToString();
-            dtpOpen.Text = gvCredit.Rows[numrow].Cells["NgayMo"].Value.ToString();
-            cmbMethod.Text = gvCredit.Rows[numrow].Cells["Method"].Value.ToString();
-            //MessageBox.Show(gvCredit.Rows[numrow].Cells["Anh"].Value.ToString());
-            //var converter = new ImageConverter();
-            //pctShow.Image = (Image)converter.ConvertFrom((byte[])gvCredit.Rows[numrow].Cells["Anh"].Value);
-            //byte[] data = (byte[])gvCredit.Rows[numrow].Cells["Anh"].Value;
-            //MemoryStream ms = new MemoryStream(data);
-            //pctShow.Image = Image.FromStream(ms);
-            pctShow.Image = ConvertStringToImage(gvCredit.Rows[numrow].Cells["Anh"].Value.ToString());
-            btnDelete.Enabled = true;
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ClearInformation();
@@ -113,41 +110,13 @@ namespace BankManage
             txtMoneyUsed.Clear();
             txtSothe.Clear();
             cmbMethod.Text = "";
-            pctShow.Hide();
         }
-        private Image ConvertStringToImage(string input)
-        {
-            try
-            {
-                byte[] imgBytes = Convert.FromBase64String(input);
-                using (MemoryStream ms = new MemoryStream(imgBytes))
-                {
-                    Image img = Image.FromStream(ms, true);
 
-                    return img;
-                }
-            }
-            catch (Exception exc)
-            {
-                return null;
-            }
-        }
-        private string ConvertImageToString(Image img)
+        private void cmbMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if (cmbMethod.Text != "")
             {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                    byte[] imgBytes = ms.ToArray();
-                    string FinalText = Convert.ToBase64String(imgBytes, 0, imgBytes.Length);
-
-                    return FinalText;
-                }
-            }
-            catch
-            {
-                return null;
+                btnSubmit.Enabled = true;
             }
         }
     }

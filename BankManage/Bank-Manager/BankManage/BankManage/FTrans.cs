@@ -16,6 +16,8 @@ namespace BankManage
         TransactionDAO transactionDAO = new TransactionDAO();
         CustomerDAO customerDAO = new CustomerDAO();
         Customer customerSend, customerReceive;
+        CreditDAO creditDAO = new CreditDAO();
+        Credit creditSend;
         DataTable datatable;
 
         public FTrans(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DataTable table)
@@ -28,52 +30,90 @@ namespace BankManage
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (txtSTK.Text != "")
+            {
+                btnCheck.Enabled = true;
+            }
+
             if (txtMoneySend.Text != "" && txtSTK.Text != "")
             {
-                int remainMoneyAfterWithDraw = Convert.ToInt32(txtMoneyRemain.Text) - Convert.ToInt32(txtMoneySend.Text);
+                if (cmbMethod.SelectedIndex == 0)
+                {
+                    int remainMoneyAfterWithDraw = Convert.ToInt32(txtMoneyRemain.Text) - Convert.ToInt32(txtMoneySend.Text);
 
-                if (txtSTK.Text != "")
-                {
-                    btnCheck.Enabled = true;
-                }
+                    if (remainMoneyAfterWithDraw < 0)
+                    {
+                        MessageBox.Show("Số dư tài khoản không đủ để chuyển khoản");
+                    }
+                    else if (remainMoneyAfterWithDraw < 50000)
+                    {
+                        MessageBox.Show("Số dư tài khoản của bạn phải có ít nhất 50000");
+                    }
+                    else
+                    {
+                        txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
+                        MessageBox.Show($"Bạn đã chuyển khoản cho tài khoản {txtSTK.Text} thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
 
-                if (remainMoneyAfterWithDraw < 0)
-                {
-                    MessageBox.Show("Số dư tài khoản không đủ để chuyển khoản");
-                }
-                else if (remainMoneyAfterWithDraw < 50000)
-                {
-                    MessageBox.Show("Số dư tài khoản của bạn phải có ít nhất 50000");
+                        customerSend.Money = Convert.ToInt32(txtMoneyRemain.Text);
+                        customerDAO.UpdateMoney(customerSend);
+
+                        for (int i = 0; i < datatable.Rows.Count - 1; i++)
+                        {
+                            string STK = datatable.Rows[i][0].ToString();
+                            if (txtSTK.Text == STK)
+                            {
+                                customerReceive = new Customer(STK, "", "", DateTime.Now, "", "", Convert.ToInt32(datatable.Rows[i][6].ToString()));
+                            }
+                        }
+                        customerReceive.Money = Convert.ToInt32(customerReceive.Money + Convert.ToInt32(txtMoneySend.Text));
+                        customerDAO.UpdateMoney(customerReceive);
+
+                        Random random = new Random();
+                        string TransCode = "CK" + random.NextString(8);
+
+                        Transaction transactionSend = new Transaction(customerSend.Stk, TransCode, "Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerReceive.Stk, txtNote.Text);
+                        transactionDAO.Create(transactionSend);
+                        Transaction transactionReceive = new Transaction(customerReceive.Stk, TransCode, "Nhan tien Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerSend.Stk, txtNote.Text);
+                        transactionDAO.Create(transactionReceive);
+                    }
                 }
                 else
                 {
-                    txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
-                    MessageBox.Show($"Bạn đã chuyển khoản cho tài khoản {txtSTK.Text} thành công. Số dư còn lại của bạn {remainMoneyAfterWithDraw}");
+                    int remainMoneyAfterWithDraw = Convert.ToInt32(txtMoneyRemain.Text) + Convert.ToInt32(txtMoneySend.Text);
 
-                    customerSend.Money = Convert.ToInt32(txtMoneyRemain.Text);
-                    customerDAO.UpdateMoney(customerSend);
-
-                    for (int i = 0; i < datatable.Rows.Count - 1; i++)
+                    if (remainMoneyAfterWithDraw > creditSend.HanMuc)
                     {
-                        string STK = datatable.Rows[i][0].ToString();
-                        if (txtSTK.Text == STK)
-                        {
-                            customerReceive = new Customer(STK, "", "", DateTime.Now, "", "", Convert.ToInt32(datatable.Rows[i][6].ToString()));
-                        }
+                        MessageBox.Show("Bạn đã xài thẻ tín dụng quá hạn mức");
                     }
-                    customerReceive.Money = Convert.ToInt32(customerReceive.Money + Convert.ToInt32(txtMoneySend.Text));
-                    customerDAO.UpdateMoney(customerReceive);
+                    else
+                    {
+                        txtMoneyRemain.Text = remainMoneyAfterWithDraw.ToString();
+                        MessageBox.Show($"Bạn đã chuyển khoản cho tài khoản {txtSTK.Text} thành công. Số tiền trong thẻ tín dụng đã xài của bạn {remainMoneyAfterWithDraw}");
 
-                    Random random = new Random();
-                    string TransCode = "CK" + random.NextString(8);
+                        creditSend.UsedMoney = Convert.ToInt32(txtMoneyRemain.Text);
+                        creditDAO.Update(creditSend);
 
-                    Transaction transactionSend = new Transaction(customerSend.Stk, TransCode, "Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerReceive.Stk);
-                    transactionDAO.Create(transactionSend);
-                    Transaction transactionReceive = new Transaction(customerReceive.Stk, TransCode, "Nhan tien Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerSend.Stk);
-                    transactionDAO.Create(transactionReceive);
+                        for (int i = 0; i < datatable.Rows.Count - 1; i++)
+                        {
+                            string STK = datatable.Rows[i][0].ToString();
+                            if (txtSTK.Text == STK)
+                            {
+                                customerReceive = new Customer(STK, "", "", DateTime.Now, "", "", Convert.ToInt32(datatable.Rows[i][6].ToString()));
+                            }
+                        }
+                        customerReceive.Money = Convert.ToInt32(customerReceive.Money + Convert.ToInt32(txtMoneySend.Text));
+                        customerDAO.UpdateMoney(customerReceive);
 
-                    txtMoneySend.Clear();
+                        Random random = new Random();
+                        string TransCode = "TD" + random.NextString(8);
+
+                        Transaction transactionSend = new Transaction(customerSend.Stk, TransCode, "Chuyen khoan Tin dung", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerReceive.Stk, txtNote.Text);
+                        transactionDAO.Create(transactionSend);
+                        Transaction transactionReceive = new Transaction(customerReceive.Stk, TransCode, "Nhan tien Chuyen khoan", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customerSend.Stk, txtNote.Text);
+                        transactionDAO.Create(transactionReceive);
+                    }
                 }
+                txtMoneySend.Clear();
             }
             else
             {
@@ -112,17 +152,40 @@ namespace BankManage
             }
         }
 
+        private void cmbMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbMethod.SelectedIndex == 0)
+            {
+                txtMoneyRemain.Text = customerSend.Money.ToString();
+                lblName.Text = "Số dư hiện tại:";
+            }
+            else if (cmbMethod.SelectedIndex == 1)
+            {
+                creditSend = new Credit(customerSend.Stk);
+                creditSend = creditDAO.Get(creditSend);
+
+                if (creditSend.HanMuc == 0)
+                {
+                    MessageBox.Show("Chua co the tin dung");
+                    txtMoneySend.Enabled = false;
+                    txtSTK.Enabled = false;
+                }
+                else
+                {
+                    txtMoneyRemain.Text = creditSend.UsedMoney.ToString();
+                    lblName.Text = "Số tiền đã dùng:";
+                }
+            }
+            txtMoneySend.Enabled = true;
+            txtSTK.Enabled = true;
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtMoneySend.Clear();
             txtNote.Clear();
             txtSTK.Clear();
             lblNote.Text = "";
-        }
-
-        private void FTrans_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

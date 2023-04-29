@@ -51,6 +51,8 @@
             "Rút tiền",
             "Gửi tiền",
             "Chuyển khoản",
+            "Chuyển khoản qua tín dụng",
+            "Nhận tiền chuyển khoản",
             "Tất cả giao dịch"});
             this.cmbChoice.Location = new System.Drawing.Point(151, 33);
             this.cmbChoice.Name = "cmbChoice";

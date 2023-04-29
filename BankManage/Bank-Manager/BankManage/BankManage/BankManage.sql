@@ -12,6 +12,9 @@ Create Table Customer (
 	UpdateAt date
 )
 
+
+
+
 INSERT INTO Customer(STK, Name, Address, DoB, CitizenID, PhoneNum, Money)
 VALUES ('1234567890', 'Nguyen Van A', 'HCM', '1999-5-15','123456789012','0365471254', 250000)
 
@@ -33,6 +36,8 @@ CREATE TABLE Trans (
 	PRIMARY KEY(STK, MaGD),
 	FOREIGN KEY (ReceivedSTK) REFERENCES Customer(STK)
 )
+
+ALTER TABLE Trans ADD Note varchar(255)
 
 INSERT INTO Trans(STK, MaGD, LoaiGD, Money, ThoigianGD, ReceivedSTK)
 VALUES ('1234567890', '001', 'Chuyen tien', '15000','2022-5-6','1564567890')
@@ -75,9 +80,9 @@ CREATE TABLE Credit (
 	MaThe char(10) PRIMARY KEY,
 	HanMuc int NOT NULL,
 	UsedMoney int,
-	Anh image NOT NULL,
 	Method varchar(255),
 	NgayMo Date,
 	NgayDaoHan Date,
 	FOREIGN KEY (STK) REFERENCES Customer(STK)
 )
+
