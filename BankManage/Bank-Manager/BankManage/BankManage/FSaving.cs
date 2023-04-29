@@ -15,7 +15,6 @@ namespace BankManage
         SavingDAO savingDAO = new SavingDAO();
         CustomerDAO customerDAO = new CustomerDAO();
         DBConnection dBConnection = new DBConnection();
-        Random random = new Random();
         Customer currentCustomer;
 
         public FSaving(string STK, string name, string address, DateTime dob, string citizenId, string phoneNumber, int money)
@@ -35,23 +34,6 @@ namespace BankManage
             gvSaving.DataSource = dBConnection.Load("Saving", condition);
         }
 
-        private void cbTerm_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbTerm.SelectedItem.ToString() == "12 thang voi lai suat 8%/ nam")
-                dtpEnd.Value = dtpSend.Value.AddYears(1);
-            else
-                dtpEnd.Value = dtpSend.Value.AddYears(3);
-        }
-
-        private void dtpSend_ValueChanged(object sender, EventArgs e)
-        {
-            bool isMonthBorrow = cbTerm.Text.Contains("12");
-            if (isMonthBorrow)
-                dtpEnd.Value = dtpSend.Value.AddYears(1);
-            else
-                dtpEnd.Value = dtpSend.Value.AddYears(3);
-        }
-
         private void btnCreate_Click(object sender, EventArgs e)
         {
             string randomMaSo = RandomMaSo();
@@ -69,10 +51,26 @@ namespace BankManage
             {
                 currentCustomer.Money = remainMoneyAfterSaving;
                 txtMoneySend.Clear();
-                customerDAO.Update(currentCustomer);
+                customerDAO.UpdateMoney(currentCustomer);
                 savingDAO.Create(saving);
                 MessageBox.Show($"Bạn đã tạo thành công sổ tiết kiệm số: " + txtSavingNumber.Text + "\nKỳ hạn: " + cbTerm.Text + "\nNgày đáo hạn: " + dtpEnd.Value.Date + " (" + cbMethod.Text +")");
             }
+        }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            Saving withdrawsaving = new Saving(txtSavingNumber.Text);
+            savingDAO.Delete(withdrawsaving);
+            LoadCustomerData($" WHERE MaSo = '{txtSavingNumber.Text}'");
+            MessageBox.Show("Lưu ý: Rút tiền sẽ bị mất phí 5%");
+            currentCustomer.Money = currentCustomer.Money + (Convert.ToInt32(txtMoneySend.Text) * 95 / 100);
+            ClearInfomation();
+            customerDAO.UpdateMoney(currentCustomer);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ClearInfomation();
         }
 
         private void gvSaving_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -86,13 +84,26 @@ namespace BankManage
             cbMethod.Text = gvSaving.Rows[numRow].Cells["PhuongThucDaoHan"].Value.ToString();
             dtpSend.Text = gvSaving.Rows[numRow].Cells["NgayGui"].Value.ToString();
             dtpEnd.Text = gvSaving.Rows[numRow].Cells["NgayDaoHan"].Value.ToString();
-
+            btnWithdraw.Enabled = true;
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
+        
+        private void cbTerm_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClearInfomation();
+            if (cbTerm.SelectedItem.ToString() == "12 thang voi lai suat 8%/ nam")
+                dtpEnd.Value = dtpSend.Value.AddYears(1);
+            else
+                dtpEnd.Value = dtpSend.Value.AddYears(3);
         }
+
+        private void dtpSend_ValueChanged(object sender, EventArgs e)
+        {
+            bool isMonthBorrow = cbTerm.Text.Contains("12");
+            if (isMonthBorrow)
+                dtpEnd.Value = dtpSend.Value.AddYears(1);
+            else
+                dtpEnd.Value = dtpSend.Value.AddYears(3);
+        }
+
         private void ClearInfomation()
         {
             txtSavingNumber.Clear();
@@ -102,20 +113,6 @@ namespace BankManage
         {
             Random random = new Random();
             return random.NextString(10);
-        }
-
-        private void btnWithdraw_Click(object sender, EventArgs e)
-        {
-            Saving withdrawsaving = new Saving(txtSavingNumber.Text);
-            savingDAO.Delete(withdrawsaving);
-            LoadCustomerData($" WHERE MaSo = '{txtSavingNumber.Text}'");   
-            ClearInfomation();
-            MessageBox.Show("Rut bi mat phi nhen");
-            customerDAO.Update(currentCustomer);
-            int MoneyAfterWithdraw = Convert.ToInt32(currentCustomer.Money) + Convert.ToInt32(txtMoneySend.Text); ;
-
-                
-
         }
     }
 }

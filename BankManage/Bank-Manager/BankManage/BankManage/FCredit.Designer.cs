@@ -34,98 +34,92 @@ namespace BankManage
             this.txtSothe = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.clbHoso = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtHanmuc = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.txtMoneyUsed = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.pctShow = new System.Windows.Forms.PictureBox();
+            this.cmbMethod = new System.Windows.Forms.ComboBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.gvCredit = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.pctShow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCredit)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpOpen
             // 
             this.dtpOpen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpOpen.Location = new System.Drawing.Point(290, 312);
-            this.dtpOpen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpOpen.Location = new System.Drawing.Point(147, 284);
             this.dtpOpen.Name = "dtpOpen";
-            this.dtpOpen.Size = new System.Drawing.Size(224, 26);
+            this.dtpOpen.Size = new System.Drawing.Size(200, 22);
             this.dtpOpen.TabIndex = 43;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 318);
+            this.label4.Location = new System.Drawing.Point(12, 288);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 20);
+            this.label4.Size = new System.Drawing.Size(96, 17);
             this.label4.TabIndex = 40;
             this.label4.Text = "Ngày mở thẻ: ";
             // 
             // txtSothe
             // 
-            this.txtSothe.Location = new System.Drawing.Point(290, 44);
+            this.txtSothe.Location = new System.Drawing.Point(147, 146);
             this.txtSothe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSothe.Name = "txtSothe";
-            this.txtSothe.Size = new System.Drawing.Size(224, 26);
+            this.txtSothe.ReadOnly = true;
+            this.txtSothe.Size = new System.Drawing.Size(200, 22);
             this.txtSothe.TabIndex = 52;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 50);
+            this.label3.Location = new System.Drawing.Point(12, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 20);
+            this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 51;
             this.label3.Text = "Số thẻ: ";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
+            this.label7.AllowDrop = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 113);
+            this.label7.Location = new System.Drawing.Point(12, 333);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(272, 20);
+            this.label7.Size = new System.Drawing.Size(125, 39);
             this.label7.TabIndex = 64;
             this.label7.Text = "Hồ sơ chứng minh năng lực tài chính: ";
-            // 
-            // clbHoso
-            // 
-            this.clbHoso.FormattingEnabled = true;
-            this.clbHoso.Items.AddRange(new object[] {
-            "Sao kê bảng lương",
-            "Hợp đồng lao động",
-            "Hợp đồng thuê tài sản"});
-            this.clbHoso.Location = new System.Drawing.Point(290, 113);
-            this.clbHoso.Name = "clbHoso";
-            this.clbHoso.Size = new System.Drawing.Size(224, 73);
-            this.clbHoso.TabIndex = 65;
-            this.clbHoso.SelectedIndexChanged += new System.EventHandler(this.clbHoso_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 246);
+            this.label1.Location = new System.Drawing.Point(12, 240);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 20);
+            this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 66;
             this.label1.Text = "Hạn mức thẻ:";
             // 
             // txtHanmuc
             // 
-            this.txtHanmuc.Location = new System.Drawing.Point(290, 243);
+            this.txtHanmuc.Location = new System.Drawing.Point(147, 237);
             this.txtHanmuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHanmuc.Name = "txtHanmuc";
-            this.txtHanmuc.Size = new System.Drawing.Size(224, 26);
+            this.txtHanmuc.Size = new System.Drawing.Size(200, 22);
             this.txtHanmuc.TabIndex = 67;
             // 
             // btnSubmit
             // 
             this.btnSubmit.Enabled = false;
-            this.btnSubmit.Location = new System.Drawing.Point(90, 377);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSubmit.Location = new System.Drawing.Point(15, 381);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(86, 48);
+            this.btnSubmit.Size = new System.Drawing.Size(76, 38);
             this.btnSubmit.TabIndex = 68;
             this.btnSubmit.Text = "Mở thẻ";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -133,32 +127,113 @@ namespace BankManage
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(290, 377);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(271, 381);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(86, 48);
+            this.btnCancel.Size = new System.Drawing.Size(76, 38);
             this.btnCancel.TabIndex = 69;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // txtMoneyUsed
+            // 
+            this.txtMoneyUsed.Location = new System.Drawing.Point(147, 191);
+            this.txtMoneyUsed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMoneyUsed.Name = "txtMoneyUsed";
+            this.txtMoneyUsed.ReadOnly = true;
+            this.txtMoneyUsed.Size = new System.Drawing.Size(200, 22);
+            this.txtMoneyUsed.TabIndex = 71;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 196);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 17);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "Số tiền đã dùng:";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(147, 381);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(76, 38);
+            this.btnDelete.TabIndex = 72;
+            this.btnDelete.Text = "Xóa thẻ";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // pctShow
+            // 
+            this.pctShow.Location = new System.Drawing.Point(353, 36);
+            this.pctShow.Name = "pctShow";
+            this.pctShow.Size = new System.Drawing.Size(279, 336);
+            this.pctShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctShow.TabIndex = 73;
+            this.pctShow.TabStop = false;
+            // 
+            // cmbMethod
+            // 
+            this.cmbMethod.FormattingEnabled = true;
+            this.cmbMethod.Items.AddRange(new object[] {
+            "Sao kê bảng lương",
+            "Hợp đồng lao động",
+            "Hợp đồng thuê tài sản"});
+            this.cmbMethod.Location = new System.Drawing.Point(147, 333);
+            this.cmbMethod.Name = "cmbMethod";
+            this.cmbMethod.Size = new System.Drawing.Size(164, 24);
+            this.cmbMethod.TabIndex = 75;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(314, 333);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(32, 24);
+            this.btnBrowse.TabIndex = 76;
+            this.btnBrowse.Text = "...";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // gvCredit
+            // 
+            this.gvCredit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvCredit.Location = new System.Drawing.Point(13, 13);
+            this.gvCredit.Name = "gvCredit";
+            this.gvCredit.RowHeadersWidth = 51;
+            this.gvCredit.RowTemplate.Height = 24;
+            this.gvCredit.Size = new System.Drawing.Size(333, 128);
+            this.gvCredit.TabIndex = 77;
+            this.gvCredit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvCredit_CellClick);
             // 
             // FCredit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 450);
+            this.ClientSize = new System.Drawing.Size(643, 424);
+            this.Controls.Add(this.gvCredit);
+            this.Controls.Add(this.btnBrowse);
+            this.Controls.Add(this.cmbMethod);
+            this.Controls.Add(this.pctShow);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.txtMoneyUsed);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtHanmuc);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.clbHoso);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSothe);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpOpen);
             this.Controls.Add(this.label4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FCredit";
             this.Text = "FCredit";
             this.Load += new System.EventHandler(this.FCredit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pctShow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCredit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,10 +245,16 @@ namespace BankManage
         private System.Windows.Forms.TextBox txtSothe;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckedListBox clbHoso;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtHanmuc;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtMoneyUsed;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.PictureBox pctShow;
+        private System.Windows.Forms.ComboBox cmbMethod;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.DataGridView gvCredit;
     }
 }

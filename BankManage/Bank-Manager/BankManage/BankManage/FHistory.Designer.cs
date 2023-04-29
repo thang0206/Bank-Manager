@@ -56,6 +56,7 @@
             this.cmbChoice.Name = "cmbChoice";
             this.cmbChoice.Size = new System.Drawing.Size(313, 24);
             this.cmbChoice.TabIndex = 1;
+            this.cmbChoice.Text = "Tất cả giao dịch";
             this.cmbChoice.SelectedIndexChanged += new System.EventHandler(this.cmbChoice_SelectedIndexChanged);
             // 
             // label1

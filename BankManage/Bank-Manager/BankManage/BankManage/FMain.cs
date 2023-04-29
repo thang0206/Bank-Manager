@@ -157,7 +157,7 @@ namespace BankManage
         private void CreditToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
-            FCredit fcredit = new FCredit();
+            FCredit fcredit = new FCredit(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
             ShowFormOnPanel(fcredit);
         }
 
