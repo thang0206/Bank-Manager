@@ -40,14 +40,14 @@
             // 
             // dtpSend
             // 
-            this.dtpSend.Location = new System.Drawing.Point(129, 129);
+            this.dtpSend.Location = new System.Drawing.Point(129, 115);
             this.dtpSend.Name = "dtpSend";
             this.dtpSend.Size = new System.Drawing.Size(232, 22);
             this.dtpSend.TabIndex = 35;
             // 
             // txtMoneySend
             // 
-            this.txtMoneySend.Location = new System.Drawing.Point(129, 74);
+            this.txtMoneySend.Location = new System.Drawing.Point(129, 65);
             this.txtMoneySend.Name = "txtMoneySend";
             this.txtMoneySend.Size = new System.Drawing.Size(232, 22);
             this.txtMoneySend.TabIndex = 34;
@@ -62,9 +62,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(285, 204);
+            this.btnCancel.Location = new System.Drawing.Point(217, 165);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(76, 38);
+            this.btnCancel.Size = new System.Drawing.Size(95, 52);
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -72,9 +72,9 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(161, 204);
+            this.btnOK.Location = new System.Drawing.Point(49, 165);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(76, 38);
+            this.btnOK.Size = new System.Drawing.Size(95, 52);
             this.btnOK.TabIndex = 31;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -84,7 +84,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 129);
+            this.label9.Location = new System.Drawing.Point(12, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 17);
             this.label9.TabIndex = 30;
@@ -94,7 +94,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 77);
+            this.label10.Location = new System.Drawing.Point(12, 68);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(118, 17);
             this.label10.TabIndex = 29;
@@ -104,7 +104,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 21);
+            this.label11.Location = new System.Drawing.Point(12, 18);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 17);
             this.label11.TabIndex = 28;
@@ -114,7 +114,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 262);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(376, 227);
             this.Controls.Add(this.dtpSend);
             this.Controls.Add(this.txtMoneySend);
             this.Controls.Add(this.txtMoneyRemain);

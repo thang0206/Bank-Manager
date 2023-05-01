@@ -37,11 +37,11 @@
             // gvHistory
             // 
             this.gvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvHistory.Location = new System.Drawing.Point(12, 79);
+            this.gvHistory.Location = new System.Drawing.Point(12, 56);
             this.gvHistory.Name = "gvHistory";
             this.gvHistory.RowHeadersWidth = 51;
             this.gvHistory.RowTemplate.Height = 24;
-            this.gvHistory.Size = new System.Drawing.Size(452, 394);
+            this.gvHistory.Size = new System.Drawing.Size(586, 345);
             this.gvHistory.TabIndex = 0;
             // 
             // cmbChoice
@@ -54,7 +54,7 @@
             "Chuyển khoản qua tín dụng",
             "Nhận tiền chuyển khoản",
             "Tất cả giao dịch"});
-            this.cmbChoice.Location = new System.Drawing.Point(151, 33);
+            this.cmbChoice.Location = new System.Drawing.Point(216, 12);
             this.cmbChoice.Name = "cmbChoice";
             this.cmbChoice.Size = new System.Drawing.Size(313, 24);
             this.cmbChoice.TabIndex = 1;
@@ -64,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 36);
+            this.label1.Location = new System.Drawing.Point(77, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 16);
             this.label1.TabIndex = 2;
@@ -74,7 +74,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 485);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(609, 415);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbChoice);
             this.Controls.Add(this.gvHistory);
