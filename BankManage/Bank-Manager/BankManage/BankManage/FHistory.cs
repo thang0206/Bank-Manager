@@ -43,8 +43,14 @@ namespace BankManage
                 case "Tất cả giao dịch":
                     LoadTransactionData($" WHERE STK = '{UserSTK}'");
                     break;
+                case "Chuyển khoản qua tín dụng":
+                    LoadTransactionData($" WHERE STK = '{UserSTK}' AND LoaiGD = 'Chuyen khoan Tin dung'");
+                    break;
+                case "Nhận tiền chuyển khoản":
+                    LoadTransactionData($" WHERE STK = '{UserSTK}' AND LoaiGD = 'Nhan tien Chuyen khoan'");
+                    break;
                 default:
-                    LoadTransactionData($" WHERE STK = '{UserSTK}' AND (LoaiGD = 'Chuyen khoan' OR LoaiGD = 'Nhan tien Chuyen khoan')");
+                    LoadTransactionData($" WHERE STK = '{UserSTK}' AND LoaiGD = 'Chuyen khoan'");
                     break;
             }
         }

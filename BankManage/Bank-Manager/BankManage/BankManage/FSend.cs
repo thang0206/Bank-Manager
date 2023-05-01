@@ -35,7 +35,7 @@ namespace BankManage
             string TransCode = "GT" + random.NextString(8);
 
             customerDAO.UpdateMoney(customer);
-            Transaction transaction = new Transaction(customer.Stk, TransCode, "Gui tien", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customer.Stk);
+            Transaction transaction = new Transaction(customer.Stk, TransCode, "Gui tien", Convert.ToInt32(txtMoneySend.Text), DateTime.Now, customer.Stk, "");
             transactionDAO.Create(transaction);
             txtMoneySend.Clear();
         }

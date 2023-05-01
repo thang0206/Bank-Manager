@@ -41,18 +41,14 @@ namespace BankManage
             this.txtMoneyUsed = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.pctShow = new System.Windows.Forms.PictureBox();
             this.cmbMethod = new System.Windows.Forms.ComboBox();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.gvCredit = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pctShow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCredit)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpOpen
             // 
+            this.dtpOpen.Enabled = false;
             this.dtpOpen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpOpen.Location = new System.Drawing.Point(147, 284);
+            this.dtpOpen.Location = new System.Drawing.Point(148, 154);
             this.dtpOpen.Name = "dtpOpen";
             this.dtpOpen.Size = new System.Drawing.Size(200, 22);
             this.dtpOpen.TabIndex = 43;
@@ -61,7 +57,7 @@ namespace BankManage
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 288);
+            this.label4.Location = new System.Drawing.Point(13, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 17);
             this.label4.TabIndex = 40;
@@ -69,7 +65,7 @@ namespace BankManage
             // 
             // txtSothe
             // 
-            this.txtSothe.Location = new System.Drawing.Point(147, 146);
+            this.txtSothe.Location = new System.Drawing.Point(148, 16);
             this.txtSothe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSothe.Name = "txtSothe";
             this.txtSothe.ReadOnly = true;
@@ -80,7 +76,7 @@ namespace BankManage
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 151);
+            this.label3.Location = new System.Drawing.Point(13, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 51;
@@ -90,7 +86,7 @@ namespace BankManage
             // 
             this.label7.AllowDrop = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 333);
+            this.label7.Location = new System.Drawing.Point(13, 203);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(125, 39);
             this.label7.TabIndex = 64;
@@ -100,7 +96,7 @@ namespace BankManage
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 240);
+            this.label1.Location = new System.Drawing.Point(13, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 66;
@@ -108,7 +104,7 @@ namespace BankManage
             // 
             // txtHanmuc
             // 
-            this.txtHanmuc.Location = new System.Drawing.Point(147, 237);
+            this.txtHanmuc.Location = new System.Drawing.Point(148, 107);
             this.txtHanmuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHanmuc.Name = "txtHanmuc";
             this.txtHanmuc.Size = new System.Drawing.Size(200, 22);
@@ -117,7 +113,7 @@ namespace BankManage
             // btnSubmit
             // 
             this.btnSubmit.Enabled = false;
-            this.btnSubmit.Location = new System.Drawing.Point(15, 381);
+            this.btnSubmit.Location = new System.Drawing.Point(16, 251);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(76, 38);
             this.btnSubmit.TabIndex = 68;
@@ -127,7 +123,7 @@ namespace BankManage
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(271, 381);
+            this.btnCancel.Location = new System.Drawing.Point(272, 251);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(76, 38);
             this.btnCancel.TabIndex = 69;
@@ -137,7 +133,7 @@ namespace BankManage
             // 
             // txtMoneyUsed
             // 
-            this.txtMoneyUsed.Location = new System.Drawing.Point(147, 191);
+            this.txtMoneyUsed.Location = new System.Drawing.Point(148, 61);
             this.txtMoneyUsed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMoneyUsed.Name = "txtMoneyUsed";
             this.txtMoneyUsed.ReadOnly = true;
@@ -148,7 +144,7 @@ namespace BankManage
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 196);
+            this.label2.Location = new System.Drawing.Point(13, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 17);
             this.label2.TabIndex = 70;
@@ -157,22 +153,13 @@ namespace BankManage
             // btnDelete
             // 
             this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(147, 381);
+            this.btnDelete.Location = new System.Drawing.Point(148, 251);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 38);
             this.btnDelete.TabIndex = 72;
             this.btnDelete.Text = "Xóa thẻ";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // pctShow
-            // 
-            this.pctShow.Location = new System.Drawing.Point(353, 36);
-            this.pctShow.Name = "pctShow";
-            this.pctShow.Size = new System.Drawing.Size(279, 336);
-            this.pctShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctShow.TabIndex = 73;
-            this.pctShow.TabStop = false;
             // 
             // cmbMethod
             // 
@@ -181,41 +168,18 @@ namespace BankManage
             "Sao kê bảng lương",
             "Hợp đồng lao động",
             "Hợp đồng thuê tài sản"});
-            this.cmbMethod.Location = new System.Drawing.Point(147, 333);
+            this.cmbMethod.Location = new System.Drawing.Point(148, 203);
             this.cmbMethod.Name = "cmbMethod";
-            this.cmbMethod.Size = new System.Drawing.Size(164, 24);
+            this.cmbMethod.Size = new System.Drawing.Size(199, 24);
             this.cmbMethod.TabIndex = 75;
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.Location = new System.Drawing.Point(314, 333);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(32, 24);
-            this.btnBrowse.TabIndex = 76;
-            this.btnBrowse.Text = "...";
-            this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // gvCredit
-            // 
-            this.gvCredit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvCredit.Location = new System.Drawing.Point(13, 13);
-            this.gvCredit.Name = "gvCredit";
-            this.gvCredit.RowHeadersWidth = 51;
-            this.gvCredit.RowTemplate.Height = 24;
-            this.gvCredit.Size = new System.Drawing.Size(333, 128);
-            this.gvCredit.TabIndex = 77;
-            this.gvCredit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvCredit_CellClick);
+            this.cmbMethod.SelectedIndexChanged += new System.EventHandler(this.cmbMethod_SelectedIndexChanged);
             // 
             // FCredit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 424);
-            this.Controls.Add(this.gvCredit);
-            this.Controls.Add(this.btnBrowse);
+            this.ClientSize = new System.Drawing.Size(360, 299);
             this.Controls.Add(this.cmbMethod);
-            this.Controls.Add(this.pctShow);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtMoneyUsed);
             this.Controls.Add(this.label2);
@@ -232,8 +196,6 @@ namespace BankManage
             this.Name = "FCredit";
             this.Text = "FCredit";
             this.Load += new System.EventHandler(this.FCredit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pctShow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCredit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,9 +214,6 @@ namespace BankManage
         private System.Windows.Forms.TextBox txtMoneyUsed;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.PictureBox pctShow;
         private System.Windows.Forms.ComboBox cmbMethod;
-        private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.DataGridView gvCredit;
     }
 }
