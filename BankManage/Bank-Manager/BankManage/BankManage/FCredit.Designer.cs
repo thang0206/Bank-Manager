@@ -48,7 +48,7 @@ namespace BankManage
             // 
             this.dtpOpen.Enabled = false;
             this.dtpOpen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpOpen.Location = new System.Drawing.Point(148, 154);
+            this.dtpOpen.Location = new System.Drawing.Point(148, 166);
             this.dtpOpen.Name = "dtpOpen";
             this.dtpOpen.Size = new System.Drawing.Size(200, 22);
             this.dtpOpen.TabIndex = 43;
@@ -57,7 +57,7 @@ namespace BankManage
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 158);
+            this.label4.Location = new System.Drawing.Point(13, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 17);
             this.label4.TabIndex = 40;
@@ -76,7 +76,7 @@ namespace BankManage
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 21);
+            this.label3.Location = new System.Drawing.Point(13, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 51;
@@ -86,7 +86,7 @@ namespace BankManage
             // 
             this.label7.AllowDrop = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 203);
+            this.label7.Location = new System.Drawing.Point(12, 209);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(125, 39);
             this.label7.TabIndex = 64;
@@ -96,7 +96,7 @@ namespace BankManage
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 110);
+            this.label1.Location = new System.Drawing.Point(13, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 66;
@@ -104,7 +104,7 @@ namespace BankManage
             // 
             // txtHanmuc
             // 
-            this.txtHanmuc.Location = new System.Drawing.Point(148, 107);
+            this.txtHanmuc.Location = new System.Drawing.Point(148, 116);
             this.txtHanmuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHanmuc.Name = "txtHanmuc";
             this.txtHanmuc.Size = new System.Drawing.Size(200, 22);
@@ -113,7 +113,7 @@ namespace BankManage
             // btnSubmit
             // 
             this.btnSubmit.Enabled = false;
-            this.btnSubmit.Location = new System.Drawing.Point(16, 251);
+            this.btnSubmit.Location = new System.Drawing.Point(12, 269);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(76, 38);
             this.btnSubmit.TabIndex = 68;
@@ -123,7 +123,7 @@ namespace BankManage
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(272, 251);
+            this.btnCancel.Location = new System.Drawing.Point(272, 269);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(76, 38);
             this.btnCancel.TabIndex = 69;
@@ -133,7 +133,7 @@ namespace BankManage
             // 
             // txtMoneyUsed
             // 
-            this.txtMoneyUsed.Location = new System.Drawing.Point(148, 61);
+            this.txtMoneyUsed.Location = new System.Drawing.Point(148, 66);
             this.txtMoneyUsed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMoneyUsed.Name = "txtMoneyUsed";
             this.txtMoneyUsed.ReadOnly = true;
@@ -144,7 +144,7 @@ namespace BankManage
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 66);
+            this.label2.Location = new System.Drawing.Point(13, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 17);
             this.label2.TabIndex = 70;
@@ -153,7 +153,7 @@ namespace BankManage
             // btnDelete
             // 
             this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(148, 251);
+            this.btnDelete.Location = new System.Drawing.Point(148, 269);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 38);
             this.btnDelete.TabIndex = 72;
@@ -168,7 +168,7 @@ namespace BankManage
             "Sao kê bảng lương",
             "Hợp đồng lao động",
             "Hợp đồng thuê tài sản"});
-            this.cmbMethod.Location = new System.Drawing.Point(148, 203);
+            this.cmbMethod.Location = new System.Drawing.Point(148, 216);
             this.cmbMethod.Name = "cmbMethod";
             this.cmbMethod.Size = new System.Drawing.Size(199, 24);
             this.cmbMethod.TabIndex = 75;
@@ -178,7 +178,8 @@ namespace BankManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 299);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(360, 338);
             this.Controls.Add(this.cmbMethod);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtMoneyUsed);
