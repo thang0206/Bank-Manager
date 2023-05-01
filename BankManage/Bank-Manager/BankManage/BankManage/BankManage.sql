@@ -59,7 +59,7 @@ CREATE TABLE Saving (
 	FOREIGN KEY (STK) REFERENCES Customer(STK)
 )
 INSERT INTO Saving(STK, MaSo, Money, KyHan, PhuongThucDaoHan, NgayGui, NgayDaoHan) 
-VALUES ('1234567891', '1043', '250000' , '12 thang voi lai suat 8%/ nam', 'Chuyen goc va lai sang ky han moi' , '2023-03-22', '2024-03-22')
+VALUES ('1234567891', '1043', '250000' , '12 thang voi lai suat 8%/ nam', 'Nhan tien lai vao tai khoan, chuyen tien goc sang ky han moi' , '2023-03-22', '2024-03-22')
 
 CREATE TABLE Borrow(
 	Money int,

@@ -16,6 +16,9 @@ namespace BankManage
         CustomerDAO customerDAO = new CustomerDAO();
         DBConnection dBConnection = new DBConnection();
         Customer currentCustomer;
+        int loans;
+        int laisuat;
+        
 
         public FSaving(string STK, string name, string address, DateTime dob, string citizenId, string phoneNumber, int money)
         {
@@ -38,7 +41,7 @@ namespace BankManage
         {
             string randomMaSo = RandomMaSo();
             Saving saving = new Saving(currentCustomer.Stk, randomMaSo, Convert.ToInt32(txtMoneySend.Text), cbTerm.Text, cbMethod.Text, dtpSend.Value.Date, dtpEnd.Value.Date);
-            int remainMoneyAfterSaving = Convert.ToInt32(currentCustomer.Money) - Convert.ToInt32(saving.Money);
+            int remainMoneyAfterSaving = Convert.ToInt32(currentCustomer.Money) - Convert.ToInt32(txtMoneySend.Text);
             if (remainMoneyAfterSaving < 0)
             {
                 MessageBox.Show("Số dư tài khoản không đủ để tạo sổ tiết kiệm, vui lòng nạp thêm tiền.");
@@ -85,10 +88,23 @@ namespace BankManage
             dtpSend.Text = gvSaving.Rows[numRow].Cells["NgayGui"].Value.ToString();
             dtpEnd.Text = gvSaving.Rows[numRow].Cells["NgayDaoHan"].Value.ToString();
             btnWithdraw.Enabled = true;
+            btnCheck.Enabled = true;
+            if (cbMethod.Text.Contains("Nhan ca tien lai va goc( tu dong so) ")) {
+                if (dtpEnd.Value.Date == DateTime.Now.Date)
+                {
+                    currentCustomer.Money = currentCustomer.Money + Convert.ToInt32(txtMoneySend.Text) + loans;
+                    customerDAO.UpdateMoney(currentCustomer);
+                    Saving withdrawsaving = new Saving(txtSavingNumber.Text);
+                    savingDAO.Delete(withdrawsaving);
+                    LoadCustomerData($" WHERE MaSo = '{txtSavingNumber.Text}'");
+                    MessageBox.Show("DA XOA SO THANH CONG, TIEN LAI VA GOC DA DUOC NHAN TRONG TAI KHOAN");
+                }
+            }
         }
         
         private void cbTerm_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (cbTerm.SelectedItem.ToString() == "12 thang voi lai suat 8%/ nam")
                 dtpEnd.Value = dtpSend.Value.AddYears(1);
             else
@@ -113,6 +129,42 @@ namespace BankManage
         {
             Random random = new Random();
             return random.NextString(10);
+        }
+        
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            
+            TimeSpan Time = DateTime.Now - dtpSend.Value.Date;           
+            int TongSoNgay = Time.Days;
+            if (cbTerm.Text.Contains("8"))
+                laisuat = 8;
+            else
+                laisuat = 12;
+            loans = (Convert.ToInt32(txtMoneySend.Text) * laisuat / 100) * TongSoNgay / 365;
+            if (dtpEnd.Value.Date == DateTime.Now.Date)
+            {
+                if (cbMethod.Text.Contains( "Nhan tien lai vao tai khoan, chuyen tien goc sang ky han moi"))
+                {
+                    currentCustomer.Money = currentCustomer.Money + loans;
+                    customerDAO.UpdateMoney(currentCustomer);
+                    string randomMaSo = RandomMaSo();
+                    Saving saving = new Saving(currentCustomer.Stk, randomMaSo, Convert.ToInt32(txtMoneySend.Text), cbTerm.Text, cbMethod.Text, dtpSend.Value.Date, dtpEnd.Value.Date);
+                    savingDAO.Create(saving);
+                    Saving withdrawsaving = new Saving(txtSavingNumber.Text);
+                    savingDAO.Delete(withdrawsaving);
+                    MessageBox.Show("Da tra lai vao tai khoan");
+                }
+                if (cbMethod.Text.Contains("Toan bo tien goc và tien lai sang ky han moi"))
+                {
+                    string randomMaSo = RandomMaSo();
+                    int txtMoneysend_update = Convert.ToInt32(txtMoneySend.Text) + loans;
+                    Saving saving = new Saving(currentCustomer.Stk, randomMaSo, txtMoneysend_update, cbTerm.Text, cbMethod.Text, dtpSend.Value.Date, dtpEnd.Value.Date);
+                    savingDAO.Create(saving);
+                    Saving withdrawsaving = new Saving(txtSavingNumber.Text);
+                    savingDAO.Delete(withdrawsaving);
+                    MessageBox.Show("Da chuyen goc va lai sang ky han moi");
+                }
+            }
         }
     }
 }
