@@ -18,10 +18,10 @@ namespace BankManage
         CustomerDAO customerDAO = new CustomerDAO();
         DBConnection dBConnection = new DBConnection();
         Customer currentCustomer;
-        public FBorrow(string STK, string name, string address, DateTime dob, string citizenId, string phoneNumber, int money)
+        public FBorrow(Customer choosedCustomer)
         {
             InitializeComponent();
-            this.currentCustomer = new Customer(STK, name, address, dob, citizenId, phoneNumber, money);
+            this.currentCustomer = choosedCustomer;
             txtMoneyRemain.Text = currentCustomer.Money.ToString(); ;
             txtID.Text = currentCustomer.CitizenId.ToString();
         }

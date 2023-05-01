@@ -28,6 +28,11 @@ namespace BankManage
         public DateTime CreatedAt { get { return createdAt; } set { createdAt = value; } }
         public DateTime UpdatedAt { get { return updatedAt; } set { updatedAt = value; } }
 
+        public Customer()
+        {
+
+        }
+
         public Customer(string stk, string name, string address, DateTime dob, string citizenId, string phoneNumber, int money)
         {
             this.stk = stk;

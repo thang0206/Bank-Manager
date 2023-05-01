@@ -17,11 +17,11 @@ namespace BankManage
         CustomerDAO customerDAO = new CustomerDAO();
         TransactionDAO transactionDAO = new TransactionDAO();
         Customer customer;
-        public FSend(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money)
+        public FSend(Customer choosedCustomer)
         {
             InitializeComponent();
-            txtMoneyRemain.Text = Money.ToString();
-            customer = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
+            txtMoneyRemain.Text = choosedCustomer.Money.ToString();
+            customer = choosedCustomer;
         }
 
         private void btnOK_Click(object sender, EventArgs e)

@@ -13,11 +13,8 @@ namespace BankManage
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            FLogin fLogin = new FLogin();
-            Application.Run(fLogin);
-
-            if (fLogin.IsLoggedIn)
-                Application.Run(new FMain());
+            FMain fMain = new FMain();
+            Application.Run(fMain);
         }
     }
 }
