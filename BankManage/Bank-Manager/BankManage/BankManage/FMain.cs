@@ -12,7 +12,6 @@ namespace BankManage
 {
     public partial class FMain : Form
     {
-        CustomerDAO customerDAO = new CustomerDAO();
         DBConnection dBConnection = new DBConnection();
         Customer choosedCustomer = new Customer();
         public FMain()
@@ -46,7 +45,12 @@ namespace BankManage
             gvSTK.Visible = isShowGvCustomer;
             menuStrip1.Enabled = isShowGvCustomer;
             if (!isShowGvCustomer)
+            {
                 MessageBox.Show("Chua co tai khoan");
+                informationToolStripMenuItem_Click(sender, e);
+            }
+            else
+                pnlOption.Controls.Clear();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -89,8 +93,10 @@ namespace BankManage
         }
         private void TransToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dBConnection.Load("Customer");
+            DataGrid dataGrid = new DataGrid
+            {
+                DataSource = dBConnection.Load("Customer")
+            };
             DataTable datatable = (DataTable)dataGrid.DataSource;
             pnlOption.Controls.Clear();
             FTrans fTrans = new FTrans(choosedCustomer, datatable);
@@ -106,8 +112,10 @@ namespace BankManage
 
         private void informationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataGrid dataGrid = new DataGrid();
-            dataGrid.DataSource = dBConnection.Load("Customer");
+            DataGrid dataGrid = new DataGrid
+            {
+                DataSource = dBConnection.Load("Customer")
+            };
             DataTable datatable = (DataTable)dataGrid.DataSource;
             pnlOption.Controls.Clear();
             if (choosedCustomer != null)
