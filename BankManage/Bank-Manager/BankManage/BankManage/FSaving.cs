@@ -20,10 +20,10 @@ namespace BankManage
         int laisuat;
         
 
-        public FSaving(string STK, string name, string address, DateTime dob, string citizenId, string phoneNumber, int money)
+        public FSaving(Customer choosedCustomer)
         {
             InitializeComponent();
-            this.currentCustomer = new Customer(STK, name, address, dob, citizenId, phoneNumber, money);
+            this.currentCustomer = choosedCustomer;
             txtName.Text = currentCustomer.Name;
             txtMoney.Text = currentCustomer.Money.ToString();
         }

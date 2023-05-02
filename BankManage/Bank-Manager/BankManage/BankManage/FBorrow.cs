@@ -15,13 +15,12 @@ namespace BankManage
     public partial class FBorrow : Form
     {
         BorrowDAO borrowDAO = new BorrowDAO();
-        CustomerDAO customerDAO = new CustomerDAO();
         DBConnection dBConnection = new DBConnection();
         Customer currentCustomer;
-        public FBorrow(string STK, string name, string address, DateTime dob, string citizenId, string phoneNumber, int money)
+        public FBorrow(Customer choosedCustomer)
         {
             InitializeComponent();
-            this.currentCustomer = new Customer(STK, name, address, dob, citizenId, phoneNumber, money);
+            this.currentCustomer = choosedCustomer;
             txtMoneyRemain.Text = currentCustomer.Money.ToString(); ;
             txtID.Text = currentCustomer.CitizenId.ToString();
         }
@@ -63,19 +62,22 @@ namespace BankManage
         } 
         private void FBorrow_Load(object sender, EventArgs e)
         {
-           
-            LoadData($" WHERE CitizenID = '{currentCustomer.CitizenId}'");
-            if (DateTime.Compare(DateTime.Now, dtpBack.Value.Date) < 0)
+            try
             {
-                MessageBox.Show("Hiện tại bạn đang có nợ xấu, vui lòng thanh toán.");
-                btnSubmit.Enabled = false;
-                btnCancel.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show("Hiện tại bạn không có khoản nợ xấu nào.");
-                btnSubmit.Enabled = true;
-            }
+                LoadData($" WHERE CitizenID = '{currentCustomer.CitizenId}'");
+                if (DateTime.Compare(DateTime.Now, dtpBack.Value.Date) < 0)
+                {
+                    MessageBox.Show("Hiện tại bạn đang có nợ xấu, vui lòng thanh toán.");
+                    btnSubmit.Enabled = false;
+                    btnCancel.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Hiện tại bạn không có khoản nợ xấu nào.");
+                    btnSubmit.Enabled = true;
+                }
+            } catch { }
+            
 
         }
 
@@ -87,17 +89,20 @@ namespace BankManage
 
         private void LoadData(string condition)
         {
-            var data = dBConnection.Load("Borrow", condition);
-            if (data.Rows.Count > 0) 
+            try
             {
-                txtEarnings.Text = data.Rows[0]["Salary"].ToString();
-                txtMoneyBorrow.Text = data.Rows[0]["MoneyBorrow"].ToString();
-                cbTypeOfCredit.Text = data.Rows[0]["KieuTinDung"].ToString();
-                cbCollateral.Text = data.Rows[0]["TaiSanTheChap"].ToString();
-                cbTerm.Text = data.Rows[0]["KyHan"].ToString();
-                dtpAllow.Text = data.Rows[0]["NgayChoVay"].ToString();
-                dtpBack.Text = data.Rows[0]["NgayHoanTien"].ToString();
-            }
+                var data = dBConnection.Load("Borrow", condition);
+                if (data.Rows.Count > 0)
+                {
+                    txtEarnings.Text = data.Rows[0]["Salary"].ToString();
+                    txtMoneyBorrow.Text = data.Rows[0]["MoneyBorrow"].ToString();
+                    cbTypeOfCredit.Text = data.Rows[0]["KieuTinDung"].ToString();
+                    cbCollateral.Text = data.Rows[0]["TaiSanTheChap"].ToString();
+                    cbTerm.Text = data.Rows[0]["KyHan"].ToString();
+                    dtpAllow.Text = data.Rows[0]["NgayChoVay"].ToString();
+                    dtpBack.Text = data.Rows[0]["NgayHoanTien"].ToString();
+                }
+            } catch { }
         }
     }
 }

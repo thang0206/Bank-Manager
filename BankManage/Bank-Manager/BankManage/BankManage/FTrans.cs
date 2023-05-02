@@ -20,11 +20,11 @@ namespace BankManage
         Credit creditSend;
         DataTable datatable;
 
-        public FTrans(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money, DataTable table)
+        public FTrans(Customer choosedCustomer, DataTable table)
         {
             InitializeComponent();
-            txtMoneyRemain.Text = Money.ToString();
-            customerSend = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
+            txtMoneyRemain.Text = choosedCustomer.Money.ToString();
+            customerSend = choosedCustomer;
             datatable = table;
         }
 

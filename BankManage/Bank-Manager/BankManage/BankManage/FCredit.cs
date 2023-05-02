@@ -21,10 +21,10 @@ namespace BankManage
         CreditDAO creditDAO = new CreditDAO();
         Credit credit;
         
-        public FCredit(string STK, string Name, string Address, DateTime DoB, string CitizenId, string PNum, int Money)
+        public FCredit(Customer choosedCustomer)
         {
             InitializeComponent();
-            customer = new Customer(STK, Name, Address, DoB, CitizenId, PNum, Money);
+            customer = choosedCustomer;
         }
 
         private void FCredit_Load(object sender, EventArgs e)
