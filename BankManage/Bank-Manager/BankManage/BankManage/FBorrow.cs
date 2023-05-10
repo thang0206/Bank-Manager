@@ -14,6 +14,7 @@ namespace BankManage
 {
     public partial class FBorrow : Form
     {
+        CustomerDAO customerDAO = new CustomerDAO();
         BorrowDAO borrowDAO = new BorrowDAO();
         DBConnection dBConnection = new DBConnection();
         Customer currentCustomer;
@@ -100,6 +101,24 @@ namespace BankManage
                     dtpBack.Text = data.Rows[0]["NgayHoanTien"].ToString();
                 }
             } catch { }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            Borrow payBorrow = new Borrow(txtID.Text);
+            int remainMoney = Convert.ToInt32(txtMoneyRemain.Text) - Convert.ToInt32(txtMoneyBorrow.Text);
+            if (remainMoney < 0)
+                MessageBox.Show("So tien trong tai khoan khong du, vui long nap them tien");
+            else
+            {
+                currentCustomer.Money = remainMoney;
+                customerDAO.Update(currentCustomer);
+                borrowDAO.Delete(payBorrow);
+            }
+
+
+
         }
     }
 }
