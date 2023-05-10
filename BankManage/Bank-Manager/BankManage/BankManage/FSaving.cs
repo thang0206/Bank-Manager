@@ -18,7 +18,6 @@ namespace BankManage
         Customer currentCustomer;
         int loans;
         int laisuat;
-        
 
         public FSaving(Customer choosedCustomer)
         {
