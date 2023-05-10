@@ -47,6 +47,7 @@ namespace BankManage
             if (!isShowGvCustomer)
             {
                 MessageBox.Show("Chua co tai khoan");
+                choosedCustomer = new Customer();
                 informationToolStripMenuItem_Click(sender, e);
             }
             else
@@ -55,9 +56,6 @@ namespace BankManage
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            gvSTK.Visible = false;
-            menuStrip1.Enabled = false;
-            pnlOption.Visible = false;
             txtFilter.Clear();
         }
 
@@ -136,6 +134,8 @@ namespace BankManage
             string phoneNumber = gvSTK.Rows[numrow].Cells["PhoneNum"].Value.ToString();
             int money = Convert.ToInt32(gvSTK.Rows[numrow].Cells["Money"].Value.ToString());
             choosedCustomer = new Customer(stk, name, address, dob, id, phoneNumber, money);
+
+            informationToolStripMenuItem_Click(sender, e);
         }
 
         private void ShowFormOnPanel(Form form)

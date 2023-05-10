@@ -159,9 +159,9 @@
             // 
             // btnCheck
             // 
-            this.btnCheck.Location = new System.Drawing.Point(342, 166);
+            this.btnCheck.Location = new System.Drawing.Point(340, 164);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(76, 22);
+            this.btnCheck.Size = new System.Drawing.Size(76, 27);
             this.btnCheck.TabIndex = 35;
             this.btnCheck.Text = "Kiểm tra";
             this.btnCheck.UseVisualStyleBackColor = true;

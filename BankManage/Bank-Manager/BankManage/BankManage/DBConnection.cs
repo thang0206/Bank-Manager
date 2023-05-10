@@ -20,31 +20,22 @@ namespace BankManage
                 SqlCommand cmd = new SqlCommand(SqlStr, conn);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    MessageBox.Show(Action + " thanh cong");
+                    if (Action != "")
+                    {
+                        MessageBox.Show(Action + " thanh cong");
+                    }
                 }
             }
             catch (Exception exc)
             {
-                MessageBox.Show(Action + " that bai\n" + exc.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        public void Execute(string SqlStr)
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(SqlStr, conn);
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Action != "")
                 {
+                    MessageBox.Show(Action + " that bai\n" + exc.Message);
                 }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
+                else
+                {
+                    MessageBox.Show(exc.Message);
+                }
             }
             finally
             {

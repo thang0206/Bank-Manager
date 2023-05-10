@@ -15,7 +15,7 @@ namespace BankManage
         public void Create(Credit credit)
         {
             string sqlStr = string.Format("INSERT INTO Credit(STK, MaThe, HanMuc, UsedMoney, Method, NgayMo, NgayDaoHan) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", credit.STK, credit.ID, credit.HanMuc, credit.UsedMoney, credit.Method, credit.NgayMo, credit.NgayDaoHan);
-            DbConnection.Execute(sqlStr);
+            DbConnection.Execute(sqlStr, "");
         }
         public void Delete(Credit credit)
         {
@@ -25,7 +25,7 @@ namespace BankManage
         public void Update(Credit credit)
         {
             string sqlStr = string.Format("UPDATE Credit SET UsedMoney = '{1}' WHERE STK = '{0}'", credit.STK, credit.UsedMoney);
-            DbConnection.Execute(sqlStr);
+            DbConnection.Execute(sqlStr, "");
         }
 
         public Credit Get(Credit credit)

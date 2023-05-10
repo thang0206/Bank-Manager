@@ -23,7 +23,7 @@ namespace BankManage
         public void UpdateMoney(Customer customer)
         {
             string sqlStr = string.Format("UPDATE Customer SET Money = '{1}' WHERE STK = '{0}'", customer.Stk, customer.Money);
-            DbConnection.Execute(sqlStr);
+            DbConnection.Execute(sqlStr, "");
         }
         public void Delete(Customer customer)
         {

@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Borrow.cs" />
-    <Compile Include="BorrowBase.cs" />
     <Compile Include="BorrowDAO.cs" />
     <Compile Include="Credit.cs" />
     <Compile Include="CreditDAO.cs" />
@@ -77,12 +76,6 @@
     </Compile>
     <Compile Include="FInformation.Designer.cs">
       <DependentUpon>FInformation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FLogin.Designer.cs">
-      <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FMain.cs">
       <SubType>Form</SubType>
@@ -132,9 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FInformation.resx">
       <DependentUpon>FInformation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FLogin.resx">
-      <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>

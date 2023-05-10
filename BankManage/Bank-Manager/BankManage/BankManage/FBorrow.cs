@@ -50,7 +50,6 @@ namespace BankManage
             }
             else
             {
-
                 borrowDAO.Create(borrow);
                 MessageBox.Show("Chúc mừng bạn đã vay thành công với số tiền: " + txtMoneyBorrow.Text + "\nKỳ hạn: " + cbTerm.Text + "\nVui lòng thanh toán trước " + dtpBack.Value.Date);
             }
@@ -77,8 +76,6 @@ namespace BankManage
                     btnSubmit.Enabled = true;
                 }
             } catch { }
-            
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -106,4 +103,3 @@ namespace BankManage
         }
     }
 }
-

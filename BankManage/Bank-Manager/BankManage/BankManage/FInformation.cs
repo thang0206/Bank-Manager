@@ -26,8 +26,19 @@ namespace BankManage
 
         private void FInformation_Load(object sender, EventArgs e)
         {
-            if (customer != null)
-                LoadInformation();
+            LoadInformation();
+            if (customer.Stk == "")
+            {
+                btnCreate.Enabled = false;
+                btnUpdate.Enabled = true;
+                btnDelete.Enabled = true;
+            }
+            else
+            {
+                btnCreate.Enabled = true;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
