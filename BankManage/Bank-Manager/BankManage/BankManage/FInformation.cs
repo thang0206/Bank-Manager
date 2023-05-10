@@ -26,9 +26,9 @@ namespace BankManage
 
         private void FInformation_Load(object sender, EventArgs e)
         {
-            if (customer.Stk != "")
+            LoadInformation();
+            if (customer.Stk == "")
             {
-                LoadInformation();
                 btnCreate.Enabled = false;
                 btnUpdate.Enabled = true;
                 btnDelete.Enabled = true;

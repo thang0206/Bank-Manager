@@ -56,9 +56,6 @@ namespace BankManage
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            gvSTK.Visible = false;
-            menuStrip1.Enabled = false;
-            pnlOption.Visible = false;
             txtFilter.Clear();
         }
 
