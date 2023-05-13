@@ -18,8 +18,9 @@ namespace BankManage
 
         public void Delete(Borrow borrow)
         {
-            string sqlStr = string.Format("INSERT INTO Borrow( CitizenID) VALUES ('{0}')", borrow.CitizenID);
-            DbConnection.Execute(sqlStr);
+            string sqlStr = string.Format("DELETE FROM Borrow where CitizenID = '{0}'", borrow.CitizenID);
+            DbConnection.Execute(sqlStr, "");
         }
     }
 }
+    

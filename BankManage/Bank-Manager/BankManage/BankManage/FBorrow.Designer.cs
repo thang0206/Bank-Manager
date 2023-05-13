@@ -275,7 +275,7 @@
             this.btnPay.TabIndex = 65;
             this.btnPay.Text = "Thanh toán";
             this.btnPay.UseVisualStyleBackColor = true;
-            this.btnPay.Click += new System.EventHandler(this.button1_Click);
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // FBorrow
             // 
