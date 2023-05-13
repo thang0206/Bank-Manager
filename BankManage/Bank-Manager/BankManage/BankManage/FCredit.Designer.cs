@@ -42,6 +42,9 @@ namespace BankManage
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.cmbMethod = new System.Windows.Forms.ComboBox();
+            this.btnShowTrans = new System.Windows.Forms.Button();
+            this.gvHistory = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gvHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpOpen
@@ -153,7 +156,7 @@ namespace BankManage
             // btnDelete
             // 
             this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(148, 269);
+            this.btnDelete.Location = new System.Drawing.Point(12, 335);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 38);
             this.btnDelete.TabIndex = 72;
@@ -174,12 +177,35 @@ namespace BankManage
             this.cmbMethod.TabIndex = 75;
             this.cmbMethod.SelectedIndexChanged += new System.EventHandler(this.cmbMethod_SelectedIndexChanged);
             // 
+            // btnShowTrans
+            // 
+            this.btnShowTrans.Location = new System.Drawing.Point(193, 335);
+            this.btnShowTrans.Name = "btnShowTrans";
+            this.btnShowTrans.Size = new System.Drawing.Size(155, 38);
+            this.btnShowTrans.TabIndex = 76;
+            this.btnShowTrans.Text = "Xem lịch sử giao dịch";
+            this.btnShowTrans.UseVisualStyleBackColor = true;
+            this.btnShowTrans.Click += new System.EventHandler(this.btnShowTrans_Click);
+            // 
+            // gvHistory
+            // 
+            this.gvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvHistory.Location = new System.Drawing.Point(365, 16);
+            this.gvHistory.Name = "gvHistory";
+            this.gvHistory.RowHeadersWidth = 51;
+            this.gvHistory.RowTemplate.Height = 24;
+            this.gvHistory.Size = new System.Drawing.Size(513, 357);
+            this.gvHistory.TabIndex = 77;
+            this.gvHistory.Visible = false;
+            // 
             // FCredit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(360, 338);
+            this.ClientSize = new System.Drawing.Size(894, 385);
+            this.Controls.Add(this.gvHistory);
+            this.Controls.Add(this.btnShowTrans);
             this.Controls.Add(this.cmbMethod);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtMoneyUsed);
@@ -197,6 +223,7 @@ namespace BankManage
             this.Name = "FCredit";
             this.Text = "FCredit";
             this.Load += new System.EventHandler(this.FCredit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gvHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +243,7 @@ namespace BankManage
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox cmbMethod;
+        private System.Windows.Forms.Button btnShowTrans;
+        private System.Windows.Forms.DataGridView gvHistory;
     }
 }

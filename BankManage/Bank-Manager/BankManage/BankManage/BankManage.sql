@@ -86,3 +86,4 @@ CREATE TABLE Credit (
 	FOREIGN KEY (STK) REFERENCES Customer(STK)
 )
 
+SELECT * FROM Trans WHERE STK = '1564567890' AND LoaiGD = 'Chuyen khoan Tin dung' OR LoaiGD = 'Nhan tien Chuyen khoan'

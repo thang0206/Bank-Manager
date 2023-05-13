@@ -29,6 +29,8 @@ namespace BankManage
 
         private void FCredit_Load(object sender, EventArgs e)
         {
+            LoadTransactionData($" WHERE STK = '{customer.Stk}' AND LoaiGD = 'Chuyen khoan Tin dung' OR LoaiGD = 'Nhan tien Chuyen khoan' ");
+
             credit = new Credit(customer.Stk);
 
             credit = creditDAO.Get(credit);
@@ -103,6 +105,11 @@ namespace BankManage
         {
             ClearInformation();
             btnDelete.Enabled = false;
+            gvHistory.Visible = false;
+        }
+        private void btnShowTrans_Click(object sender, EventArgs e)
+        {
+            gvHistory.Visible = true;
         }
         private void ClearInformation()
         {
@@ -118,6 +125,10 @@ namespace BankManage
             {
                 btnSubmit.Enabled = true;
             }
+        }
+        private void LoadTransactionData(string condition)
+        {
+            gvHistory.DataSource = DbConnection.Load("Trans", condition);
         }
     }
 }
