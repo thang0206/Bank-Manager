@@ -1,4 +1,4 @@
-﻿
+
 namespace BankManage
 {
     partial class FCredit
@@ -44,6 +44,7 @@ namespace BankManage
             this.cmbMethod = new System.Windows.Forms.ComboBox();
             this.btnShowTrans = new System.Windows.Forms.Button();
             this.gvHistory = new System.Windows.Forms.DataGridView();
+            this.btnPay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@ namespace BankManage
             this.dtpOpen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpOpen.Location = new System.Drawing.Point(148, 166);
             this.dtpOpen.Name = "dtpOpen";
-            this.dtpOpen.Size = new System.Drawing.Size(200, 22);
+            this.dtpOpen.Size = new System.Drawing.Size(234, 22);
             this.dtpOpen.TabIndex = 43;
             // 
             // label4
@@ -72,7 +73,7 @@ namespace BankManage
             this.txtSothe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSothe.Name = "txtSothe";
             this.txtSothe.ReadOnly = true;
-            this.txtSothe.Size = new System.Drawing.Size(200, 22);
+            this.txtSothe.Size = new System.Drawing.Size(234, 22);
             this.txtSothe.TabIndex = 52;
             // 
             // label3
@@ -110,7 +111,7 @@ namespace BankManage
             this.txtHanmuc.Location = new System.Drawing.Point(148, 116);
             this.txtHanmuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHanmuc.Name = "txtHanmuc";
-            this.txtHanmuc.Size = new System.Drawing.Size(200, 22);
+            this.txtHanmuc.Size = new System.Drawing.Size(234, 22);
             this.txtHanmuc.TabIndex = 67;
             // 
             // btnSubmit
@@ -126,7 +127,7 @@ namespace BankManage
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(272, 269);
+            this.btnCancel.Location = new System.Drawing.Point(290, 269);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(76, 38);
             this.btnCancel.TabIndex = 69;
@@ -140,7 +141,7 @@ namespace BankManage
             this.txtMoneyUsed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMoneyUsed.Name = "txtMoneyUsed";
             this.txtMoneyUsed.ReadOnly = true;
-            this.txtMoneyUsed.Size = new System.Drawing.Size(200, 22);
+            this.txtMoneyUsed.Size = new System.Drawing.Size(234, 22);
             this.txtMoneyUsed.TabIndex = 71;
             // 
             // label2
@@ -156,7 +157,8 @@ namespace BankManage
             // btnDelete
             // 
             this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(12, 335);
+            this.btnDelete.Location = new System.Drawing.Point(148, 269);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 38);
             this.btnDelete.TabIndex = 72;
@@ -173,15 +175,16 @@ namespace BankManage
             "Hợp đồng thuê tài sản"});
             this.cmbMethod.Location = new System.Drawing.Point(148, 216);
             this.cmbMethod.Name = "cmbMethod";
-            this.cmbMethod.Size = new System.Drawing.Size(199, 24);
+            this.cmbMethod.Size = new System.Drawing.Size(233, 24);
             this.cmbMethod.TabIndex = 75;
             this.cmbMethod.SelectedIndexChanged += new System.EventHandler(this.cmbMethod_SelectedIndexChanged);
             // 
             // btnShowTrans
             // 
-            this.btnShowTrans.Location = new System.Drawing.Point(193, 335);
+            this.btnShowTrans.Location = new System.Drawing.Point(148, 328);
+            this.btnShowTrans.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowTrans.Name = "btnShowTrans";
-            this.btnShowTrans.Size = new System.Drawing.Size(155, 38);
+            this.btnShowTrans.Size = new System.Drawing.Size(218, 38);
             this.btnShowTrans.TabIndex = 76;
             this.btnShowTrans.Text = "Xem lịch sử giao dịch";
             this.btnShowTrans.UseVisualStyleBackColor = true;
@@ -190,22 +193,34 @@ namespace BankManage
             // gvHistory
             // 
             this.gvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvHistory.Location = new System.Drawing.Point(365, 16);
+            this.gvHistory.Location = new System.Drawing.Point(412, 16);
+            this.gvHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gvHistory.Name = "gvHistory";
             this.gvHistory.RowHeadersWidth = 51;
             this.gvHistory.RowTemplate.Height = 24;
-            this.gvHistory.Size = new System.Drawing.Size(513, 357);
+            this.gvHistory.Size = new System.Drawing.Size(482, 350);
             this.gvHistory.TabIndex = 77;
             this.gvHistory.Visible = false;
+            // 
+            // btnPay
+            // 
+            this.btnPay.Location = new System.Drawing.Point(15, 328);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(94, 38);
+            this.btnPay.TabIndex = 76;
+            this.btnPay.Text = "Thanh toán ";
+            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // FCredit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(894, 385);
+            this.ClientSize = new System.Drawing.Size(983, 410);
             this.Controls.Add(this.gvHistory);
             this.Controls.Add(this.btnShowTrans);
+            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.cmbMethod);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtMoneyUsed);
@@ -245,5 +260,6 @@ namespace BankManage
         private System.Windows.Forms.ComboBox cmbMethod;
         private System.Windows.Forms.Button btnShowTrans;
         private System.Windows.Forms.DataGridView gvHistory;
+        private System.Windows.Forms.Button btnPay;
     }
 }

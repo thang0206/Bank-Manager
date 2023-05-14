@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +17,7 @@ namespace BankManage
     public partial class FCredit : Form
     {
         Customer customer;
+        CustomerDAO customerDAO = new CustomerDAO();
         DBConnection DbConnection = new DBConnection();
         CreditDAO creditDAO = new CreditDAO();
         Credit credit;
@@ -29,7 +30,7 @@ namespace BankManage
 
         private void FCredit_Load(object sender, EventArgs e)
         {
-            LoadTransactionData($" WHERE STK = '{customer.Stk}' AND LoaiGD = 'Chuyen khoan Tin dung' OR LoaiGD = 'Nhan tien Chuyen khoan' ");
+            LoadTransactionData($" WHERE STK = '{customer.Stk}' AND LoaiGD = 'Chuyen khoan Tin dung' OR STK = '{customer.Stk}' AND LoaiGD = 'Nhan tien Chuyen khoan'");
 
             credit = new Credit(customer.Stk);
 
@@ -39,9 +40,9 @@ namespace BankManage
             txtHanmuc.Text = credit.HanMuc.ToString();
             txtMoneyUsed.Text = credit.UsedMoney.ToString();
 
-            if (DateTime.Now >= credit.NgayDaoHan)
+            if (DateTime.Now == credit.NgayDaoHan)
             {
-                CustomerDAO customerDAO = new CustomerDAO();
+                
                 customer.Money = customer.Money - credit.UsedMoney;
 
                 if (customer.Money < 50000 )
@@ -91,7 +92,6 @@ namespace BankManage
 
                 MessageBox.Show("Chúc mừng bạn đã mở thẻ tín dụng thành công:\nSố thẻ: " + MaThe + "\nHạn mức cho phép:" + txtHanmuc.Text + "\nVui lòng thanh toán dư nợ vào ngày " + DateTime.Now.Day + " của tháng tiếp theo, nếu phát sinh giao dịch");
             }
-            FCredit_Load(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -129,6 +129,23 @@ namespace BankManage
         private void LoadTransactionData(string condition)
         {
             gvHistory.DataSource = DbConnection.Load("Trans", condition);
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            Credit paycredit = new Credit(txtMoneyUsed.Text);
+            int remainMoney = customer.Money - Convert.ToInt32(txtMoneyUsed.Text);
+            if (remainMoney < 0)
+                MessageBox.Show("So tien trong tai khoan khong du, vui long nap them tien");
+            else
+            {
+                customer.Money = remainMoney;
+                customerDAO.UpdateMoney(customer);
+                creditDAO.Update(paycredit);
+                MessageBox.Show("Thanh cong");
+                btnDelete.Enabled = false;
+                
+            }
         }
     }
 }

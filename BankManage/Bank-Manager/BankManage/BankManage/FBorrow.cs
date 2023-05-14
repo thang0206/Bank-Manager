@@ -14,11 +14,13 @@ namespace BankManage
 {
     public partial class FBorrow : Form
     {
+        CustomerDAO customerDAO = new CustomerDAO();
         BorrowDAO borrowDAO = new BorrowDAO();
         DBConnection dBConnection = new DBConnection();
         Customer currentCustomer;
         public FBorrow(Customer choosedCustomer)
         {
+
             InitializeComponent();
             this.currentCustomer = choosedCustomer;
             txtMoneyRemain.Text = currentCustomer.Money.ToString(); ;
@@ -43,7 +45,8 @@ namespace BankManage
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            Borrow borrow = new Borrow(Convert.ToInt32(txtMoneyRemain.Text), currentCustomer.CitizenId, Convert.ToInt32(txtEarnings.Text), Convert.ToInt32(txtMoneyBorrow.Text),cbTypeOfCredit.Text, cbCollateral.Text, cbTerm.Text,dtpAllow.Value.Date, dtpBack.Value.Date);
+        Borrow borrow = new Borrow(Convert.ToInt32(txtMoneyRemain.Text), currentCustomer.CitizenId, Convert.ToInt32(txtEarnings.Text), Convert.ToInt32(txtMoneyBorrow.Text), cbTypeOfCredit.Text, cbCollateral.Text, cbTerm.Text, dtpAllow.Value.Date, dtpBack.Value.Date);
+
             if (Convert.ToInt32(txtMoneyBorrow.Text) > (15 * Convert.ToInt32(txtEarnings.Text)) + Convert.ToInt32(txtMoneyRemain.Text))
             {
                 MessageBox.Show("Bạn không được phép vay, bởi vì quá mức giới hạn chi trả của bạn");
@@ -101,5 +104,20 @@ namespace BankManage
                 }
             } catch { }
         }
+
+private void btnPay_Click(object sender, EventArgs e)
+        {
+            Borrow payBorrow = new Borrow(txtID.Text);
+            int remainMoney = Convert.ToInt32(txtMoneyRemain.Text) - Convert.ToInt32(txtMoneyBorrow.Text);
+            if (remainMoney < 0)
+                MessageBox.Show("So tien trong tai khoan khong du, vui long nap them tien");
+            else
+            {
+                currentCustomer.Money = remainMoney;
+                customerDAO.UpdateMoney(currentCustomer);
+                borrowDAO.Delete(payBorrow);
+                MessageBox.Show("Thanh toan khoan vay thanh cong");
+            }
+    }
     }
 }
