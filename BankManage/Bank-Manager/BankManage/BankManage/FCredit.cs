@@ -30,7 +30,7 @@ namespace BankManage
 
         private void FCredit_Load(object sender, EventArgs e)
         {
-            LoadTransactionData($" WHERE STK = '{customer.Stk}' AND LoaiGD = 'Chuyen khoan Tin dung' OR LoaiGD = 'Nhan tien Chuyen khoan' ");
+            LoadTransactionData($" WHERE STK = '{customer.Stk}' AND LoaiGD = 'Chuyen khoan Tin dung' OR STK = '{customer.Stk}' AND LoaiGD = 'Nhan tien Chuyen khoan'");
 
             credit = new Credit(customer.Stk);
 

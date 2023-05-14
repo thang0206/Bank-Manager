@@ -86,4 +86,6 @@ CREATE TABLE Credit (
 	
 )
 
-SELECT * FROM Trans WHERE STK = '1564567890' AND LoaiGD = 'Chuyen khoan Tin dung' OR LoaiGD = 'Nhan tien Chuyen khoan'
+SELECT * FROM Trans
+WHERE STK = '1234567890' AND LoaiGD = 'Chuyen khoan Tin dung'
+OR STK = '1234567890' AND LoaiGD = 'Nhan tien Chuyen khoan'
