@@ -182,7 +182,7 @@
             // 
             // txtMoneyRemain
             // 
-            this.txtMoneyRemain.Location = new System.Drawing.Point(191, 20);
+            this.txtMoneyRemain.Location = new System.Drawing.Point(191, 24);
             this.txtMoneyRemain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneyRemain.Name = "txtMoneyRemain";
             this.txtMoneyRemain.ReadOnly = true;
@@ -191,7 +191,7 @@
             // 
             // txtMoneyBorrow
             // 
-            this.txtMoneyBorrow.Location = new System.Drawing.Point(191, 164);
+            this.txtMoneyBorrow.Location = new System.Drawing.Point(191, 163);
             this.txtMoneyBorrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneyBorrow.Name = "txtMoneyBorrow";
             this.txtMoneyBorrow.Size = new System.Drawing.Size(277, 26);

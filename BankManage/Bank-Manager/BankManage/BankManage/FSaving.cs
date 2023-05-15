@@ -140,7 +140,7 @@ namespace BankManage
             else
                 laisuat = 12;
             loans = (Convert.ToInt32(txtMoneySend.Text) * laisuat / 100) * TongSoNgay / 365;
-            if (dtpEnd.Value.Date == DateTime.Now.Date)
+            if ((DateTime.Compare(DateTime.Now, dtpEnd.Value.Date) >= 0))
             {
                 if (cbMethod.Text.Contains( "Nhan tien lai vao tai khoan, chuyen tien goc sang ky han moi"))
                 {
