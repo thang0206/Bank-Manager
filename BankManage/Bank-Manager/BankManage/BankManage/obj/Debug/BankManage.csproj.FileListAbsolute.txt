@@ -90,3 +90,4 @@ D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankM
 D:\21133078_NguyenTanSuong\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.pdb
 E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\bin\Debug\Guna.UI2.dll
 E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.CopyComplete
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FWaiting.resources

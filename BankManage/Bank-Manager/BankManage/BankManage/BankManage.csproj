@@ -89,6 +89,12 @@
     <Compile Include="FMain.Designer.cs">
       <DependentUpon>FMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FWaiting.Designer.cs">
+      <DependentUpon>FWaiting.cs</DependentUpon>
+    </Compile>
     <Compile Include="FSaving.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FTrans.resx">
       <DependentUpon>FTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FWaiting.resx">
+      <DependentUpon>FWaiting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FWithdraw.resx">
       <DependentUpon>FWithdraw.cs</DependentUpon>
