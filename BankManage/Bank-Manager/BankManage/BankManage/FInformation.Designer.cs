@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FInformation));
             this.pnlUpdate = new System.Windows.Forms.Panel();
-            this.txtSTK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtpDoB = new System.Windows.Forms.DateTimePicker();
-            this.txtPNum = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.txtAddr = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.txtMoney = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlInformation = new System.Windows.Forms.Panel();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
+            this.txtMoney = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPNum = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dtpDoB = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.txtAddr = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSTK = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlInformation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,15 +61,6 @@
             this.pnlUpdate.Size = new System.Drawing.Size(0, 0);
             this.pnlUpdate.TabIndex = 8;
             // 
-            // txtSTK
-            // 
-            this.txtSTK.Location = new System.Drawing.Point(212, 14);
-            this.txtSTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSTK.Name = "txtSTK";
-            this.txtSTK.ReadOnly = true;
-            this.txtSTK.Size = new System.Drawing.Size(234, 22);
-            this.txtSTK.TabIndex = 31;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -78,28 +70,6 @@
             this.label2.Size = new System.Drawing.Size(41, 18);
             this.label2.TabIndex = 26;
             this.label2.Text = "STK:";
-            // 
-            // dtpDoB
-            // 
-            this.dtpDoB.Location = new System.Drawing.Point(212, 164);
-            this.dtpDoB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpDoB.Name = "dtpDoB";
-            this.dtpDoB.Size = new System.Drawing.Size(234, 22);
-            this.dtpDoB.TabIndex = 58;
-            // 
-            // txtPNum
-            // 
-            this.txtPNum.Location = new System.Drawing.Point(212, 264);
-            this.txtPNum.Name = "txtPNum";
-            this.txtPNum.Size = new System.Drawing.Size(234, 22);
-            this.txtPNum.TabIndex = 57;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(212, 214);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(234, 22);
-            this.txtID.TabIndex = 56;
             // 
             // label4
             // 
@@ -120,30 +90,6 @@
             this.label8.Size = new System.Drawing.Size(106, 18);
             this.label8.TabIndex = 54;
             this.label8.Text = "CMND/CCCD:";
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Location = new System.Drawing.Point(21, 364);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(115, 48);
-            this.btnCreate.TabIndex = 5;
-            this.btnCreate.Text = "Tạo";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
-            // txtAddr
-            // 
-            this.txtAddr.Location = new System.Drawing.Point(212, 114);
-            this.txtAddr.Name = "txtAddr";
-            this.txtAddr.Size = new System.Drawing.Size(234, 22);
-            this.txtAddr.TabIndex = 53;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(212, 64);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(234, 22);
-            this.txtName.TabIndex = 52;
             // 
             // label6
             // 
@@ -175,40 +121,10 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Họ và tên:";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Enabled = false;
-            this.btnUpdate.Location = new System.Drawing.Point(177, 364);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(115, 48);
-            this.btnUpdate.TabIndex = 7;
-            this.btnUpdate.Text = "Chỉnh sửa";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // txtMoney
-            // 
-            this.txtMoney.Location = new System.Drawing.Point(212, 314);
-            this.txtMoney.Name = "txtMoney";
-            this.txtMoney.ReadOnly = true;
-            this.txtMoney.Size = new System.Drawing.Size(234, 22);
-            this.txtMoney.TabIndex = 38;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(331, 364);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(115, 48);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.LightGray;
+            this.label7.BackColor = System.Drawing.Color.LightBlue;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(22, 315);
             this.label7.Name = "label7";
@@ -218,33 +134,253 @@
             // 
             // pnlInformation
             // 
+            this.pnlInformation.Controls.Add(this.btnDelete);
+            this.pnlInformation.Controls.Add(this.btnUpdate);
+            this.pnlInformation.Controls.Add(this.btnCreate);
+            this.pnlInformation.Controls.Add(this.txtMoney);
+            this.pnlInformation.Controls.Add(this.txtPNum);
+            this.pnlInformation.Controls.Add(this.txtID);
+            this.pnlInformation.Controls.Add(this.dtpDoB);
+            this.pnlInformation.Controls.Add(this.txtAddr);
+            this.pnlInformation.Controls.Add(this.txtName);
             this.pnlInformation.Controls.Add(this.txtSTK);
             this.pnlInformation.Controls.Add(this.label2);
             this.pnlInformation.Controls.Add(this.label7);
-            this.pnlInformation.Controls.Add(this.dtpDoB);
-            this.pnlInformation.Controls.Add(this.btnDelete);
-            this.pnlInformation.Controls.Add(this.txtPNum);
-            this.pnlInformation.Controls.Add(this.txtMoney);
-            this.pnlInformation.Controls.Add(this.txtID);
-            this.pnlInformation.Controls.Add(this.btnUpdate);
             this.pnlInformation.Controls.Add(this.label4);
             this.pnlInformation.Controls.Add(this.label3);
             this.pnlInformation.Controls.Add(this.label8);
             this.pnlInformation.Controls.Add(this.label5);
-            this.pnlInformation.Controls.Add(this.btnCreate);
             this.pnlInformation.Controls.Add(this.label6);
-            this.pnlInformation.Controls.Add(this.txtAddr);
-            this.pnlInformation.Controls.Add(this.txtName);
             this.pnlInformation.Location = new System.Drawing.Point(12, 11);
             this.pnlInformation.Name = "pnlInformation";
             this.pnlInformation.Size = new System.Drawing.Size(466, 430);
             this.pnlInformation.TabIndex = 59;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Animated = true;
+            this.btnDelete.AutoRoundedCorners = true;
+            this.btnDelete.BorderRadius = 23;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(328, 364);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(95, 48);
+            this.btnDelete.TabIndex = 68;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Animated = true;
+            this.btnUpdate.AutoRoundedCorners = true;
+            this.btnUpdate.BorderRadius = 23;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.Location = new System.Drawing.Point(174, 364);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(120, 48);
+            this.btnUpdate.TabIndex = 67;
+            this.btnUpdate.Text = "Chỉnh sửa";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Animated = true;
+            this.btnCreate.AutoRoundedCorners = true;
+            this.btnCreate.BorderRadius = 23;
+            this.btnCreate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCreate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.Image")));
+            this.btnCreate.Location = new System.Drawing.Point(44, 364);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(95, 48);
+            this.btnCreate.TabIndex = 66;
+            this.btnCreate.Text = "Tạo";
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // txtMoney
+            // 
+            this.txtMoney.Animated = true;
+            this.txtMoney.AutoRoundedCorners = true;
+            this.txtMoney.BorderRadius = 16;
+            this.txtMoney.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMoney.DefaultText = "";
+            this.txtMoney.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMoney.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMoney.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txtMoney.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMoney.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMoney.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMoney.ForeColor = System.Drawing.Color.Black;
+            this.txtMoney.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMoney.Location = new System.Drawing.Point(212, 305);
+            this.txtMoney.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMoney.Name = "txtMoney";
+            this.txtMoney.PasswordChar = '\0';
+            this.txtMoney.PlaceholderText = "";
+            this.txtMoney.ReadOnly = true;
+            this.txtMoney.SelectedText = "";
+            this.txtMoney.Size = new System.Drawing.Size(234, 34);
+            this.txtMoney.TabIndex = 65;
+            // 
+            // txtPNum
+            // 
+            this.txtPNum.Animated = true;
+            this.txtPNum.AutoRoundedCorners = true;
+            this.txtPNum.BorderRadius = 16;
+            this.txtPNum.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPNum.DefaultText = "";
+            this.txtPNum.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPNum.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPNum.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txtPNum.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPNum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPNum.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPNum.ForeColor = System.Drawing.Color.Black;
+            this.txtPNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPNum.Location = new System.Drawing.Point(212, 255);
+            this.txtPNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPNum.Name = "txtPNum";
+            this.txtPNum.PasswordChar = '\0';
+            this.txtPNum.PlaceholderText = "";
+            this.txtPNum.SelectedText = "";
+            this.txtPNum.Size = new System.Drawing.Size(234, 34);
+            this.txtPNum.TabIndex = 64;
+            // 
+            // txtID
+            // 
+            this.txtID.Animated = true;
+            this.txtID.AutoRoundedCorners = true;
+            this.txtID.BorderRadius = 16;
+            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtID.DefaultText = "";
+            this.txtID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtID.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txtID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtID.ForeColor = System.Drawing.Color.Black;
+            this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtID.Location = new System.Drawing.Point(212, 206);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtID.Name = "txtID";
+            this.txtID.PasswordChar = '\0';
+            this.txtID.PlaceholderText = "";
+            this.txtID.SelectedText = "";
+            this.txtID.Size = new System.Drawing.Size(234, 34);
+            this.txtID.TabIndex = 63;
+            // 
+            // dtpDoB
+            // 
+            this.dtpDoB.Animated = true;
+            this.dtpDoB.AutoRoundedCorners = true;
+            this.dtpDoB.BorderRadius = 17;
+            this.dtpDoB.Checked = true;
+            this.dtpDoB.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.dtpDoB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpDoB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDoB.Location = new System.Drawing.Point(212, 158);
+            this.dtpDoB.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpDoB.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpDoB.Name = "dtpDoB";
+            this.dtpDoB.Size = new System.Drawing.Size(234, 36);
+            this.dtpDoB.TabIndex = 62;
+            this.dtpDoB.Value = new System.DateTime(2023, 5, 15, 14, 40, 54, 39);
+            // 
+            // txtAddr
+            // 
+            this.txtAddr.Animated = true;
+            this.txtAddr.AutoRoundedCorners = true;
+            this.txtAddr.BorderRadius = 16;
+            this.txtAddr.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAddr.DefaultText = "";
+            this.txtAddr.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAddr.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAddr.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txtAddr.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAddr.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAddr.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtAddr.ForeColor = System.Drawing.Color.Black;
+            this.txtAddr.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAddr.Location = new System.Drawing.Point(212, 105);
+            this.txtAddr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAddr.Name = "txtAddr";
+            this.txtAddr.PasswordChar = '\0';
+            this.txtAddr.PlaceholderText = "";
+            this.txtAddr.SelectedText = "";
+            this.txtAddr.Size = new System.Drawing.Size(234, 34);
+            this.txtAddr.TabIndex = 61;
+            // 
+            // txtName
+            // 
+            this.txtName.Animated = true;
+            this.txtName.AutoRoundedCorners = true;
+            this.txtName.BorderRadius = 16;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtName.ForeColor = System.Drawing.Color.Black;
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Location = new System.Drawing.Point(212, 54);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.PlaceholderText = "";
+            this.txtName.SelectedText = "";
+            this.txtName.Size = new System.Drawing.Size(234, 34);
+            this.txtName.TabIndex = 60;
+            // 
+            // txtSTK
+            // 
+            this.txtSTK.Animated = true;
+            this.txtSTK.AutoRoundedCorners = true;
+            this.txtSTK.BorderRadius = 16;
+            this.txtSTK.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSTK.DefaultText = "";
+            this.txtSTK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSTK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSTK.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txtSTK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSTK.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSTK.ForeColor = System.Drawing.Color.Black;
+            this.txtSTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSTK.Location = new System.Drawing.Point(212, 5);
+            this.txtSTK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSTK.Name = "txtSTK";
+            this.txtSTK.PasswordChar = '\0';
+            this.txtSTK.PlaceholderText = "";
+            this.txtSTK.ReadOnly = true;
+            this.txtSTK.SelectedText = "";
+            this.txtSTK.Size = new System.Drawing.Size(234, 34);
+            this.txtSTK.TabIndex = 59;
+            // 
             // FInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(484, 444);
             this.Controls.Add(this.pnlInformation);
             this.Controls.Add(this.pnlUpdate);
@@ -261,23 +397,23 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlUpdate;
-        private System.Windows.Forms.TextBox txtSTK;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpDoB;
-        private System.Windows.Forms.TextBox txtPNum;
-        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.TextBox txtAddr;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox txtMoney;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnlInformation;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDoB;
+        private Guna.UI2.WinForms.Guna2TextBox txtAddr;
+        private Guna.UI2.WinForms.Guna2TextBox txtName;
+        private Guna.UI2.WinForms.Guna2TextBox txtSTK;
+        private Guna.UI2.WinForms.Guna2Button btnCreate;
+        private Guna.UI2.WinForms.Guna2TextBox txtMoney;
+        private Guna.UI2.WinForms.Guna2TextBox txtPNum;
+        private Guna.UI2.WinForms.Guna2TextBox txtID;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
     }
 }

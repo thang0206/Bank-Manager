@@ -28,17 +28,18 @@ namespace BankManage
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             this.pnlFind = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.gvSTK = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.txtFilter = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pnlOption = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtFilter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gvSTK = new System.Windows.Forms.DataGridView();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlOption = new Guna.UI2.WinForms.Guna2Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,16 +50,19 @@ namespace BankManage
             this.CreditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SavingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TransHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).BeginInit();
+            this.Animate_Win = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.Borderless_Form = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.btnQuit = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
+            this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlFind
@@ -70,29 +74,6 @@ namespace BankManage
             this.pnlFind.Size = new System.Drawing.Size(0, 0);
             this.pnlFind.TabIndex = 6;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(268, 86);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(92, 43);
-            this.btnCancel.TabIndex = 13;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // gvSTK
-            // 
-            this.gvSTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSTK.Location = new System.Drawing.Point(461, 14);
-            this.gvSTK.Name = "gvSTK";
-            this.gvSTK.RowHeadersWidth = 51;
-            this.gvSTK.RowTemplate.Height = 24;
-            this.gvSTK.Size = new System.Drawing.Size(435, 115);
-            this.gvSTK.TabIndex = 2;
-            this.gvSTK.Visible = false;
-            this.gvSTK.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSTK_CellClick);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -101,26 +82,6 @@ namespace BankManage
             this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nhập CMND/CCCD:";
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Location = new System.Drawing.Point(90, 86);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(93, 43);
-            this.btnFilter.TabIndex = 11;
-            this.btnFilter.Text = "Tìm kiếm";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.Location = new System.Drawing.Point(16, 41);
-            this.txtFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtFilter.MinimumSize = new System.Drawing.Size(4, 30);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(425, 22);
-            this.txtFilter.TabIndex = 10;
             // 
             // panel3
             // 
@@ -132,37 +93,118 @@ namespace BankManage
             this.panel3.Size = new System.Drawing.Size(0, 0);
             this.panel3.TabIndex = 7;
             // 
-            // pnlOption
-            // 
-            this.pnlOption.Location = new System.Drawing.Point(16, 13);
-            this.pnlOption.Name = "pnlOption";
-            this.pnlOption.Size = new System.Drawing.Size(880, 434);
-            this.pnlOption.TabIndex = 1;
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.gvSTK);
+            this.panel1.BackColor = System.Drawing.Color.Cyan;
             this.panel1.Controls.Add(this.txtFilter);
+            this.panel1.Controls.Add(this.gvSTK);
+            this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnFilter);
-            this.panel1.Location = new System.Drawing.Point(11, 16);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(11, 23);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(901, 142);
             this.panel1.TabIndex = 14;
             // 
+            // txtFilter
+            // 
+            this.txtFilter.Animated = true;
+            this.txtFilter.AutoRoundedCorners = true;
+            this.txtFilter.BorderRadius = 15;
+            this.txtFilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilter.DefaultText = "";
+            this.txtFilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFilter.ForeColor = System.Drawing.Color.Black;
+            this.txtFilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilter.Location = new System.Drawing.Point(16, 38);
+            this.txtFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.PasswordChar = '\0';
+            this.txtFilter.PlaceholderText = "";
+            this.txtFilter.SelectedText = "";
+            this.txtFilter.Size = new System.Drawing.Size(434, 33);
+            this.txtFilter.TabIndex = 0;
+            // 
+            // gvSTK
+            // 
+            this.gvSTK.BackgroundColor = System.Drawing.Color.Cyan;
+            this.gvSTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvSTK.Location = new System.Drawing.Point(485, 13);
+            this.gvSTK.Name = "gvSTK";
+            this.gvSTK.RowHeadersWidth = 51;
+            this.gvSTK.RowTemplate.Height = 24;
+            this.gvSTK.Size = new System.Drawing.Size(400, 116);
+            this.gvSTK.TabIndex = 13;
+            this.gvSTK.Visible = false;
+            this.gvSTK.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSTK_CellClick);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Animated = true;
+            this.btnCancel.AnimatedGIF = true;
+            this.btnCancel.AutoRoundedCorners = true;
+            this.btnCancel.BorderRadius = 20;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.Location = new System.Drawing.Point(285, 86);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(82, 43);
+            this.btnCancel.TabIndex = 0;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Animated = true;
+            this.btnFilter.AnimatedGIF = true;
+            this.btnFilter.AutoRoundedCorners = true;
+            this.btnFilter.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilter.BorderRadius = 20;
+            this.btnFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnFilter.ForeColor = System.Drawing.Color.White;
+            this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
+            this.btnFilter.Location = new System.Drawing.Point(74, 86);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(118, 43);
+            this.btnFilter.TabIndex = 0;
+            this.btnFilter.Text = "Tìm kiếm";
+            this.btnFilter.UseTransparentBackground = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.Controls.Add(this.pnlOption);
-            this.panel2.Location = new System.Drawing.Point(238, 160);
+            this.panel2.Location = new System.Drawing.Point(249, 160);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(912, 458);
+            this.panel2.Size = new System.Drawing.Size(901, 458);
             this.panel2.TabIndex = 0;
+            // 
+            // pnlOption
+            // 
+            this.pnlOption.Location = new System.Drawing.Point(11, 17);
+            this.pnlOption.Name = "pnlOption";
+            this.pnlOption.Size = new System.Drawing.Size(885, 437);
+            this.pnlOption.TabIndex = 0;
             // 
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.Gray;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Enabled = false;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -176,17 +218,20 @@ namespace BankManage
             this.SavingToolStripMenuItem,
             this.TransHistoryToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 37);
+            this.menuStrip1.Location = new System.Drawing.Point(3, 94);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(233, 233);
+            this.menuStrip1.Size = new System.Drawing.Size(252, 225);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // informationToolStripMenuItem
             // 
             this.informationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.informationToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.informationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("informationToolStripMenuItem.Image")));
+            this.informationToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(215, 32);
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(235, 32);
             this.informationToolStripMenuItem.Text = "Thông tin khách hàng";
             this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
             // 
@@ -197,13 +242,18 @@ namespace BankManage
             this.SendToolStripMenuItem,
             this.TransToolStripMenuItem});
             this.ContractToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ContractToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.ContractToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ContractToolStripMenuItem.Image")));
             this.ContractToolStripMenuItem.Name = "ContractToolStripMenuItem";
-            this.ContractToolStripMenuItem.Size = new System.Drawing.Size(109, 32);
+            this.ContractToolStripMenuItem.Size = new System.Drawing.Size(129, 32);
             this.ContractToolStripMenuItem.Text = "Giao dịch";
             // 
             // WithdrawToolStripMenuItem
             // 
+            this.WithdrawToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.WithdrawToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.WithdrawToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.WithdrawToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.WithdrawToolStripMenuItem.Name = "WithdrawToolStripMenuItem";
             this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(222, 32);
             this.WithdrawToolStripMenuItem.Text = "Rút tiền";
@@ -211,6 +261,8 @@ namespace BankManage
             // 
             // SendToolStripMenuItem
             // 
+            this.SendToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.SendToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.SendToolStripMenuItem.Name = "SendToolStripMenuItem";
             this.SendToolStripMenuItem.Size = new System.Drawing.Size(222, 32);
             this.SendToolStripMenuItem.Text = "Gửi tiền";
@@ -218,6 +270,8 @@ namespace BankManage
             // 
             // TransToolStripMenuItem
             // 
+            this.TransToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.TransToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.TransToolStripMenuItem.Name = "TransToolStripMenuItem";
             this.TransToolStripMenuItem.Size = new System.Drawing.Size(222, 32);
             this.TransToolStripMenuItem.Text = "Chuyển khoản";
@@ -226,93 +280,142 @@ namespace BankManage
             // BorrowToolStripMenuItem
             // 
             this.BorrowToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.BorrowToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.BorrowToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("BorrowToolStripMenuItem.Image")));
             this.BorrowToolStripMenuItem.Name = "BorrowToolStripMenuItem";
-            this.BorrowToolStripMenuItem.Size = new System.Drawing.Size(57, 32);
+            this.BorrowToolStripMenuItem.Size = new System.Drawing.Size(77, 32);
             this.BorrowToolStripMenuItem.Text = "Vay";
             this.BorrowToolStripMenuItem.Click += new System.EventHandler(this.BorrowToolStripMenuItem_Click);
             // 
             // CreditToolStripMenuItem
             // 
             this.CreditToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.CreditToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.CreditToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CreditToolStripMenuItem.Image")));
             this.CreditToolStripMenuItem.Name = "CreditToolStripMenuItem";
-            this.CreditToolStripMenuItem.Size = new System.Drawing.Size(108, 32);
+            this.CreditToolStripMenuItem.Size = new System.Drawing.Size(128, 32);
             this.CreditToolStripMenuItem.Text = "Tín dụng ";
             this.CreditToolStripMenuItem.Click += new System.EventHandler(this.CreditToolStripMenuItem_Click);
             // 
             // SavingToolStripMenuItem
             // 
             this.SavingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.SavingToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.SavingToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SavingToolStripMenuItem.Image")));
             this.SavingToolStripMenuItem.Name = "SavingToolStripMenuItem";
-            this.SavingToolStripMenuItem.Size = new System.Drawing.Size(189, 32);
+            this.SavingToolStripMenuItem.Size = new System.Drawing.Size(209, 32);
             this.SavingToolStripMenuItem.Text = "Tài khoản tiết kiệm";
             this.SavingToolStripMenuItem.Click += new System.EventHandler(this.SavingToolStripMenuItem_Click);
             // 
             // TransHistoryToolStripMenuItem
             // 
             this.TransHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.TransHistoryToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.TransHistoryToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("TransHistoryToolStripMenuItem.Image")));
             this.TransHistoryToolStripMenuItem.Name = "TransHistoryToolStripMenuItem";
-            this.TransHistoryToolStripMenuItem.Size = new System.Drawing.Size(211, 32);
+            this.TransHistoryToolStripMenuItem.Size = new System.Drawing.Size(231, 32);
             this.TransHistoryToolStripMenuItem.Text = "Xem lịch sử giao dịch";
             this.TransHistoryToolStripMenuItem.Click += new System.EventHandler(this.TransHistoryToolStripMenuItem_Click);
             // 
-            // panel4
+            // Animate_Win
             // 
-            this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Location = new System.Drawing.Point(-12, -1);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 636);
-            this.panel4.TabIndex = 15;
+            this.Animate_Win.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_VER_NEGATIVE;
+            this.Animate_Win.TargetForm = this;
             // 
-            // pictureBox1
+            // Borderless_Form
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 366);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Borderless_Form.AnimationType = Guna.UI2.WinForms.Guna2BorderlessForm.AnimateWindowType.AW_VER_NEGATIVE;
+            this.Borderless_Form.BorderRadius = 2;
+            this.Borderless_Form.ContainerControl = this;
+            this.Borderless_Form.DockIndicatorTransparencyValue = 0.6D;
+            this.Borderless_Form.ResizeForm = false;
+            this.Borderless_Form.TransparentWhileDrag = true;
             // 
-            // panel5
+            // btnQuit
             // 
-            this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.panel1);
-            this.panel5.Location = new System.Drawing.Point(236, -11);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(939, 165);
-            this.panel5.TabIndex = 16;
+            this.btnQuit.Animated = true;
+            this.btnQuit.AnimatedGIF = true;
+            this.btnQuit.AutoRoundedCorners = true;
+            this.btnQuit.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnQuit.BorderRadius = 21;
+            this.btnQuit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuit.DisabledState.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnQuit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQuit.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnQuit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnQuit.ForeColor = System.Drawing.Color.White;
+            this.btnQuit.Image = ((System.Drawing.Image)(resources.GetObject("btnQuit.Image")));
+            this.btnQuit.Location = new System.Drawing.Point(31, 640);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(180, 45);
+            this.btnQuit.TabIndex = 2;
+            this.btnQuit.Text = "Thoát";
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 352);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(220, 209);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.panel1);
+            this.guna2Panel2.FillColor = System.Drawing.Color.Cyan;
+            this.guna2Panel2.Location = new System.Drawing.Point(249, -11);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(926, 167);
+            this.guna2Panel2.TabIndex = 18;
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.guna2GradientPanel1.Controls.Add(this.menuStrip1);
+            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
+            this.guna2GradientPanel1.Controls.Add(this.btnQuit);
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.SkyBlue;
+            this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(-1, -89);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(255, 716);
+            this.guna2GradientPanel1.TabIndex = 19;
             // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1162, 626);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlFind);
+            this.Controls.Add(this.guna2Panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý ngân hàng";
             this.Load += new System.EventHandler(this.FMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).EndInit();
             this.panel2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2GradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,12 +424,7 @@ namespace BankManage
         #endregion
         private System.Windows.Forms.Panel pnlFind;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel pnlOption;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.TextBox txtFilter;
-        private System.Windows.Forms.DataGridView gvSTK;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -339,8 +437,16 @@ namespace BankManage
         private System.Windows.Forms.ToolStripMenuItem CreditToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SavingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TransHistoryToolStripMenuItem;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2AnimateWindow Animate_Win;
+        private Guna.UI2.WinForms.Guna2BorderlessForm Borderless_Form;
+        private Guna.UI2.WinForms.Guna2Button btnFilter;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private System.Windows.Forms.DataGridView gvSTK;
+        private Guna.UI2.WinForms.Guna2TextBox txtFilter;
+        private Guna.UI2.WinForms.Guna2Panel pnlOption;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button btnQuit;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
     }
 }

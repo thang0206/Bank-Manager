@@ -29,33 +29,25 @@ namespace BankManage
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtpOpen = new System.Windows.Forms.DateTimePicker();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCredit));
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSothe = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtHanmuc = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.txtMoneyUsed = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.cmbMethod = new System.Windows.Forms.ComboBox();
-            this.btnShowTrans = new System.Windows.Forms.Button();
             this.gvHistory = new System.Windows.Forms.DataGridView();
-            this.btnPay = new System.Windows.Forms.Button();
+            this.txtSothe = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMoneyUsed = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cmbHanMuc = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dtpOpen = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.cmbMethod = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnSubmit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPay = new Guna.UI2.WinForms.Guna2Button();
+            this.btnShowTrans = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvHistory)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dtpOpen
-            // 
-            this.dtpOpen.Enabled = false;
-            this.dtpOpen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpOpen.Location = new System.Drawing.Point(148, 166);
-            this.dtpOpen.Name = "dtpOpen";
-            this.dtpOpen.Size = new System.Drawing.Size(234, 22);
-            this.dtpOpen.TabIndex = 43;
             // 
             // label4
             // 
@@ -66,15 +58,6 @@ namespace BankManage
             this.label4.Size = new System.Drawing.Size(96, 17);
             this.label4.TabIndex = 40;
             this.label4.Text = "Ngày mở thẻ: ";
-            // 
-            // txtSothe
-            // 
-            this.txtSothe.Location = new System.Drawing.Point(148, 16);
-            this.txtSothe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSothe.Name = "txtSothe";
-            this.txtSothe.ReadOnly = true;
-            this.txtSothe.Size = new System.Drawing.Size(234, 22);
-            this.txtSothe.TabIndex = 52;
             // 
             // label3
             // 
@@ -106,44 +89,6 @@ namespace BankManage
             this.label1.TabIndex = 66;
             this.label1.Text = "Hạn mức thẻ:";
             // 
-            // txtHanmuc
-            // 
-            this.txtHanmuc.Location = new System.Drawing.Point(148, 116);
-            this.txtHanmuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtHanmuc.Name = "txtHanmuc";
-            this.txtHanmuc.Size = new System.Drawing.Size(234, 22);
-            this.txtHanmuc.TabIndex = 67;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Enabled = false;
-            this.btnSubmit.Location = new System.Drawing.Point(12, 269);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(76, 38);
-            this.btnSubmit.TabIndex = 68;
-            this.btnSubmit.Text = "Mở thẻ";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(290, 269);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(76, 38);
-            this.btnCancel.TabIndex = 69;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // txtMoneyUsed
-            // 
-            this.txtMoneyUsed.Location = new System.Drawing.Point(148, 66);
-            this.txtMoneyUsed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMoneyUsed.Name = "txtMoneyUsed";
-            this.txtMoneyUsed.ReadOnly = true;
-            this.txtMoneyUsed.Size = new System.Drawing.Size(234, 22);
-            this.txtMoneyUsed.TabIndex = 71;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -154,42 +99,6 @@ namespace BankManage
             this.label2.TabIndex = 70;
             this.label2.Text = "Số tiền đã dùng:";
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(148, 269);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(76, 38);
-            this.btnDelete.TabIndex = 72;
-            this.btnDelete.Text = "Xóa thẻ";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // cmbMethod
-            // 
-            this.cmbMethod.FormattingEnabled = true;
-            this.cmbMethod.Items.AddRange(new object[] {
-            "Sao kê bảng lương",
-            "Hợp đồng lao động",
-            "Hợp đồng thuê tài sản"});
-            this.cmbMethod.Location = new System.Drawing.Point(148, 216);
-            this.cmbMethod.Name = "cmbMethod";
-            this.cmbMethod.Size = new System.Drawing.Size(233, 24);
-            this.cmbMethod.TabIndex = 75;
-            this.cmbMethod.SelectedIndexChanged += new System.EventHandler(this.cmbMethod_SelectedIndexChanged);
-            // 
-            // btnShowTrans
-            // 
-            this.btnShowTrans.Location = new System.Drawing.Point(148, 328);
-            this.btnShowTrans.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnShowTrans.Name = "btnShowTrans";
-            this.btnShowTrans.Size = new System.Drawing.Size(218, 38);
-            this.btnShowTrans.TabIndex = 76;
-            this.btnShowTrans.Text = "Xem lịch sử giao dịch";
-            this.btnShowTrans.UseVisualStyleBackColor = true;
-            this.btnShowTrans.Click += new System.EventHandler(this.btnShowTrans_Click);
-            // 
             // gvHistory
             // 
             this.gvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -198,41 +107,244 @@ namespace BankManage
             this.gvHistory.Name = "gvHistory";
             this.gvHistory.RowHeadersWidth = 51;
             this.gvHistory.RowTemplate.Height = 24;
-            this.gvHistory.Size = new System.Drawing.Size(482, 350);
+            this.gvHistory.Size = new System.Drawing.Size(439, 350);
             this.gvHistory.TabIndex = 77;
             this.gvHistory.Visible = false;
             // 
+            // txtSothe
+            // 
+            this.txtSothe.Animated = true;
+            this.txtSothe.AutoRoundedCorners = true;
+            this.txtSothe.BorderRadius = 16;
+            this.txtSothe.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSothe.DefaultText = "";
+            this.txtSothe.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSothe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSothe.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txtSothe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSothe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSothe.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSothe.ForeColor = System.Drawing.Color.Black;
+            this.txtSothe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSothe.Location = new System.Drawing.Point(148, 13);
+            this.txtSothe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSothe.Name = "txtSothe";
+            this.txtSothe.PasswordChar = '\0';
+            this.txtSothe.PlaceholderText = "";
+            this.txtSothe.ReadOnly = true;
+            this.txtSothe.SelectedText = "";
+            this.txtSothe.Size = new System.Drawing.Size(234, 35);
+            this.txtSothe.TabIndex = 79;
+            // 
+            // txtMoneyUsed
+            // 
+            this.txtMoneyUsed.Animated = true;
+            this.txtMoneyUsed.AutoRoundedCorners = true;
+            this.txtMoneyUsed.BorderRadius = 16;
+            this.txtMoneyUsed.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMoneyUsed.DefaultText = "";
+            this.txtMoneyUsed.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMoneyUsed.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMoneyUsed.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.txtMoneyUsed.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMoneyUsed.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMoneyUsed.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMoneyUsed.ForeColor = System.Drawing.Color.Black;
+            this.txtMoneyUsed.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMoneyUsed.Location = new System.Drawing.Point(148, 59);
+            this.txtMoneyUsed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMoneyUsed.Name = "txtMoneyUsed";
+            this.txtMoneyUsed.PasswordChar = '\0';
+            this.txtMoneyUsed.PlaceholderText = "";
+            this.txtMoneyUsed.ReadOnly = true;
+            this.txtMoneyUsed.SelectedText = "";
+            this.txtMoneyUsed.Size = new System.Drawing.Size(234, 35);
+            this.txtMoneyUsed.TabIndex = 80;
+            // 
+            // cmbHanMuc
+            // 
+            this.cmbHanMuc.AutoRoundedCorners = true;
+            this.cmbHanMuc.BackColor = System.Drawing.Color.Transparent;
+            this.cmbHanMuc.BorderRadius = 17;
+            this.cmbHanMuc.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.cmbHanMuc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbHanMuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbHanMuc.Enabled = false;
+            this.cmbHanMuc.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbHanMuc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbHanMuc.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbHanMuc.ForeColor = System.Drawing.Color.Black;
+            this.cmbHanMuc.ItemHeight = 30;
+            this.cmbHanMuc.Items.AddRange(new object[] {
+            "5 triệu",
+            "10 triệu",
+            "20 triệu"});
+            this.cmbHanMuc.Location = new System.Drawing.Point(148, 107);
+            this.cmbHanMuc.Name = "cmbHanMuc";
+            this.cmbHanMuc.Size = new System.Drawing.Size(233, 36);
+            this.cmbHanMuc.TabIndex = 81;
+            // 
+            // dtpOpen
+            // 
+            this.dtpOpen.Animated = true;
+            this.dtpOpen.AutoRoundedCorners = true;
+            this.dtpOpen.BorderRadius = 17;
+            this.dtpOpen.Checked = true;
+            this.dtpOpen.Enabled = false;
+            this.dtpOpen.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.dtpOpen.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpOpen.ForeColor = System.Drawing.Color.Black;
+            this.dtpOpen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpOpen.Location = new System.Drawing.Point(148, 162);
+            this.dtpOpen.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpOpen.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpOpen.Name = "dtpOpen";
+            this.dtpOpen.Size = new System.Drawing.Size(233, 36);
+            this.dtpOpen.TabIndex = 82;
+            this.dtpOpen.Value = new System.DateTime(2023, 5, 15, 14, 56, 42, 956);
+            // 
+            // cmbMethod
+            // 
+            this.cmbMethod.AutoRoundedCorners = true;
+            this.cmbMethod.BackColor = System.Drawing.Color.Transparent;
+            this.cmbMethod.BorderRadius = 17;
+            this.cmbMethod.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.cmbMethod.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMethod.Enabled = false;
+            this.cmbMethod.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbMethod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbMethod.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbMethod.ForeColor = System.Drawing.Color.Black;
+            this.cmbMethod.ItemHeight = 30;
+            this.cmbMethod.Items.AddRange(new object[] {
+            "Sao kê bảng lương",
+            "Hợp đồng lao động",
+            "Hợp đồng thuê tài sản"});
+            this.cmbMethod.Location = new System.Drawing.Point(148, 209);
+            this.cmbMethod.Name = "cmbMethod";
+            this.cmbMethod.Size = new System.Drawing.Size(234, 36);
+            this.cmbMethod.TabIndex = 83;
+            this.cmbMethod.SelectedIndexChanged += new System.EventHandler(this.cmbMethod_SelectedIndexChanged);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Animated = true;
+            this.btnSubmit.AutoRoundedCorners = true;
+            this.btnSubmit.BorderRadius = 18;
+            this.btnSubmit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSubmit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSubmit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSubmit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Image = ((System.Drawing.Image)(resources.GetObject("btnSubmit.Image")));
+            this.btnSubmit.Location = new System.Drawing.Point(12, 269);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(125, 38);
+            this.btnSubmit.TabIndex = 84;
+            this.btnSubmit.Text = "Mở thẻ";
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Animated = true;
+            this.btnDelete.AutoRoundedCorners = true;
+            this.btnDelete.BorderRadius = 18;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(148, 269);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(110, 38);
+            this.btnDelete.TabIndex = 85;
+            this.btnDelete.Text = "Xóa thẻ";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Animated = true;
+            this.btnCancel.AutoRoundedCorners = true;
+            this.btnCancel.BorderRadius = 18;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.Location = new System.Drawing.Point(267, 269);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(115, 38);
+            this.btnCancel.TabIndex = 86;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(15, 328);
+            this.btnPay.Animated = true;
+            this.btnPay.AutoRoundedCorners = true;
+            this.btnPay.BorderRadius = 18;
+            this.btnPay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPay.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPay.ForeColor = System.Drawing.Color.White;
+            this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
+            this.btnPay.Location = new System.Drawing.Point(12, 328);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(94, 38);
-            this.btnPay.TabIndex = 76;
-            this.btnPay.Text = "Thanh toán ";
-            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Size = new System.Drawing.Size(125, 38);
+            this.btnPay.TabIndex = 87;
+            this.btnPay.Text = "Thanh toán";
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // btnShowTrans
+            // 
+            this.btnShowTrans.Animated = true;
+            this.btnShowTrans.AutoRoundedCorners = true;
+            this.btnShowTrans.BorderRadius = 18;
+            this.btnShowTrans.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnShowTrans.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnShowTrans.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnShowTrans.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnShowTrans.Enabled = false;
+            this.btnShowTrans.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnShowTrans.ForeColor = System.Drawing.Color.White;
+            this.btnShowTrans.Image = ((System.Drawing.Image)(resources.GetObject("btnShowTrans.Image")));
+            this.btnShowTrans.Location = new System.Drawing.Point(148, 328);
+            this.btnShowTrans.Name = "btnShowTrans";
+            this.btnShowTrans.Size = new System.Drawing.Size(234, 38);
+            this.btnShowTrans.TabIndex = 88;
+            this.btnShowTrans.Text = "Thống kê thẻ tín dụng";
+            this.btnShowTrans.Click += new System.EventHandler(this.btnShowTrans_Click);
             // 
             // FCredit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(983, 410);
-            this.Controls.Add(this.gvHistory);
+            this.BackColor = System.Drawing.Color.LightBlue;
+            this.ClientSize = new System.Drawing.Size(910, 410);
             this.Controls.Add(this.btnShowTrans);
             this.Controls.Add(this.btnPay);
-            this.Controls.Add(this.cmbMethod);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.txtMoneyUsed);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.txtHanmuc);
+            this.Controls.Add(this.cmbMethod);
+            this.Controls.Add(this.dtpOpen);
+            this.Controls.Add(this.cmbHanMuc);
+            this.Controls.Add(this.txtMoneyUsed);
+            this.Controls.Add(this.txtSothe);
+            this.Controls.Add(this.gvHistory);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtSothe);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtpOpen);
             this.Controls.Add(this.label4);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FCredit";
@@ -245,21 +357,21 @@ namespace BankManage
         }
 
         #endregion
-        private System.Windows.Forms.DateTimePicker dtpOpen;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSothe;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtHanmuc;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtMoneyUsed;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.ComboBox cmbMethod;
-        private System.Windows.Forms.Button btnShowTrans;
         private System.Windows.Forms.DataGridView gvHistory;
-        private System.Windows.Forms.Button btnPay;
+        private Guna.UI2.WinForms.Guna2TextBox txtSothe;
+        private Guna.UI2.WinForms.Guna2TextBox txtMoneyUsed;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbHanMuc;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpOpen;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbMethod;
+        private Guna.UI2.WinForms.Guna2Button btnSubmit;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private Guna.UI2.WinForms.Guna2Button btnPay;
+        private Guna.UI2.WinForms.Guna2Button btnShowTrans;
     }
 }

@@ -74,32 +74,6 @@ namespace BankManage
         {
             ClearInfomation();
         }
-
-        private void gvSaving_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int numRow = e.RowIndex;
-            txtSavingNumber.Text = gvSaving.Rows[numRow].Cells["MaSo"].Value.ToString();
-            txtName.Text = currentCustomer.Name;
-            txtMoney.Text = currentCustomer.Money.ToString();
-            txtMoneySend.Text = gvSaving.Rows[numRow].Cells["Money"].Value.ToString();
-            cbTerm.Text = gvSaving.Rows[numRow].Cells["KyHan"].Value.ToString();
-            cbMethod.Text = gvSaving.Rows[numRow].Cells["PhuongThucDaoHan"].Value.ToString();
-            dtpSend.Text = gvSaving.Rows[numRow].Cells["NgayGui"].Value.ToString();
-            dtpEnd.Text = gvSaving.Rows[numRow].Cells["NgayDaoHan"].Value.ToString();
-            btnWithdraw.Enabled = true;
-            btnCheck.Enabled = true;
-            if (cbMethod.Text.Contains("Nhan ca tien lai va goc( tu dong so) ")) {
-                if (dtpEnd.Value.Date == DateTime.Now.Date)
-                {
-                    currentCustomer.Money = currentCustomer.Money + Convert.ToInt32(txtMoneySend.Text) + loans;
-                    customerDAO.UpdateMoney(currentCustomer);
-                    Saving withdrawsaving = new Saving(txtSavingNumber.Text);
-                    savingDAO.Delete(withdrawsaving);
-                    LoadCustomerData($" WHERE MaSo = '{txtSavingNumber.Text}'");
-                    MessageBox.Show("DA XOA SO THANH CONG, TIEN LAI VA GOC DA DUOC NHAN TRONG TAI KHOAN");
-                }
-            }
-        }
         
         private void cbTerm_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -162,6 +136,45 @@ namespace BankManage
                     Saving withdrawsaving = new Saving(txtSavingNumber.Text);
                     savingDAO.Delete(withdrawsaving);
                     MessageBox.Show("Da chuyen goc va lai sang ky han moi");
+                }
+            }
+        }
+
+        private void gvSaving_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numRow = e.RowIndex;
+            txtSavingNumber.Text = gvSaving.Rows[numRow].Cells["MaSo"].Value.ToString();
+            txtName.Text = currentCustomer.Name;
+            txtMoney.Text = currentCustomer.Money.ToString();
+            txtMoneySend.Text = gvSaving.Rows[numRow].Cells["Money"].Value.ToString();
+            cbTerm.Text = gvSaving.Rows[numRow].Cells["KyHan"].Value.ToString();
+            string Method = gvSaving.Rows[numRow].Cells["PhuongThucDaoHan"].Value.ToString();
+            if (Method == "Nhan ca tien lai va goc( tu dong so) ")
+            {
+                cbMethod.StartIndex = 0;
+            }
+            else if (Method == "Toan bo tien goc và tien lai sang ky han moi")
+            {
+                cbMethod.StartIndex = 2;
+            }
+            else
+            {
+                cbMethod.StartIndex = 1;
+            }
+            dtpSend.Text = gvSaving.Rows[numRow].Cells["NgayGui"].Value.ToString();
+            dtpEnd.Text = gvSaving.Rows[numRow].Cells["NgayDaoHan"].Value.ToString();
+            btnWithdraw.Enabled = true;
+            btnCheck.Enabled = true;
+            if (cbMethod.Text.Contains("Nhan ca tien lai va goc( tu dong so) "))
+            {
+                if (dtpEnd.Value.Date == DateTime.Now.Date)
+                {
+                    currentCustomer.Money = currentCustomer.Money + Convert.ToInt32(txtMoneySend.Text) + loans;
+                    customerDAO.UpdateMoney(currentCustomer);
+                    Saving withdrawsaving = new Saving(txtSavingNumber.Text);
+                    savingDAO.Delete(withdrawsaving);
+                    LoadCustomerData($" WHERE MaSo = '{txtSavingNumber.Text}'");
+                    MessageBox.Show("DA XOA SO THANH CONG, TIEN LAI VA GOC DA DUOC NHAN TRONG TAI KHOAN");
                 }
             }
         }

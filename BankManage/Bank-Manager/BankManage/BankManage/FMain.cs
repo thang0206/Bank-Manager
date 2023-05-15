@@ -146,5 +146,10 @@ namespace BankManage
             form.Dock = DockStyle.Fill;
             form.Show();
         }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

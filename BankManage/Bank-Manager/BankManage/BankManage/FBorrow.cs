@@ -23,7 +23,7 @@ namespace BankManage
 
             InitializeComponent();
             this.currentCustomer = choosedCustomer;
-            txtMoneyRemain.Text = currentCustomer.Money.ToString(); ;
+            txtMoneyRemain.Text = currentCustomer.Money.ToString();
             txtID.Text = currentCustomer.CitizenId.ToString();
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace BankManage
 
         private void cbKyhan_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (cbTerm.SelectedItem.ToString() == "12 thang, lai suat 10%/nam")
+            if (cbTerm.SelectedIndex == 0)
                 dtpBack.Value = dtpAllow.Value.AddYears(1);
             else
                 dtpBack.Value = dtpAllow.Value.AddMonths(8);
@@ -60,14 +60,14 @@ namespace BankManage
 
         private void cbTypeOfCredit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbCollateral.Enabled = cbTypeOfCredit.SelectedItem.ToString() == "Vay the chap";
+            cbCollateral.Enabled = cbTypeOfCredit.SelectedIndex == 0;
         } 
         private void FBorrow_Load(object sender, EventArgs e)
         {
             try
             {
                 LoadData($" WHERE CitizenID = '{currentCustomer.CitizenId}'");
-                if (DateTime.Compare(DateTime.Now, dtpBack.Value.Date) < 0)
+                if (DateTime.Compare(DateTime.Now, dtpBack.Value.Date) > 0)
                 {
                     MessageBox.Show("Hiện tại bạn đang có nợ xấu, vui lòng thanh toán.");
                     btnSubmit.Enabled = false;
@@ -96,28 +96,64 @@ namespace BankManage
                 {
                     txtEarnings.Text = data.Rows[0]["Salary"].ToString();
                     txtMoneyBorrow.Text = data.Rows[0]["MoneyBorrow"].ToString();
-                    cbTypeOfCredit.Text = data.Rows[0]["KieuTinDung"].ToString();
-                    cbCollateral.Text = data.Rows[0]["TaiSanTheChap"].ToString();
-                    cbTerm.Text = data.Rows[0]["KyHan"].ToString();
+                    
+                    string TypeOfCredit = data.Rows[0]["KieuTinDung"].ToString();
+                    if (TypeOfCredit == "Vay thế chấp")
+                    {
+                        cbTypeOfCredit.StartIndex = 0;
+                    }
+                    else
+                    {
+                        cbTypeOfCredit.StartIndex = 1;
+                    }
+
+                    string Collateral = data.Rows[0]["TaiSanTheChap"].ToString();
+                    if (Collateral == "Sổ hồng, sổ đỏ nhà")
+                    {
+                        cbCollateral.StartIndex = 0;
+                    }
+                    else if (Collateral == "Cà vẹt xe")
+                    {
+                        cbCollateral.StartIndex = 1;
+                    }
+                    else if (Collateral == "Giấy phép xây dựng")
+                    {
+                        cbCollateral.StartIndex = 2;
+                    }
+                    else
+                    {
+                        cbCollateral.StartIndex = 3;
+                    }
+
+                    string Term = data.Rows[0]["KyHan"].ToString();
+                    if (Term.Contains("12") == true)
+                    {
+                        cbTerm.StartIndex = 0;
+                    }
+                    else
+                    {
+                        cbTerm.StartIndex = 1;
+                    }
+
                     dtpAllow.Text = data.Rows[0]["NgayChoVay"].ToString();
                     dtpBack.Text = data.Rows[0]["NgayHoanTien"].ToString();
                 }
             } catch { }
         }
 
-private void btnPay_Click(object sender, EventArgs e)
+        private void btnPay_Click(object sender, EventArgs e)
         {
             Borrow payBorrow = new Borrow(txtID.Text);
             int remainMoney = Convert.ToInt32(txtMoneyRemain.Text) - Convert.ToInt32(txtMoneyBorrow.Text);
             if (remainMoney < 0)
-                MessageBox.Show("So tien trong tai khoan khong du, vui long nap them tien");
+                MessageBox.Show("Số tiền trong tài khoản không đủ, vui lòng nạp thêm tiền");
             else
             {
                 currentCustomer.Money = remainMoney;
                 customerDAO.UpdateMoney(currentCustomer);
                 borrowDAO.Delete(payBorrow);
-                MessageBox.Show("Thanh toan khoan vay thanh cong");
+                MessageBox.Show("Thanh toán khoản vay thành công");
             }
-    }
+        }
     }
 }
