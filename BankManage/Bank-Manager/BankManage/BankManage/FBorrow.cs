@@ -67,18 +67,29 @@ namespace BankManage
             try
             {
                 LoadData($" WHERE CitizenID = '{currentCustomer.CitizenId}'");
-                if (DateTime.Compare(DateTime.Now, dtpBack.Value.Date) > 0)
+                if (txtMoneyBorrow.Text == "")
                 {
-                    MessageBox.Show("Hiện tại bạn đang có nợ xấu, vui lòng thanh toán.");
+                    MessageBox.Show("Hiện tại bạn không có khoản vay hay khoản nợ xấu nào.");
+                    btnSubmit.Enabled = true;
+
+                }
+                else if (DateTime.Compare(DateTime.Now, dtpBack.Value.Date) >= 0)
+                {
+                    MessageBox.Show("Hiện tại bạn đang có khoản nợ xấu, vui lòng thanh toán.");
                     btnSubmit.Enabled = false;
                     btnCancel.Enabled = false;
                 }
                 else
                 {
-                    MessageBox.Show("Hiện tại bạn không có khoản nợ xấu nào.");
-                    btnSubmit.Enabled = true;
+                    MessageBox.Show("Bạn đã có một khoản vay với số tiền: " + txtMoneyBorrow.Text + " vào ngày: " + dtpAllow.Value.Date + "\nVui lòng thanh toán trước ngày: " + dtpBack.Value.Date + " để không phải đưa vào danh sách nợ xấu.");
+                    btnSubmit.Enabled = false;
+                    btnCancel.Enabled = false;
                 }
-            } catch { }
+            }
+            catch(Exception ex)
+            { 
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -97,7 +97,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(2, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.TabIndex = 20;
@@ -137,7 +137,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 53);
+            this.label9.Location = new System.Drawing.Point(2, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 17);
             this.label9.TabIndex = 57;
@@ -166,7 +166,7 @@
             this.txtMoneyRemain.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMoneyRemain.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMoneyRemain.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMoneyRemain.Location = new System.Drawing.Point(148, 94);
+            this.txtMoneyRemain.Location = new System.Drawing.Point(147, 45);
             this.txtMoneyRemain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneyRemain.Name = "txtMoneyRemain";
             this.txtMoneyRemain.PasswordChar = '\0';
@@ -217,7 +217,7 @@
             this.txtEarnings.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEarnings.ForeColor = System.Drawing.Color.Black;
             this.txtEarnings.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEarnings.Location = new System.Drawing.Point(148, 47);
+            this.txtEarnings.Location = new System.Drawing.Point(148, 93);
             this.txtEarnings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEarnings.Name = "txtEarnings";
             this.txtEarnings.PasswordChar = '\0';
