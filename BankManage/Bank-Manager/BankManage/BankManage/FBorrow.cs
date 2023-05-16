@@ -45,16 +45,19 @@ namespace BankManage
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-        Borrow borrow = new Borrow(Convert.ToInt32(txtMoneyRemain.Text), currentCustomer.CitizenId, Convert.ToInt32(txtEarnings.Text), Convert.ToInt32(txtMoneyBorrow.Text), cbTypeOfCredit.Text, cbCollateral.Text, cbTerm.Text, dtpAllow.Value.Date, dtpBack.Value.Date);
+            if (isValidForm())
+            {
+                Borrow borrow = new Borrow(Convert.ToInt32(txtMoneyRemain.Text), currentCustomer.CitizenId, Convert.ToInt32(txtEarnings.Text), Convert.ToInt32(txtMoneyBorrow.Text), cbTypeOfCredit.Text, cbCollateral.Text, cbTerm.Text, dtpAllow.Value.Date, dtpBack.Value.Date);
 
-            if (Convert.ToInt32(txtMoneyBorrow.Text) > (15 * Convert.ToInt32(txtEarnings.Text)) + Convert.ToInt32(txtMoneyRemain.Text))
-            {
-                MessageBox.Show("Bạn không được phép vay, bởi vì quá mức giới hạn chi trả của bạn");
-            }
-            else
-            {
-                borrowDAO.Create(borrow);
-                MessageBox.Show("Chúc mừng bạn đã vay thành công với số tiền: " + txtMoneyBorrow.Text + "\nKỳ hạn: " + cbTerm.Text + "\nVui lòng thanh toán trước " + dtpBack.Value.Date);
+                if (Convert.ToInt32(txtMoneyBorrow.Text) > (15 * Convert.ToInt32(txtEarnings.Text)) + Convert.ToInt32(txtMoneyRemain.Text))
+                {
+                    MessageBox.Show("Bạn không được phép vay, bởi vì quá mức giới hạn chi trả của bạn");
+                }
+                else
+                {
+                    borrowDAO.Create(borrow);
+                    MessageBox.Show("Chúc mừng bạn đã vay thành công với số tiền: " + txtMoneyBorrow.Text + "\nKỳ hạn: " + cbTerm.Text + "\nVui lòng thanh toán trước " + dtpBack.Value.Date);
+                }
             }
         }
 
@@ -71,18 +74,21 @@ namespace BankManage
                 {
                     MessageBox.Show("Hiện tại bạn không có khoản vay hay khoản nợ xấu nào.");
                     btnSubmit.Enabled = true;
+                    btnPay.Enabled = false;
 
                 }
                 else if (DateTime.Compare(DateTime.Now, dtpBack.Value.Date) >= 0)
                 {
                     MessageBox.Show("Hiện tại bạn đang có khoản nợ xấu, vui lòng thanh toán.");
                     btnSubmit.Enabled = false;
+                    btnPay.Enabled = true;
                     btnCancel.Enabled = false;
                 }
                 else
                 {
                     MessageBox.Show("Bạn đã có một khoản vay với số tiền: " + txtMoneyBorrow.Text + " vào ngày: " + dtpAllow.Value.Date + "\nVui lòng thanh toán trước ngày: " + dtpBack.Value.Date + " để không phải đưa vào danh sách nợ xấu.");
                     btnSubmit.Enabled = false;
+                    btnPay.Enabled = true;
                     btnCancel.Enabled = false;
                 }
             }
@@ -165,6 +171,30 @@ namespace BankManage
                 borrowDAO.Delete(payBorrow);
                 MessageBox.Show("Thanh toán khoản vay thành công");
             }
+        }
+        private bool isValidForm()
+        {
+            if (txtEarnings.Text == "")
+            {
+                MessageBox.Show("Vui long nhập thu nhập hàng tháng");
+                return false;
+            }
+            else if (txtMoneyBorrow.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập số tiền muốn vay");
+                return false;
+            }
+            else if (cbTypeOfCredit.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn kiểu tín dụng");
+                return false;
+            }
+            else if (cbTerm.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn kỳ hạn vay");
+                return false;
+            }
+            return true;
         }
     }
 }
