@@ -20,6 +20,7 @@ namespace BankManage
         CustomerDAO customerDAO = new CustomerDAO();
         DBConnection DbConnection = new DBConnection();
         CreditDAO creditDAO = new CreditDAO();
+        TransactionDAO transactionDAO = new TransactionDAO();
         Credit credit;
 
         public FCredit(Customer choosedCustomer)
@@ -153,6 +154,7 @@ namespace BankManage
         {
             Credit credit = new Credit(customer.Stk, txtSothe.Text);
             creditDAO.Delete(credit);
+            transactionDAO.DeleteCredit(customer.Stk);
             FCredit_Load(sender, e);
             btnDelete.Enabled = false;
         }
