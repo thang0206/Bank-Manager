@@ -106,17 +106,18 @@ namespace BankManage
         
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            
             TimeSpan Time = DateTime.Now - dtpSend.Value.Date;           
             int TongSoNgay = Time.Days;
-            if (cbTerm.Text.Contains("8"))
+            if (cbTerm.Text.Contains("8") == true)
                 laisuat = 8;
             else
                 laisuat = 12;
             loans = (Convert.ToInt32(txtMoneySend.Text) * laisuat / 100) * TongSoNgay / 365;
+            string msg = string.Format("So tien loi cua ban la {0} dong", loans);
+            MessageBox.Show(msg);
             if ((DateTime.Compare(DateTime.Now, dtpEnd.Value.Date) >= 0))
             {
-                if (cbMethod.Text.Contains( "Nhan tien lai vao tai khoan, chuyen tien goc sang ky han moi"))
+                if (cbMethod.Text.Contains("Nhan tien lai vao tai khoan, chuyen tien goc sang ky han moi") == true)
                 {
                     currentCustomer.Money = currentCustomer.Money + loans;
                     customerDAO.UpdateMoney(currentCustomer);
@@ -127,7 +128,7 @@ namespace BankManage
                     savingDAO.Delete(withdrawsaving);
                     MessageBox.Show("Da tra lai vao tai khoan");
                 }
-                if (cbMethod.Text.Contains("Toan bo tien goc và tien lai sang ky han moi"))
+                else if (cbMethod.Text.Contains("Toan bo tien goc và tien lai sang ky han moi") == true)
                 {
                     string randomMaSo = RandomMaSo();
                     int txtMoneysend_update = Convert.ToInt32(txtMoneySend.Text) + loans;
