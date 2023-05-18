@@ -202,6 +202,7 @@ namespace BankManage
                 txtMoneyUsed.Text = "0";
                 paycredit.UsedMoney = 0;
                 creditDAO.Update(paycredit);
+                transactionDAO.DeleteCredit(customer.Stk);
                 MessageBox.Show("Thanh toán thành công");
                 btnDelete.Enabled = false;
             }
