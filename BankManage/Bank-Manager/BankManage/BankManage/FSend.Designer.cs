@@ -42,30 +42,30 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 120);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(238, 204);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 17);
+            this.label9.Size = new System.Drawing.Size(96, 18);
             this.label9.TabIndex = 30;
             this.label9.Text = "Ngày gửi tiền:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 68);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(238, 144);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(118, 17);
+            this.label10.Size = new System.Drawing.Size(123, 18);
             this.label10.TabIndex = 29;
             this.label10.Text = "Số tiền muốn gửi:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 18);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(238, 84);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 17);
+            this.label11.Size = new System.Drawing.Size(101, 18);
             this.label11.TabIndex = 28;
             this.label11.Text = "Số dư hiện tại:";
             // 
@@ -84,14 +84,14 @@
             this.txtMoneyRemain.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMoneyRemain.ForeColor = System.Drawing.Color.Black;
             this.txtMoneyRemain.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMoneyRemain.Location = new System.Drawing.Point(129, 9);
+            this.txtMoneyRemain.Location = new System.Drawing.Point(385, 74);
             this.txtMoneyRemain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneyRemain.Name = "txtMoneyRemain";
             this.txtMoneyRemain.PasswordChar = '\0';
             this.txtMoneyRemain.PlaceholderText = "";
             this.txtMoneyRemain.ReadOnly = true;
             this.txtMoneyRemain.SelectedText = "";
-            this.txtMoneyRemain.Size = new System.Drawing.Size(229, 37);
+            this.txtMoneyRemain.Size = new System.Drawing.Size(230, 36);
             this.txtMoneyRemain.TabIndex = 36;
             // 
             // txtMoneySend
@@ -109,13 +109,13 @@
             this.txtMoneySend.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMoneySend.ForeColor = System.Drawing.Color.Black;
             this.txtMoneySend.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMoneySend.Location = new System.Drawing.Point(129, 59);
+            this.txtMoneySend.Location = new System.Drawing.Point(385, 134);
             this.txtMoneySend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneySend.Name = "txtMoneySend";
             this.txtMoneySend.PasswordChar = '\0';
             this.txtMoneySend.PlaceholderText = "";
             this.txtMoneySend.SelectedText = "";
-            this.txtMoneySend.Size = new System.Drawing.Size(229, 37);
+            this.txtMoneySend.Size = new System.Drawing.Size(230, 36);
             this.txtMoneySend.TabIndex = 37;
             // 
             // dtpSend
@@ -128,11 +128,11 @@
             this.dtpSend.FillColor = System.Drawing.Color.LightSkyBlue;
             this.dtpSend.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpSend.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpSend.Location = new System.Drawing.Point(129, 111);
+            this.dtpSend.Location = new System.Drawing.Point(385, 194);
             this.dtpSend.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpSend.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpSend.Name = "dtpSend";
-            this.dtpSend.Size = new System.Drawing.Size(229, 36);
+            this.dtpSend.Size = new System.Drawing.Size(230, 36);
             this.dtpSend.TabIndex = 38;
             this.dtpSend.Value = new System.DateTime(2023, 5, 15, 15, 34, 21, 870);
             // 
@@ -140,7 +140,7 @@
             // 
             this.btnOK.Animated = true;
             this.btnOK.AutoRoundedCorners = true;
-            this.btnOK.BorderRadius = 25;
+            this.btnOK.BorderRadius = 26;
             this.btnOK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnOK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnOK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -148,9 +148,9 @@
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnOK.ForeColor = System.Drawing.Color.White;
             this.btnOK.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.Image")));
-            this.btnOK.Location = new System.Drawing.Point(58, 165);
+            this.btnOK.Location = new System.Drawing.Point(312, 264);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(95, 52);
+            this.btnOK.Size = new System.Drawing.Size(95, 55);
             this.btnOK.TabIndex = 39;
             this.btnOK.Text = "OK";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -159,7 +159,7 @@
             // 
             this.btnCancel.Animated = true;
             this.btnCancel.AutoRoundedCorners = true;
-            this.btnCancel.BorderRadius = 25;
+            this.btnCancel.BorderRadius = 26;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -167,9 +167,9 @@
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(222, 165);
+            this.btnCancel.Location = new System.Drawing.Point(476, 264);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(95, 52);
+            this.btnCancel.Size = new System.Drawing.Size(95, 55);
             this.btnCancel.TabIndex = 40;
             this.btnCancel.Text = "Hủy";
             // 
@@ -178,7 +178,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(376, 227);
+            this.ClientSize = new System.Drawing.Size(917, 402);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.dtpSend);

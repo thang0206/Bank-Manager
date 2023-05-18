@@ -40,26 +40,21 @@ namespace BankManage
             this.btnFilter = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlOption = new Guna.UI2.WinForms.Guna2Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.WithdrawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TransToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BorrowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CreditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SavingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TransHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Animate_Win = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.Borderless_Form = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btnQuit = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btnHistory = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSaving = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCredit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBorrow = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTrans = new Guna.UI2.WinForms.Guna2Button();
+            this.btnInfo = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).BeginInit();
             this.panel2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
@@ -103,7 +98,7 @@ namespace BankManage
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(11, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(901, 142);
+            this.panel1.Size = new System.Drawing.Size(929, 176);
             this.panel1.TabIndex = 14;
             // 
             // txtFilter
@@ -121,7 +116,7 @@ namespace BankManage
             this.txtFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFilter.ForeColor = System.Drawing.Color.Black;
             this.txtFilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilter.Location = new System.Drawing.Point(16, 38);
+            this.txtFilter.Location = new System.Drawing.Point(16, 52);
             this.txtFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.PasswordChar = '\0';
@@ -134,11 +129,11 @@ namespace BankManage
             // 
             this.gvSTK.BackgroundColor = System.Drawing.Color.Cyan;
             this.gvSTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSTK.Location = new System.Drawing.Point(485, 13);
+            this.gvSTK.Location = new System.Drawing.Point(472, 13);
             this.gvSTK.Name = "gvSTK";
             this.gvSTK.RowHeadersWidth = 51;
             this.gvSTK.RowTemplate.Height = 24;
-            this.gvSTK.Size = new System.Drawing.Size(400, 116);
+            this.gvSTK.Size = new System.Drawing.Size(451, 145);
             this.gvSTK.TabIndex = 13;
             this.gvSTK.Visible = false;
             this.gvSTK.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSTK_CellClick);
@@ -156,9 +151,9 @@ namespace BankManage
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(285, 86);
+            this.btnCancel.Location = new System.Drawing.Point(265, 108);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(82, 43);
+            this.btnCancel.Size = new System.Drawing.Size(118, 43);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -177,7 +172,7 @@ namespace BankManage
             this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnFilter.ForeColor = System.Drawing.Color.White;
             this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
-            this.btnFilter.Location = new System.Drawing.Point(74, 86);
+            this.btnFilter.Location = new System.Drawing.Point(74, 108);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(118, 43);
             this.btnFilter.TabIndex = 0;
@@ -189,133 +184,30 @@ namespace BankManage
             // 
             this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.Controls.Add(this.pnlOption);
-            this.panel2.Location = new System.Drawing.Point(249, 160);
+            this.panel2.Location = new System.Drawing.Point(276, 197);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(901, 458);
+            this.panel2.Size = new System.Drawing.Size(940, 478);
             this.panel2.TabIndex = 0;
             // 
             // pnlOption
             // 
             this.pnlOption.Location = new System.Drawing.Point(11, 17);
             this.pnlOption.Name = "pnlOption";
-            this.pnlOption.Size = new System.Drawing.Size(885, 437);
+            this.pnlOption.Size = new System.Drawing.Size(923, 453);
             this.pnlOption.TabIndex = 0;
             // 
-            // menuStrip1
+            // guna2PictureBox1
             // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Enabled = false;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informationToolStripMenuItem,
-            this.ContractToolStripMenuItem,
-            this.BorrowToolStripMenuItem,
-            this.CreditToolStripMenuItem,
-            this.SavingToolStripMenuItem,
-            this.TransHistoryToolStripMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip1.Location = new System.Drawing.Point(3, 94);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(252, 225);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // informationToolStripMenuItem
-            // 
-            this.informationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.informationToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.informationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("informationToolStripMenuItem.Image")));
-            this.informationToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(235, 32);
-            this.informationToolStripMenuItem.Text = "Thông tin khách hàng";
-            this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
-            // 
-            // ContractToolStripMenuItem
-            // 
-            this.ContractToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.WithdrawToolStripMenuItem,
-            this.SendToolStripMenuItem,
-            this.TransToolStripMenuItem});
-            this.ContractToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ContractToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.ContractToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ContractToolStripMenuItem.Image")));
-            this.ContractToolStripMenuItem.Name = "ContractToolStripMenuItem";
-            this.ContractToolStripMenuItem.Size = new System.Drawing.Size(129, 32);
-            this.ContractToolStripMenuItem.Text = "Giao dịch";
-            // 
-            // WithdrawToolStripMenuItem
-            // 
-            this.WithdrawToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.WithdrawToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.WithdrawToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.WithdrawToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.WithdrawToolStripMenuItem.Name = "WithdrawToolStripMenuItem";
-            this.WithdrawToolStripMenuItem.Size = new System.Drawing.Size(222, 32);
-            this.WithdrawToolStripMenuItem.Text = "Rút tiền";
-            this.WithdrawToolStripMenuItem.Click += new System.EventHandler(this.WithdrawToolStripMenuItem_Click);
-            // 
-            // SendToolStripMenuItem
-            // 
-            this.SendToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.SendToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.SendToolStripMenuItem.Name = "SendToolStripMenuItem";
-            this.SendToolStripMenuItem.Size = new System.Drawing.Size(222, 32);
-            this.SendToolStripMenuItem.Text = "Gửi tiền";
-            this.SendToolStripMenuItem.Click += new System.EventHandler(this.SendToolStripMenuItem_Click);
-            // 
-            // TransToolStripMenuItem
-            // 
-            this.TransToolStripMenuItem.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.TransToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.TransToolStripMenuItem.Name = "TransToolStripMenuItem";
-            this.TransToolStripMenuItem.Size = new System.Drawing.Size(222, 32);
-            this.TransToolStripMenuItem.Text = "Chuyển khoản";
-            this.TransToolStripMenuItem.Click += new System.EventHandler(this.TransToolStripMenuItem_Click);
-            // 
-            // BorrowToolStripMenuItem
-            // 
-            this.BorrowToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.BorrowToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.BorrowToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("BorrowToolStripMenuItem.Image")));
-            this.BorrowToolStripMenuItem.Name = "BorrowToolStripMenuItem";
-            this.BorrowToolStripMenuItem.Size = new System.Drawing.Size(77, 32);
-            this.BorrowToolStripMenuItem.Text = "Vay";
-            this.BorrowToolStripMenuItem.Click += new System.EventHandler(this.BorrowToolStripMenuItem_Click);
-            // 
-            // CreditToolStripMenuItem
-            // 
-            this.CreditToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.CreditToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.CreditToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CreditToolStripMenuItem.Image")));
-            this.CreditToolStripMenuItem.Name = "CreditToolStripMenuItem";
-            this.CreditToolStripMenuItem.Size = new System.Drawing.Size(128, 32);
-            this.CreditToolStripMenuItem.Text = "Tín dụng ";
-            this.CreditToolStripMenuItem.Click += new System.EventHandler(this.CreditToolStripMenuItem_Click);
-            // 
-            // SavingToolStripMenuItem
-            // 
-            this.SavingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.SavingToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.SavingToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SavingToolStripMenuItem.Image")));
-            this.SavingToolStripMenuItem.Name = "SavingToolStripMenuItem";
-            this.SavingToolStripMenuItem.Size = new System.Drawing.Size(209, 32);
-            this.SavingToolStripMenuItem.Text = "Tài khoản tiết kiệm";
-            this.SavingToolStripMenuItem.Click += new System.EventHandler(this.SavingToolStripMenuItem_Click);
-            // 
-            // TransHistoryToolStripMenuItem
-            // 
-            this.TransHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.TransHistoryToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.TransHistoryToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("TransHistoryToolStripMenuItem.Image")));
-            this.TransHistoryToolStripMenuItem.Name = "TransHistoryToolStripMenuItem";
-            this.TransHistoryToolStripMenuItem.Size = new System.Drawing.Size(231, 32);
-            this.TransHistoryToolStripMenuItem.Text = "Xem lịch sử giao dịch";
-            this.TransHistoryToolStripMenuItem.Click += new System.EventHandler(this.TransHistoryToolStripMenuItem_Click);
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(76, 101);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(130, 130);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // Animate_Win
             // 
@@ -336,8 +228,8 @@ namespace BankManage
             this.btnQuit.Animated = true;
             this.btnQuit.AnimatedGIF = true;
             this.btnQuit.AutoRoundedCorners = true;
-            this.btnQuit.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnQuit.BorderRadius = 21;
+            this.btnQuit.BackColor = System.Drawing.Color.Transparent;
+            this.btnQuit.BorderRadius = 24;
             this.btnQuit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnQuit.DisabledState.FillColor = System.Drawing.Color.RoyalBlue;
@@ -346,55 +238,194 @@ namespace BankManage
             this.btnQuit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnQuit.ForeColor = System.Drawing.Color.White;
             this.btnQuit.Image = ((System.Drawing.Image)(resources.GetObject("btnQuit.Image")));
-            this.btnQuit.Location = new System.Drawing.Point(31, 640);
+            this.btnQuit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQuit.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnQuit.Location = new System.Drawing.Point(49, 690);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(180, 45);
+            this.btnQuit.Size = new System.Drawing.Size(180, 50);
             this.btnQuit.TabIndex = 2;
             this.btnQuit.Text = "Thoát";
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 352);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(220, 209);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.panel1);
             this.guna2Panel2.FillColor = System.Drawing.Color.Cyan;
-            this.guna2Panel2.Location = new System.Drawing.Point(249, -11);
+            this.guna2Panel2.Location = new System.Drawing.Point(276, -11);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(926, 167);
+            this.guna2Panel2.Size = new System.Drawing.Size(947, 202);
             this.guna2Panel2.TabIndex = 18;
             // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.guna2GradientPanel1.Controls.Add(this.menuStrip1);
             this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
+            this.guna2GradientPanel1.Controls.Add(this.btnHistory);
+            this.guna2GradientPanel1.Controls.Add(this.btnSaving);
+            this.guna2GradientPanel1.Controls.Add(this.btnCredit);
+            this.guna2GradientPanel1.Controls.Add(this.btnBorrow);
+            this.guna2GradientPanel1.Controls.Add(this.btnTrans);
+            this.guna2GradientPanel1.Controls.Add(this.btnInfo);
             this.guna2GradientPanel1.Controls.Add(this.btnQuit);
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.SkyBlue;
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(-1, -89);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(255, 716);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(280, 767);
             this.guna2GradientPanel1.TabIndex = 19;
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.Animated = true;
+            this.btnHistory.AutoRoundedCorners = true;
+            this.btnHistory.BackColor = System.Drawing.Color.Transparent;
+            this.btnHistory.BorderRadius = 24;
+            this.btnHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHistory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHistory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHistory.Enabled = false;
+            this.btnHistory.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnHistory.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.btnHistory.ForeColor = System.Drawing.Color.White;
+            this.btnHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnHistory.Image")));
+            this.btnHistory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHistory.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnHistory.Location = new System.Drawing.Point(20, 600);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(245, 50);
+            this.btnHistory.TabIndex = 8;
+            this.btnHistory.Text = "Xem lịch sử giao dịch";
+            this.btnHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
+            // btnSaving
+            // 
+            this.btnSaving.Animated = true;
+            this.btnSaving.AutoRoundedCorners = true;
+            this.btnSaving.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaving.BorderRadius = 24;
+            this.btnSaving.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaving.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaving.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSaving.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSaving.Enabled = false;
+            this.btnSaving.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnSaving.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.btnSaving.ForeColor = System.Drawing.Color.White;
+            this.btnSaving.Image = ((System.Drawing.Image)(resources.GetObject("btnSaving.Image")));
+            this.btnSaving.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSaving.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnSaving.Location = new System.Drawing.Point(20, 530);
+            this.btnSaving.Name = "btnSaving";
+            this.btnSaving.Size = new System.Drawing.Size(245, 50);
+            this.btnSaving.TabIndex = 7;
+            this.btnSaving.Text = "Tài khoản tiết kiệm";
+            this.btnSaving.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSaving.Click += new System.EventHandler(this.btnSaving_Click);
+            // 
+            // btnCredit
+            // 
+            this.btnCredit.Animated = true;
+            this.btnCredit.AutoRoundedCorners = true;
+            this.btnCredit.BackColor = System.Drawing.Color.Transparent;
+            this.btnCredit.BorderRadius = 24;
+            this.btnCredit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCredit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCredit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCredit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCredit.Enabled = false;
+            this.btnCredit.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnCredit.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.btnCredit.ForeColor = System.Drawing.Color.White;
+            this.btnCredit.Image = ((System.Drawing.Image)(resources.GetObject("btnCredit.Image")));
+            this.btnCredit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCredit.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnCredit.Location = new System.Drawing.Point(20, 460);
+            this.btnCredit.Name = "btnCredit";
+            this.btnCredit.Size = new System.Drawing.Size(245, 50);
+            this.btnCredit.TabIndex = 6;
+            this.btnCredit.Text = "Tín dụng";
+            this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
+            // 
+            // btnBorrow
+            // 
+            this.btnBorrow.Animated = true;
+            this.btnBorrow.AutoRoundedCorners = true;
+            this.btnBorrow.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorrow.BorderRadius = 24;
+            this.btnBorrow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBorrow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBorrow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBorrow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBorrow.Enabled = false;
+            this.btnBorrow.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnBorrow.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.btnBorrow.ForeColor = System.Drawing.Color.White;
+            this.btnBorrow.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrow.Image")));
+            this.btnBorrow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBorrow.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnBorrow.Location = new System.Drawing.Point(20, 390);
+            this.btnBorrow.Name = "btnBorrow";
+            this.btnBorrow.Size = new System.Drawing.Size(245, 50);
+            this.btnBorrow.TabIndex = 5;
+            this.btnBorrow.Text = "Vay";
+            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
+            // 
+            // btnTrans
+            // 
+            this.btnTrans.Animated = true;
+            this.btnTrans.AutoRoundedCorners = true;
+            this.btnTrans.BackColor = System.Drawing.Color.Transparent;
+            this.btnTrans.BorderRadius = 24;
+            this.btnTrans.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTrans.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTrans.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTrans.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTrans.Enabled = false;
+            this.btnTrans.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnTrans.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.btnTrans.ForeColor = System.Drawing.Color.White;
+            this.btnTrans.Image = ((System.Drawing.Image)(resources.GetObject("btnTrans.Image")));
+            this.btnTrans.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTrans.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnTrans.Location = new System.Drawing.Point(20, 320);
+            this.btnTrans.Name = "btnTrans";
+            this.btnTrans.Size = new System.Drawing.Size(245, 50);
+            this.btnTrans.TabIndex = 4;
+            this.btnTrans.Text = "Giao dịch";
+            this.btnTrans.Click += new System.EventHandler(this.btnTrans_Click);
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.Animated = true;
+            this.btnInfo.AutoRoundedCorners = true;
+            this.btnInfo.BackColor = System.Drawing.Color.Transparent;
+            this.btnInfo.BorderRadius = 24;
+            this.btnInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnInfo.Enabled = false;
+            this.btnInfo.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnInfo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfo.ForeColor = System.Drawing.Color.White;
+            this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
+            this.btnInfo.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnInfo.Location = new System.Drawing.Point(20, 250);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(245, 50);
+            this.btnInfo.TabIndex = 3;
+            this.btnInfo.Text = "Thông tin khách hàng";
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1162, 626);
+            this.ClientSize = new System.Drawing.Size(1222, 679);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -402,7 +433,6 @@ namespace BankManage
             this.Controls.Add(this.guna2Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý ngân hàng";
@@ -411,8 +441,6 @@ namespace BankManage
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvSTK)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
@@ -427,16 +455,6 @@ namespace BankManage
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ContractToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem WithdrawToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem SendToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem TransToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem BorrowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CreditToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem SavingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem TransHistoryToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2AnimateWindow Animate_Win;
         private Guna.UI2.WinForms.Guna2BorderlessForm Borderless_Form;
         private Guna.UI2.WinForms.Guna2Button btnFilter;
@@ -448,5 +466,11 @@ namespace BankManage
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btnQuit;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2Button btnHistory;
+        private Guna.UI2.WinForms.Guna2Button btnSaving;
+        private Guna.UI2.WinForms.Guna2Button btnCredit;
+        private Guna.UI2.WinForms.Guna2Button btnBorrow;
+        private Guna.UI2.WinForms.Guna2Button btnTrans;
+        private Guna.UI2.WinForms.Guna2Button btnInfo;
     }
 }

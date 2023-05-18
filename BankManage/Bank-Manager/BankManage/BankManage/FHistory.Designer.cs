@@ -37,19 +37,20 @@
             // gvHistory
             // 
             this.gvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvHistory.Location = new System.Drawing.Point(12, 56);
+            this.gvHistory.Location = new System.Drawing.Point(12, 64);
             this.gvHistory.Name = "gvHistory";
             this.gvHistory.RowHeadersWidth = 51;
             this.gvHistory.RowTemplate.Height = 24;
-            this.gvHistory.Size = new System.Drawing.Size(586, 345);
+            this.gvHistory.Size = new System.Drawing.Size(881, 330);
             this.gvHistory.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 15);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(196, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 16);
+            this.label1.Size = new System.Drawing.Size(156, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Chọn loại giao dịch:";
             // 
@@ -72,7 +73,7 @@
             "Chuyển khoản qua tín dụng",
             "Nhận tiền chuyển khoản",
             "Tất cả giao dịch"});
-            this.cmbChoice.Location = new System.Drawing.Point(211, 3);
+            this.cmbChoice.Location = new System.Drawing.Point(381, 12);
             this.cmbChoice.Name = "cmbChoice";
             this.cmbChoice.Size = new System.Drawing.Size(313, 36);
             this.cmbChoice.StartIndex = 5;
@@ -84,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(609, 415);
+            this.ClientSize = new System.Drawing.Size(905, 406);
             this.Controls.Add(this.cmbChoice);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gvHistory);

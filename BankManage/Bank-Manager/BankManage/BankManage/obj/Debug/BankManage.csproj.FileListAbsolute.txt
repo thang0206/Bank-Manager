@@ -94,3 +94,4 @@ E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankMan
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\bin\Debug\Guna.UI2.dll
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FWaiting.resources
 D:\University\SecondYear\HK2\Win Programing\BankManage\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.csproj.CopyComplete
+E:\study\Sophomore\HKII\WinsPro\Git\Bank-manager\BankManage\Bank-Manager\BankManage\BankManage\obj\Debug\BankManage.FTrans_General.resources

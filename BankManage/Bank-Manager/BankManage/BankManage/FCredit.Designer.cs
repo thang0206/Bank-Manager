@@ -52,62 +52,62 @@ namespace BankManage
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 171);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(453, 73);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 17);
+            this.label4.Size = new System.Drawing.Size(100, 18);
             this.label4.TabIndex = 40;
             this.label4.Text = "Ngày mở thẻ: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 19);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 17);
+            this.label3.Size = new System.Drawing.Size(59, 18);
             this.label3.TabIndex = 51;
             this.label3.Text = "Số thẻ: ";
             // 
             // label7
             // 
             this.label7.AllowDrop = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 209);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(452, 119);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 39);
+            this.label7.Size = new System.Drawing.Size(156, 39);
             this.label7.TabIndex = 64;
             this.label7.Text = "Hồ sơ chứng minh năng lực tài chính: ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 119);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 17);
+            this.label1.Size = new System.Drawing.Size(96, 18);
             this.label1.TabIndex = 66;
             this.label1.Text = "Hạn mức thẻ:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 69);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 17);
+            this.label2.Size = new System.Drawing.Size(114, 18);
             this.label2.TabIndex = 70;
             this.label2.Text = "Số tiền đã dùng:";
             // 
             // gvHistory
             // 
             this.gvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvHistory.Location = new System.Drawing.Point(412, 16);
+            this.gvHistory.Location = new System.Drawing.Point(331, 194);
             this.gvHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gvHistory.Name = "gvHistory";
             this.gvHistory.RowHeadersWidth = 51;
             this.gvHistory.RowTemplate.Height = 24;
-            this.gvHistory.Size = new System.Drawing.Size(439, 350);
+            this.gvHistory.Size = new System.Drawing.Size(539, 187);
             this.gvHistory.TabIndex = 77;
             this.gvHistory.Visible = false;
             // 
@@ -115,7 +115,7 @@ namespace BankManage
             // 
             this.txtSothe.Animated = true;
             this.txtSothe.AutoRoundedCorners = true;
-            this.txtSothe.BorderRadius = 16;
+            this.txtSothe.BorderRadius = 17;
             this.txtSothe.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSothe.DefaultText = "";
             this.txtSothe.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -126,21 +126,21 @@ namespace BankManage
             this.txtSothe.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSothe.ForeColor = System.Drawing.Color.Black;
             this.txtSothe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSothe.Location = new System.Drawing.Point(148, 13);
+            this.txtSothe.Location = new System.Drawing.Point(167, 13);
             this.txtSothe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSothe.Name = "txtSothe";
             this.txtSothe.PasswordChar = '\0';
             this.txtSothe.PlaceholderText = "";
             this.txtSothe.ReadOnly = true;
             this.txtSothe.SelectedText = "";
-            this.txtSothe.Size = new System.Drawing.Size(234, 35);
+            this.txtSothe.Size = new System.Drawing.Size(233, 36);
             this.txtSothe.TabIndex = 79;
             // 
             // txtMoneyUsed
             // 
             this.txtMoneyUsed.Animated = true;
             this.txtMoneyUsed.AutoRoundedCorners = true;
-            this.txtMoneyUsed.BorderRadius = 16;
+            this.txtMoneyUsed.BorderRadius = 17;
             this.txtMoneyUsed.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMoneyUsed.DefaultText = "";
             this.txtMoneyUsed.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -151,14 +151,14 @@ namespace BankManage
             this.txtMoneyUsed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMoneyUsed.ForeColor = System.Drawing.Color.Black;
             this.txtMoneyUsed.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMoneyUsed.Location = new System.Drawing.Point(148, 59);
+            this.txtMoneyUsed.Location = new System.Drawing.Point(167, 65);
             this.txtMoneyUsed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoneyUsed.Name = "txtMoneyUsed";
             this.txtMoneyUsed.PasswordChar = '\0';
             this.txtMoneyUsed.PlaceholderText = "";
             this.txtMoneyUsed.ReadOnly = true;
             this.txtMoneyUsed.SelectedText = "";
-            this.txtMoneyUsed.Size = new System.Drawing.Size(234, 35);
+            this.txtMoneyUsed.Size = new System.Drawing.Size(233, 36);
             this.txtMoneyUsed.TabIndex = 80;
             // 
             // cmbHanMuc
@@ -179,7 +179,7 @@ namespace BankManage
             "5 triệu",
             "10 triệu",
             "20 triệu"});
-            this.cmbHanMuc.Location = new System.Drawing.Point(148, 107);
+            this.cmbHanMuc.Location = new System.Drawing.Point(167, 120);
             this.cmbHanMuc.Name = "cmbHanMuc";
             this.cmbHanMuc.Size = new System.Drawing.Size(233, 36);
             this.cmbHanMuc.TabIndex = 81;
@@ -195,7 +195,7 @@ namespace BankManage
             this.dtpOpen.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpOpen.ForeColor = System.Drawing.Color.Black;
             this.dtpOpen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpOpen.Location = new System.Drawing.Point(148, 162);
+            this.dtpOpen.Location = new System.Drawing.Point(637, 65);
             this.dtpOpen.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpOpen.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpOpen.Name = "dtpOpen";
@@ -221,7 +221,7 @@ namespace BankManage
             "Sao kê bảng lương",
             "Hợp đồng lao động",
             "Hợp đồng thuê tài sản"});
-            this.cmbMethod.Location = new System.Drawing.Point(148, 209);
+            this.cmbMethod.Location = new System.Drawing.Point(636, 120);
             this.cmbMethod.Name = "cmbMethod";
             this.cmbMethod.Size = new System.Drawing.Size(234, 36);
             this.cmbMethod.TabIndex = 83;
@@ -231,7 +231,7 @@ namespace BankManage
             // 
             this.btnSubmit.Animated = true;
             this.btnSubmit.AutoRoundedCorners = true;
-            this.btnSubmit.BorderRadius = 18;
+            this.btnSubmit.BorderRadius = 21;
             this.btnSubmit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSubmit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSubmit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -239,9 +239,10 @@ namespace BankManage
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
             this.btnSubmit.Image = ((System.Drawing.Image)(resources.GetObject("btnSubmit.Image")));
-            this.btnSubmit.Location = new System.Drawing.Point(12, 269);
+            this.btnSubmit.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnSubmit.Location = new System.Drawing.Point(16, 194);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(125, 38);
+            this.btnSubmit.Size = new System.Drawing.Size(120, 45);
             this.btnSubmit.TabIndex = 84;
             this.btnSubmit.Text = "Mở thẻ";
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -250,7 +251,7 @@ namespace BankManage
             // 
             this.btnDelete.Animated = true;
             this.btnDelete.AutoRoundedCorners = true;
-            this.btnDelete.BorderRadius = 18;
+            this.btnDelete.BorderRadius = 21;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -259,9 +260,10 @@ namespace BankManage
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(148, 269);
+            this.btnDelete.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnDelete.Location = new System.Drawing.Point(167, 194);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(110, 38);
+            this.btnDelete.Size = new System.Drawing.Size(120, 45);
             this.btnDelete.TabIndex = 85;
             this.btnDelete.Text = "Xóa thẻ";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -270,7 +272,7 @@ namespace BankManage
             // 
             this.btnCancel.Animated = true;
             this.btnCancel.AutoRoundedCorners = true;
-            this.btnCancel.BorderRadius = 18;
+            this.btnCancel.BorderRadius = 21;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -278,9 +280,10 @@ namespace BankManage
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(267, 269);
+            this.btnCancel.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnCancel.Location = new System.Drawing.Point(167, 264);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(115, 38);
+            this.btnCancel.Size = new System.Drawing.Size(120, 45);
             this.btnCancel.TabIndex = 86;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -289,7 +292,7 @@ namespace BankManage
             // 
             this.btnPay.Animated = true;
             this.btnPay.AutoRoundedCorners = true;
-            this.btnPay.BorderRadius = 18;
+            this.btnPay.BorderRadius = 21;
             this.btnPay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -297,9 +300,10 @@ namespace BankManage
             this.btnPay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPay.ForeColor = System.Drawing.Color.White;
             this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
-            this.btnPay.Location = new System.Drawing.Point(12, 328);
+            this.btnPay.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnPay.Location = new System.Drawing.Point(16, 264);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(125, 38);
+            this.btnPay.Size = new System.Drawing.Size(120, 45);
             this.btnPay.TabIndex = 87;
             this.btnPay.Text = "Thanh toán";
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
@@ -308,7 +312,7 @@ namespace BankManage
             // 
             this.btnShowTrans.Animated = true;
             this.btnShowTrans.AutoRoundedCorners = true;
-            this.btnShowTrans.BorderRadius = 18;
+            this.btnShowTrans.BorderRadius = 21;
             this.btnShowTrans.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnShowTrans.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnShowTrans.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -317,9 +321,10 @@ namespace BankManage
             this.btnShowTrans.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnShowTrans.ForeColor = System.Drawing.Color.White;
             this.btnShowTrans.Image = ((System.Drawing.Image)(resources.GetObject("btnShowTrans.Image")));
-            this.btnShowTrans.Location = new System.Drawing.Point(148, 328);
+            this.btnShowTrans.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnShowTrans.Location = new System.Drawing.Point(16, 336);
             this.btnShowTrans.Name = "btnShowTrans";
-            this.btnShowTrans.Size = new System.Drawing.Size(234, 38);
+            this.btnShowTrans.Size = new System.Drawing.Size(271, 45);
             this.btnShowTrans.TabIndex = 88;
             this.btnShowTrans.Text = "Thống kê thẻ tín dụng";
             this.btnShowTrans.Click += new System.EventHandler(this.btnShowTrans_Click);
@@ -329,7 +334,7 @@ namespace BankManage
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(910, 410);
+            this.ClientSize = new System.Drawing.Size(905, 406);
             this.Controls.Add(this.btnShowTrans);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnCancel);

@@ -88,7 +88,7 @@
             // timer
             // 
             this.timer.Enabled = true;
-            this.timer.Interval = 8000;
+            this.timer.Interval = 6000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // FWaiting
