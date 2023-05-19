@@ -48,5 +48,9 @@ namespace BankManage
         {
             this.stk = stk;
         }
+        public Customer(string STK, string citizenId)
+        {
+            this.citizenId = citizenId;
+        }
     }
 }

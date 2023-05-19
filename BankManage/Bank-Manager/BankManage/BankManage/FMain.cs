@@ -51,8 +51,8 @@ namespace BankManage
             btnTrans.Enabled = isShowGvCustomer;
             if (!isShowGvCustomer)
             {
-                MessageBox.Show("Chua co tai khoan");
-                choosedCustomer = new Customer();
+                MessageBox.Show("Invalid customer");
+                choosedCustomer = new Customer("",txtFilter.Text);
                 btnInfo_Click(sender, e);
             }
             else
