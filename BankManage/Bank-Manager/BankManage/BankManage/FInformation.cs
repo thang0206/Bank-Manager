@@ -13,7 +13,6 @@ namespace BankManage
     public partial class FInformation : Form
     {
         CustomerDAO customerDAO = new CustomerDAO();
-        DBConnection dBConnection = new DBConnection();
         Customer customer;
         DataTable datatable;
 
@@ -47,9 +46,16 @@ namespace BankManage
             for (int i = 0; i < datatable.Rows.Count - 1; i++)
                 while (randomStk == datatable.Rows[i]["STK"].ToString())
                     randomStk = RandomSTK();
-            Customer newCustomer = new Customer(randomStk, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, 0)
+            Customer newCustomer = new Customer()
             {
-                CreatedAt = DateTime.Now
+                STK = randomStk,
+                Name = txtName.Text,
+                Address = txtAddr.Text,
+                DoB = dtpDoB.Value,
+                CitizenID = txtID.Text,
+                PhoneNum = txtPNum.Text,
+                Money = 0,
+                CreateAt = DateTime.Now
             };
             if (customerDAO.ValidateFormCreate(newCustomer))
                 MessageBox.Show("Khong duoc de trong");
@@ -59,8 +65,17 @@ namespace BankManage
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Customer updatedCustomer = new Customer(txtSTK.Text, txtName.Text, txtAddr.Text, dtpDoB.Value, txtID.Text, txtPNum.Text, Convert.ToInt32(txtMoney.Text));
-            updatedCustomer.UpdatedAt = DateTime.Now;
+            Customer updatedCustomer = new Customer()
+            {
+                STK = txtSTK.Text,
+                Name = txtName.Text,
+                Address = txtAddr.Text,
+                DoB = dtpDoB.Value,
+                CitizenID = txtID.Text,
+                PhoneNum = txtPNum.Text,
+                Money = Convert.ToInt32(txtMoney.Text),
+                UpdateAt = DateTime.Now
+            };
             if (customerDAO.ValidateFormCreate(updatedCustomer))
                 MessageBox.Show("Khong duoc de trong");
             else
@@ -72,7 +87,10 @@ namespace BankManage
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Customer deletetedCustomer = new Customer(txtSTK.Text);
+            Customer deletetedCustomer = new Customer()
+            {
+                STK = txtSTK.Text
+            };
             customerDAO.Delete(deletetedCustomer);
             ClearInfomation();
         }
@@ -95,11 +113,11 @@ namespace BankManage
 
         private void LoadInformation()
         {
-            txtSTK.Text = customer.Stk;
+            txtSTK.Text = customer.STK;
             txtName.Text = customer.Name;
             txtAddr.Text = customer.Address;
-            txtID.Text = customer.CitizenId;
-            txtPNum.Text = customer.PhoneNumber;
+            txtID.Text = customer.CitizenID;
+            txtPNum.Text = customer.PhoneNum;
             txtMoney.Text = customer.Money.ToString();
         }
     }

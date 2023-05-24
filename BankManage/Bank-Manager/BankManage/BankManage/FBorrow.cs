@@ -24,7 +24,7 @@ namespace BankManage
             InitializeComponent();
             this.currentCustomer = choosedCustomer;
             txtMoneyRemain.Text = currentCustomer.Money.ToString();
-            txtID.Text = currentCustomer.CitizenId.ToString();
+            txtID.Text = currentCustomer.CitizenID.ToString();
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -47,7 +47,18 @@ namespace BankManage
         {
             if (isValidForm())
             {
-                Borrow borrow = new Borrow(Convert.ToInt32(txtMoneyRemain.Text), currentCustomer.CitizenId, Convert.ToInt32(txtEarnings.Text), Convert.ToInt32(txtMoneyBorrow.Text), cbTypeOfCredit.Text, cbCollateral.Text, cbTerm.Text, dtpAllow.Value.Date, dtpBack.Value.Date);
+                Borrow borrow = new Borrow()
+                {
+                    Money = Convert.ToInt32(txtMoneyRemain.Text),
+                    CitizenID = currentCustomer.CitizenID,
+                    Salary = Convert.ToInt32(txtEarnings.Text),
+                    MoneyBorrow = Convert.ToInt32(txtMoneyBorrow.Text),
+                    KieuTinDung = cbTypeOfCredit.Text,
+                    TaiSanTheChap = cbCollateral.Text,
+                    KyHan = cbTerm.Text,
+                    NgayChoVay = dtpAllow.Value.Date,
+                    NgayHoanTien = dtpBack.Value.Date
+                };
 
                 if (Convert.ToInt32(txtMoneyBorrow.Text) > (15 * Convert.ToInt32(txtEarnings.Text)) + Convert.ToInt32(txtMoneyRemain.Text))
                 {
@@ -69,7 +80,7 @@ namespace BankManage
         {
             try
             {
-                LoadData($" WHERE CitizenID = '{currentCustomer.CitizenId}'");
+                LoadData($" WHERE CitizenID = '{currentCustomer.CitizenID}'");
                 if (txtMoneyBorrow.Text == "")
                 {
                     MessageBox.Show("Hiện tại bạn không có khoản vay hay khoản nợ xấu nào.");
@@ -160,7 +171,10 @@ namespace BankManage
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            Borrow payBorrow = new Borrow(txtID.Text);
+            Borrow payBorrow = new Borrow()
+            {
+                CitizenID = txtID.Text
+            };
             int remainMoney = Convert.ToInt32(txtMoneyRemain.Text) - Convert.ToInt32(txtMoneyBorrow.Text);
             if (remainMoney < 0)
                 MessageBox.Show("Số tiền trong tài khoản không đủ, vui lòng nạp thêm tiền");

@@ -31,13 +31,15 @@ namespace BankManage
 
         private void FCredit_Load(object sender, EventArgs e)
         {
-            LoadTransactionData($" WHERE STK = '{customer.Stk}' AND LoaiGD = 'Chuyen khoan Tin dung' OR STK = '{customer.Stk}' AND LoaiGD = 'Nhan tien Chuyen khoan'");
+            LoadTransactionData($" WHERE STK = '{customer.STK}' AND LoaiGD = 'Chuyen khoan Tin dung' OR STK = '{customer.STK}' AND LoaiGD = 'Nhan tien Chuyen khoan'");
 
-            credit = new Credit(customer.Stk);
-
+            credit = new Credit()
+            {
+                STK = customer.STK,
+            };
             credit = creditDAO.Get(credit);
 
-            txtSothe.Text = credit.ID;
+            txtSothe.Text = credit.MaThe;
 
             txtMoneyUsed.Text = credit.UsedMoney.ToString();
 
@@ -143,7 +145,16 @@ namespace BankManage
                         hanmuc = 20000000; 
                         break;
                 }
-                credit = new Credit(customer.Stk, MaThe, hanmuc, 0, cmbMethod.Text, DateTime.Now, DateTime.Now.AddMonths(1));
+                Credit credit = new Credit() 
+                { 
+                    STK = customer.STK, 
+                    MaThe = MaThe, 
+                    HanMuc = hanmuc, 
+                    UsedMoney = 0, 
+                    Method = cmbMethod.Text, 
+                    NgayMo = DateTime.Now, 
+                    NgayDaoHan = DateTime.Now.AddMonths(1) 
+                }; 
                 creditDAO.Create(credit);
 
                 MessageBox.Show("Chúc mừng bạn đã mở thẻ tín dụng thành công:\nSố thẻ: " + MaThe + "\nHạn mức cho phép:" + hanmuc + "\nVui lòng thanh toán dư nợ vào ngày " + DateTime.Now.Day + " của tháng tiếp theo, nếu phát sinh giao dịch");
@@ -152,9 +163,13 @@ namespace BankManage
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Credit credit = new Credit(customer.Stk, txtSothe.Text);
+            Credit credit = new Credit()
+            {
+                STK = customer.STK,
+                MaThe = txtSothe.Text
+            };
             creditDAO.Delete(credit);
-            transactionDAO.DeleteCredit(customer.Stk);
+            transactionDAO.DeleteCredit(customer.STK);
             FCredit_Load(sender, e);
             btnDelete.Enabled = false;
         }
@@ -190,9 +205,12 @@ namespace BankManage
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            Credit paycredit = new Credit(customer.Stk);
+            Credit paycredit = new Credit()
+            {
+                STK = customer.STK,
+            };
             paycredit = creditDAO.Get(paycredit);
-            int remainMoney = customer.Money - Convert.ToInt32(txtMoneyUsed.Text);
+            int remainMoney = Convert.ToInt32(customer.Money) - Convert.ToInt32(txtMoneyUsed.Text);
             if (remainMoney < 0)
                 MessageBox.Show("Số tiền trong tài khoản không đủ, vui lòng nạp thêm tiền");
             else
@@ -202,7 +220,7 @@ namespace BankManage
                 txtMoneyUsed.Text = "0";
                 paycredit.UsedMoney = 0;
                 creditDAO.Update(paycredit);
-                transactionDAO.DeleteCredit(customer.Stk);
+                transactionDAO.DeleteCredit(customer.STK);
                 MessageBox.Show("Thanh toán thành công");
                 btnDelete.Enabled = false;
             }

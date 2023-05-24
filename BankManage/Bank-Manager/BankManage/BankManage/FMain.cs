@@ -52,7 +52,11 @@ namespace BankManage
             if (!isShowGvCustomer)
             {
                 MessageBox.Show("Invalid customer");
-                choosedCustomer = new Customer("",txtFilter.Text);
+                choosedCustomer = new Customer()
+                {
+                    STK = "",
+                    CitizenID = txtFilter.Text
+                };
                 btnInfo_Click(sender, e);
             }
             else
@@ -74,7 +78,16 @@ namespace BankManage
             string id = gvSTK.Rows[numrow].Cells["CitizenId"].Value.ToString();
             string phoneNumber = gvSTK.Rows[numrow].Cells["PhoneNum"].Value.ToString();
             int money = Convert.ToInt32(gvSTK.Rows[numrow].Cells["Money"].Value.ToString());
-            choosedCustomer = new Customer(stk, name, address, dob, id, phoneNumber, money);
+            choosedCustomer = new Customer()
+            {
+                STK = stk,
+                Name = name,
+                Address = address,
+                DoB = dob,
+                CitizenID = id,
+                PhoneNum = phoneNumber,
+                Money = money
+            };
 
             btnInfo_Click(sender, e);
         }
@@ -144,7 +157,7 @@ namespace BankManage
         private void btnHistory_Click(object sender, EventArgs e)
         {
             pnlOption.Controls.Clear();
-            FHistory fHistory = new FHistory(choosedCustomer.Stk);
+            FHistory fHistory = new FHistory(choosedCustomer.STK);
             ShowFormOnPanel(fHistory);
         }
     }
