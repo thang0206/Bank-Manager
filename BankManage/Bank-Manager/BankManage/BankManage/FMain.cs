@@ -43,12 +43,17 @@ namespace BankManage
                 }
             }
             gvSTK.Visible = isShowGvCustomer;
-            menuStrip1.Enabled = isShowGvCustomer;
+            btnInfo.Enabled = isShowGvCustomer;
+            btnHistory.Enabled = isShowGvCustomer;
+            btnSaving.Enabled = isShowGvCustomer;
+            btnBorrow.Enabled = isShowGvCustomer;
+            btnCredit.Enabled = isShowGvCustomer;
+            btnTrans.Enabled = isShowGvCustomer;
             if (!isShowGvCustomer)
             {
-                MessageBox.Show("Chua co tai khoan");
-                choosedCustomer = new Customer();
-                informationToolStripMenuItem_Click(sender, e);
+                MessageBox.Show("Invalid customer");
+                choosedCustomer = new Customer("",txtFilter.Text);
+                btnInfo_Click(sender, e);
             }
             else
                 pnlOption.Controls.Clear();
@@ -57,70 +62,6 @@ namespace BankManage
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtFilter.Clear();
-        }
-
-        private void TransHistoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FHistory fHistory = new FHistory(choosedCustomer.Stk);
-            ShowFormOnPanel(fHistory);
-        }
-        private void SavingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FSaving fSaving = new FSaving(choosedCustomer);
-            ShowFormOnPanel(fSaving);
-        }
-        private void BorrowToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FBorrow fBorrow = new FBorrow(choosedCustomer);
-            ShowFormOnPanel(fBorrow);
-        }
-        private void WithdrawToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FWithdraw fWithdraw = new FWithdraw(choosedCustomer);
-            ShowFormOnPanel(fWithdraw);
-        }
-        private void SendToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FSend fsend = new FSend(choosedCustomer);
-            ShowFormOnPanel(fsend);
-        }
-        private void TransToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataGrid dataGrid = new DataGrid
-            {
-                DataSource = dBConnection.Load("Customer")
-            };
-            DataTable datatable = (DataTable)dataGrid.DataSource;
-            pnlOption.Controls.Clear();
-            FTrans fTrans = new FTrans(choosedCustomer, datatable);
-            ShowFormOnPanel(fTrans);    
-        }
-
-        private void CreditToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlOption.Controls.Clear();
-            FCredit fcredit = new FCredit(choosedCustomer);
-            ShowFormOnPanel(fcredit);
-        }
-
-        private void informationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataGrid dataGrid = new DataGrid
-            {
-                DataSource = dBConnection.Load("Customer")
-            };
-            DataTable datatable = (DataTable)dataGrid.DataSource;
-            pnlOption.Controls.Clear();
-            if (choosedCustomer != null)
-            {
-                FInformation fInformation = new FInformation(choosedCustomer, datatable);
-                ShowFormOnPanel(fInformation);
-            }
         }
 
         private void gvSTK_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -135,7 +76,7 @@ namespace BankManage
             int money = Convert.ToInt32(gvSTK.Rows[numrow].Cells["Money"].Value.ToString());
             choosedCustomer = new Customer(stk, name, address, dob, id, phoneNumber, money);
 
-            informationToolStripMenuItem_Click(sender, e);
+            btnInfo_Click(sender, e);
         }
 
         private void ShowFormOnPanel(Form form)
@@ -145,6 +86,66 @@ namespace BankManage
             pnlOption.Controls.Add(form);
             form.Dock = DockStyle.Fill;
             form.Show();
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            DataGrid dataGrid = new DataGrid
+            {
+                DataSource = dBConnection.Load("Customer")
+            };
+            DataTable datatable = (DataTable)dataGrid.DataSource;
+            pnlOption.Controls.Clear();
+            if (choosedCustomer != null)
+            {
+                FInformation fInformation = new FInformation(choosedCustomer, datatable);
+                ShowFormOnPanel(fInformation);
+            }
+        }
+
+        private void btnTrans_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            DataGrid dataGrid = new DataGrid
+            {
+                DataSource = dBConnection.Load("Customer")
+            };
+            DataTable datatable = (DataTable)dataGrid.DataSource;
+            FTrans_General fTrans_General = new FTrans_General(choosedCustomer, datatable);
+            ShowFormOnPanel(fTrans_General);
+        }
+
+        private void btnBorrow_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FBorrow fBorrow = new FBorrow(choosedCustomer);
+            ShowFormOnPanel(fBorrow);
+        }
+
+        private void btnCredit_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FCredit fcredit = new FCredit(choosedCustomer);
+            ShowFormOnPanel(fcredit);
+        }
+
+        private void btnSaving_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FSaving fSaving = new FSaving(choosedCustomer);
+            ShowFormOnPanel(fSaving);
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            pnlOption.Controls.Clear();
+            FHistory fHistory = new FHistory(choosedCustomer.Stk);
+            ShowFormOnPanel(fHistory);
         }
     }
 }

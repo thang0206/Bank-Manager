@@ -27,7 +27,7 @@ namespace BankManage
         private void FInformation_Load(object sender, EventArgs e)
         {
             LoadInformation();
-            if (customer.Stk == "")
+            if (txtSTK.Text != "")
             {
                 btnCreate.Enabled = false;
                 btnUpdate.Enabled = true;

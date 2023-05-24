@@ -29,24 +29,43 @@
         private void InitializeComponent()
         {
             this.gvHistory = new System.Windows.Forms.DataGridView();
-            this.cmbChoice = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbChoice = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // gvHistory
             // 
             this.gvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvHistory.Location = new System.Drawing.Point(12, 56);
+            this.gvHistory.Location = new System.Drawing.Point(12, 64);
             this.gvHistory.Name = "gvHistory";
             this.gvHistory.RowHeadersWidth = 51;
             this.gvHistory.RowTemplate.Height = 24;
-            this.gvHistory.Size = new System.Drawing.Size(586, 345);
+            this.gvHistory.Size = new System.Drawing.Size(881, 330);
             this.gvHistory.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(196, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Chọn loại giao dịch:";
             // 
             // cmbChoice
             // 
-            this.cmbChoice.FormattingEnabled = true;
+            this.cmbChoice.AutoRoundedCorners = true;
+            this.cmbChoice.BackColor = System.Drawing.Color.Transparent;
+            this.cmbChoice.BorderRadius = 17;
+            this.cmbChoice.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChoice.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbChoice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbChoice.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbChoice.ForeColor = System.Drawing.Color.Black;
+            this.cmbChoice.ItemHeight = 30;
             this.cmbChoice.Items.AddRange(new object[] {
             "Rút tiền",
             "Gửi tiền",
@@ -54,30 +73,21 @@
             "Chuyển khoản qua tín dụng",
             "Nhận tiền chuyển khoản",
             "Tất cả giao dịch"});
-            this.cmbChoice.Location = new System.Drawing.Point(216, 12);
+            this.cmbChoice.Location = new System.Drawing.Point(381, 12);
             this.cmbChoice.Name = "cmbChoice";
-            this.cmbChoice.Size = new System.Drawing.Size(313, 24);
-            this.cmbChoice.TabIndex = 1;
-            this.cmbChoice.Text = "Tất cả giao dịch";
+            this.cmbChoice.Size = new System.Drawing.Size(313, 36);
+            this.cmbChoice.StartIndex = 5;
+            this.cmbChoice.TabIndex = 3;
             this.cmbChoice.SelectedIndexChanged += new System.EventHandler(this.cmbChoice_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Chọn loại giao dịch:";
             // 
             // FHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(609, 415);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.LightBlue;
+            this.ClientSize = new System.Drawing.Size(905, 406);
             this.Controls.Add(this.cmbChoice);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gvHistory);
             this.Name = "FHistory";
             this.Text = "FHistory";
@@ -91,7 +101,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView gvHistory;
-        private System.Windows.Forms.ComboBox cmbChoice;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbChoice;
     }
 }
